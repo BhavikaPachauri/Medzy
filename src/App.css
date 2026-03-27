@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap");
+
+:root {
+  --font-heading: "Playfair Display", serif;
+  --font-body: "DM Sans", sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  color: #1f2937;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.01em;
+}
+
+p,
+span,
+a,
+li,
+input,
+textarea,
+button,
+label {
+  font-family: var(--font-body);
+}
+
+.section-eyebrow {
+  color: #00b5a5;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 3.8vw, 3rem);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+}
+
+.section-subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+  line-height: 1.8;
+  color: #4b5563;
+  margin-top: 0.9rem;
+}
+
+.section-paragraph {
+  font-family: var(--font-body);
+  line-height: 1.8;
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.section-container {
+  width: min(100%, 1200px);
+  margin-inline: auto;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out;
+}
+
+@keyframes rotate-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-rotate-slow {
+  animation: rotate-slow 22s linear infinite;
+}
