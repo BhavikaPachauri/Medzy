@@ -7,11 +7,11 @@ type Props = {
 };
 
 export default function PartnerHero({ formRef }: Props) {
-  const r1 = usePartnerReveal<HTMLDivElement>(0);
+
   const r2 = usePartnerReveal<HTMLHeadingElement>(100);
   const r3 = usePartnerReveal<HTMLParagraphElement>(200);
   const r4 = usePartnerReveal<HTMLDivElement>(300);
-  const r5 = usePartnerReveal<HTMLDivElement>(380);
+
 
   return (
     <section className="relative overflow-hidden border-b bg-[url('./img/partnerbanner.webp')] bg-cover bg-no-repeat " style={{ borderColor: B.border }}>

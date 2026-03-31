@@ -40,7 +40,7 @@ export default function PartnerEnquiryForm({ formRef }: Props) {
   const [form, setForm] = useState<FormState>(INITIAL_FORM);
   const [submitted, setSubmitted] = useState(false);
   const [focused, setFocused] = useState<FocusField>(null);
-  const revealRef = usePartnerReveal<HTMLDivElement>(0);
+ 
 
   const inputStyle = (name: keyof FormState) => ({
     width: "100%",

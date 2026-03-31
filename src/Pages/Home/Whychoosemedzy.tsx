@@ -11,20 +11,7 @@ interface Feature {
   desc: string;
 }
 
-const ArrowIcon = () => (
-  <svg
-    width="14"
-    height="14"
-    viewBox="0 0 16 16"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.8"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M3 8h10M9 4l4 4-4 4" />
-  </svg>
-);
+
 
 const NetworkIcon = () => (
   <svg viewBox="0 0 48 48" fill="none" className="w-7 h-7">

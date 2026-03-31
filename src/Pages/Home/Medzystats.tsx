@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import SectionHeader from "../../common/SectionHeader";
+
 
 interface Stat {
   id: number;
