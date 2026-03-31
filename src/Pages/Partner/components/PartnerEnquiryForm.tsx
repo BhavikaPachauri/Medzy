@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { RefObject } from "react";
-import usePartnerReveal from "../hooks/usePartnerReveal";
+
 import { PARTNER_COLORS as B } from "../partnerTheme";
 
 type Props = {
