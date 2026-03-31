@@ -9,8 +9,6 @@ interface Feature {
   tag: string;
   title: string;
   desc: string;
-  stat: string;
-  statLabel: string;
 }
 
 const ArrowIcon = () => (
@@ -76,8 +74,7 @@ const features: Feature[] = [
     tag: "NETWORK",
     title: "Pan-India Distribution",
     desc: "Seamless delivery across all major states with our extensive logistics infrastructure connecting every corner of India.",
-    stat: "28+",
-    statLabel: "States Covered",
+    
   },
   {
     id: 2,
@@ -85,8 +82,7 @@ const features: Feature[] = [
     tag: "DELIVERY",
     title: "Timely Fulfillment",
     desc: "Streamlined logistics powered by real-time tracking ensures your orders arrive exactly when promised, every single time.",
-    stat: "98%",
-    statLabel: "On-Time Rate",
+   
   },
   {
     id: 3,
@@ -94,8 +90,7 @@ const features: Feature[] = [
     tag: "VALUE",
     title: "Competitive Pricing",
     desc: "Cost-effective pharmaceutical solutions without ever compromising on quality, giving you the best value for every rupee.",
-    stat: "30%",
-    statLabel: "Avg. Savings",
+
   },
   {
     id: 4,
@@ -103,8 +98,7 @@ const features: Feature[] = [
     tag: "SUPPORT",
     title: "24/7 Customer Support",
     desc: "Dedicated support team available round the clock for all inquiries, order tracking, and assistance whenever you need it.",
-    stat: "24/7",
-    statLabel: "Always Available",
+    
   },
 ];
 
@@ -217,39 +211,8 @@ function FeatureCard({ feature, index, visible }: FeatureCardProps) {
           </p>
         </div>
 
-        {/* Stat row */}
-        <div
-          className="mt-auto flex items-center gap-3 pt-4"
-          style={{ borderTop: "1px solid rgba(0,178,169,0.15)" }}
-        >
-          <span
-            className="text-3xl font-black font-heading"
-            style={{
-              background: "linear-gradient(135deg, #00b2a9, #00d4c8)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            }}
-          >
-            {feature.stat}
-          </span>
-          <span
-            className="text-xs text-gray-400 font-medium uppercase tracking-wide font-body"
-          >
-            {feature.statLabel}
-          </span>
-          <div className="ml-auto">
-            <div
-              className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300"
-              style={{
-                background: hovered ? "#00b2a9" : "transparent",
-                border: `1.5px solid ${hovered ? "#00b2a9" : "rgba(0,178,169,0.35)"}`,
-                color: hovered ? "#ffffff" : "#00b2a9",
-              }}
-            >
-              <ArrowIcon />
-            </div>
-          </div>
-        </div>
+        
+        
       </div>
     </div>
   );
@@ -314,7 +277,7 @@ export default function WhyChooseMedzy() {
                   </span>
                 </>
               }
-              subtitle="Reliable distribution, on-time fulfillment, competitive pricing, and proactive support for healthcare partners."
+             
             />
 
             {/* Decorative divider */}

@@ -3,8 +3,8 @@
 import { useState, useRef, useEffect } from "react";
 
 /* ── brand tokens ── */
-const TEAL = "#00B8A9";
-const NAVY = "#1C3557";
+const TEAL = "#019d90";
+const NAVY = "#019d90";
 
 /* ── scroll reveal ── */
 function useVisible(threshold = 0.1) {
@@ -86,15 +86,15 @@ function InfoRow({ icon, label, value, href }: { icon: React.ReactNode; label: s
         {icon}
       </div>
       <div>
-        <p className="text-xs font-semibold uppercase tracking-widest mb-0.5" style={{ color: TEAL, fontFamily: "'DM Sans', sans-serif" }}>
+        <p className="text-xs font-semibold uppercase tracking-widest mb-0.5" style={{ color: TEAL,  }}>
           {label}
         </p>
         {href ? (
-          <a href={href} className="text-sm font-medium hover:underline transition-all" style={{ color: NAVY, fontFamily: "'DM Sans', sans-serif", textDecorationColor: TEAL }}>
+          <a href={href} className="text-sm font-medium hover:underline transition-all" style={{ color: NAVY,  textDecorationColor: TEAL }}>
             {value}
           </a>
         ) : (
-          <p className="text-sm font-medium" style={{ color: NAVY, fontFamily: "'DM Sans', sans-serif" }}>{value}</p>
+          <p className="text-sm font-medium" style={{ color: NAVY}}>{value}</p>
         )}
       </div>
     </div>
@@ -123,15 +123,17 @@ function ChannelCard({ icon, title, email, phone, note }: { icon: React.ReactNod
         <h4 className="font-bold text-base" style={{ color: NAVY, fontFamily: "'Syne', sans-serif" }}>{title}</h4>
       </div>
       {email && (
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 text-[#019d90]">
           <MailIcon />
-          <a href={`mailto:${email}`} className="text-sm font-medium" style={{ color: "#5A6A7E", fontFamily: "'DM Sans', sans-serif" }}>{email}</a>
+          <a href={`mailto:${email}`} className="text-sm font-medium text-[#019d90]" >{email}</a>
         </div>
       )}
       {phone && (
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 text-[#019d90]">
           <PhoneIcon />
-          <a href={`tel:${phone}`} className="text-sm font-medium" style={{ color: "#5A6A7E", fontFamily: "'DM Sans', sans-serif" }}>{phone}</a>
+          <a href={`tel:${phone}`} className="text-sm font-medium text-[#019d90]" >
+            {phone}
+          </a>
         </div>
       )}
       {note && (
@@ -210,30 +212,20 @@ export default function Contact() {
 
   return (
     <>
-      {/* font imports */}
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600&display=swap');
-        * { box-sizing: border-box; }
-        ::placeholder { color: #a0adb8; font-family: 'DM Sans', sans-serif; }
-        input:-webkit-autofill { -webkit-box-shadow: 0 0 0 40px #fafafa inset !important; }
-        @keyframes fadeUp { from { opacity:0; transform:translateY(20px);} to { opacity:1; transform:translateY(0);} }
-        @keyframes checkPop { 0%{transform:scale(0)} 70%{transform:scale(1.15)} 100%{transform:scale(1)} }
-        .fade-up { animation: fadeUp 0.6s ease forwards; }
-      `}</style>
-
       <div style={{ background: "linear-gradient(170deg, #ffffff 0%, #F4FBFA 100%)", minHeight: "100vh" }}>
 
         {/* ── HERO BANNER ─────────────────────────────────── */}
         <div
           ref={heroRef}
-          className="relative overflow-hidden py-16 px-6"
+          className="relative overflow-hidden py-16 px-6 w-full h-[300px] bg-gradient-to-br from-teal-700 via-teal-600 to-teal-400 rounded-b-[50%]"
           style={{
-            background: `linear-gradient(130deg, ${NAVY} 0%, #112640 55%, #0a3028 100%)`,
+           
             opacity: heroVisible ? 1 : 0,
             transform: heroVisible ? "translateY(0)" : "translateY(-16px)",
             transition: "all 0.7s ease",
           }}
         >
+          
           {/* grid texture */}
           <div className="absolute inset-0 pointer-events-none"
             style={{
@@ -249,7 +241,7 @@ export default function Contact() {
           <div className="relative max-w-5xl mx-auto text-center">
             <span
               className="inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-5"
-              style={{ background: "rgba(0,184,169,0.15)", color: TEAL, fontFamily: "'DM Sans', sans-serif" }}
+              style={{ background: "rgba(0,184,169,0.15)", color: "white", fontFamily: "'DM Sans', sans-serif" }}
             >
               Contact Us
             </span>
@@ -258,34 +250,21 @@ export default function Contact() {
               style={{ fontFamily: "'Syne', sans-serif", fontSize: "clamp(28px, 4vw, 46px)", color: "#fff" }}
             >
               Get in Touch with{" "}
-              <span style={{ color: TEAL }}>Medzy Healthcare</span>
+              <span style={{ color: "#63b658" }}>Medzy Healthcare</span>
             </h1>
             <p
-              className="max-w-xl mx-auto text-sm leading-relaxed"
-              style={{ color: "rgba(196,218,230,0.75)", fontFamily: "'DM Sans', sans-serif" }}
+              className="max-w-5xl mx-auto text-sm leading-relaxed"
+              style={{ color: "white", fontFamily: "'DM Sans', sans-serif" }}
             >
-              We're here to serve you. Reach out for product inquiries, partnership opportunities, or general information. Our team is ready to assist you.
+             We're here to serve you. Reach out for product inquiries, partnership opportunities, or general information. Whether you need assistance with our products, customer support, or partnership opportunities, our team is ready to assist you. 
             </p>
 
-            {/* stat pills */}
-            <div className="flex flex-wrap justify-center gap-3 mt-8">
-              {[
-                { label: "Mon–Sat", sub: "9 AM – 6 PM" },
-                { label: "24hr", sub: "Email Response" },
-                { label: "Delhi NCR", sub: "Head Office" },
-              ].map((s) => (
-                <div key={s.label} className="px-5 py-2 rounded-full flex items-center gap-2"
-                  style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(0,184,169,0.20)" }}>
-                  <span className="font-bold text-sm" style={{ color: TEAL, fontFamily: "'Syne', sans-serif" }}>{s.label}</span>
-                  <span className="text-xs" style={{ color: "rgba(196,218,230,0.60)", fontFamily: "'DM Sans', sans-serif" }}>{s.sub}</span>
-                </div>
-              ))}
-            </div>
+            
           </div>
         </div>
 
         {/* ── CONTENT ─────────────────────────────────────── */}
-        <div className="max-w-5xl mx-auto px-5 py-14 flex flex-col gap-10">
+        <div className="max-w-7xl mx-auto px-5 py-14 flex flex-col gap-10">
 
           {/* ── ROW 1: Corporate + Warehouse ── */}
           <div
@@ -296,10 +275,8 @@ export default function Contact() {
             {/* Corporate */}
             <div className="rounded-2xl overflow-hidden" style={{ border: "1px solid rgba(0,184,169,0.12)", background: "#fff", boxShadow: "0 4px 16px rgba(28,53,87,0.06)" }}>
               {/* card header */}
-              <div className="px-6 py-4 flex items-center gap-3" style={{ background: `linear-gradient(90deg, ${NAVY}, #1a4070)` }}>
-                <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: "rgba(0,184,169,0.20)", color: TEAL }}>
-                  <MapPinIcon />
-                </div>
+              <div className="px-6 py-4 flex items-center gap-3" style={{ background: `linear-gradient(90deg, ${NAVY}, #019d90)` }}>
+                
                 <h3 className="font-bold text-base text-white" style={{ fontFamily: "'Syne', sans-serif" }}>Corporate Office</h3>
               </div>
               <div className="px-6 py-4 flex flex-col">
@@ -323,10 +300,8 @@ export default function Contact() {
             <div className="flex flex-col gap-5">
               {/* Warehouse */}
               <div className="rounded-2xl overflow-hidden" style={{ border: "1px solid rgba(0,184,169,0.12)", background: "#fff", boxShadow: "0 4px 16px rgba(28,53,87,0.06)" }}>
-                <div className="px-6 py-4 flex items-center gap-3" style={{ background: `linear-gradient(90deg, ${NAVY}, #1a4070)` }}>
-                  <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: "rgba(0,184,169,0.20)", color: TEAL }}>
-                    <WarehouseIcon />
-                  </div>
+                <div className="px-6 py-4 flex items-center gap-3" style={{ background: `linear-gradient(90deg, ${NAVY},#019d90)` }}>
+                  
                   <h3 className="font-bold text-base text-white" style={{ fontFamily: "'Syne', sans-serif" }}>Warehouse Address</h3>
                 </div>
                 <div className="px-6 py-4">
@@ -346,11 +321,9 @@ export default function Contact() {
 
               {/* Contact Channels */}
               <div className="rounded-2xl overflow-hidden" style={{ border: "1px solid rgba(0,184,169,0.12)", background: "#fff", boxShadow: "0 4px 16px rgba(28,53,87,0.06)" }}>
-                <div className="px-6 py-4 flex items-center gap-3" style={{ background: `linear-gradient(90deg, ${NAVY}, #1a4070)` }}>
-                  <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: "rgba(0,184,169,0.20)", color: TEAL }}>
-                    <PackageIcon />
-                  </div>
-                  <h3 className="font-bold text-base text-white" style={{ fontFamily: "'Syne', sans-serif" }}>Contact Channels</h3>
+                <div className="px-6 py-4 flex items-center gap-3" style={{ background: `linear-gradient(90deg, ${NAVY}, #019d90)` }}>
+                 
+                  <h3 className="font-bold text-base text-white" style={{ fontFamily: "'Syne', sans-serif" }}>Contact </h3>
                 </div>
                 <div className="px-6 py-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <ChannelCard
@@ -377,13 +350,11 @@ export default function Contact() {
           >
             <div className="rounded-2xl overflow-hidden" style={{ border: "1px solid rgba(0,184,169,0.12)", background: "#fff", boxShadow: "0 4px 20px rgba(28,53,87,0.06)" }}>
               {/* form header */}
-              <div className="px-6 md:px-10 py-5 flex items-center gap-3" style={{ background: `linear-gradient(90deg, ${NAVY}, #1a4070)` }}>
-                <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: "rgba(0,184,169,0.20)", color: TEAL }}>
-                  <SendIcon />
-                </div>
+              <div className="px-6 md:px-10 py-5 flex items-center gap-3" style={{ background: `linear-gradient(90deg, ${NAVY}, #019d90)` }}>
+                
                 <div>
                   <h3 className="font-bold text-base text-white" style={{ fontFamily: "'Syne', sans-serif" }}>Quick Contact Form</h3>
-                  <p className="text-xs" style={{ color: "rgba(196,218,230,0.65)", fontFamily: "'DM Sans', sans-serif" }}>We'll get back to you within 24 hours</p>
+                 
                 </div>
               </div>
 
@@ -445,26 +416,15 @@ export default function Contact() {
           >
             <div className="rounded-2xl overflow-hidden" style={{ border: "1px solid rgba(0,184,169,0.12)", background: "#fff", boxShadow: "0 4px 20px rgba(28,53,87,0.06)" }}>
               {/* header */}
-              <div className="px-6 md:px-10 py-5 flex items-center justify-between" style={{ background: `linear-gradient(90deg, ${NAVY}, #1a4070)` }}>
+              <div className="px-6 md:px-10 py-5 flex items-center justify-between" style={{ background: `linear-gradient(90deg, ${NAVY}, #019d90)` }}>
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: "rgba(0,184,169,0.20)", color: TEAL }}>
-                    <MapPinIcon />
-                  </div>
+                  
                   <div>
                     <h3 className="font-bold text-base text-white" style={{ fontFamily: "'Syne', sans-serif" }}>Find Us on the Map</h3>
-                    <p className="text-xs" style={{ color: "rgba(196,218,230,0.65)", fontFamily: "'DM Sans', sans-serif" }}>Building No-1, Block-10, Near AIPL Joy Street, Gurugram</p>
+                    <p className="text-xs" style={{ color: "white", fontFamily: "'DM Sans', sans-serif" }}>Building No-1, Block-10, Near AIPL Joy Street, Gurugram</p>
                   </div>
                 </div>
-                <a
-                  href="https://maps.google.com/?q=AIPL+Joy+Street+Village+Ramgarh+Gurugram+Haryana+122502"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold transition-all hover:opacity-90"
-                  style={{ background: "rgba(0,184,169,0.18)", color: TEAL, border: "1px solid rgba(0,184,169,0.30)", fontFamily: "'DM Sans', sans-serif" }}
-                >
-                  <NavigationIcon />
-                  Get Directions
-                </a>
+              
               </div>
 
               {/* map + info side layout */}
@@ -514,11 +474,11 @@ export default function Contact() {
                       </a>
                       <a href="mailto:info@medzyhealthcare.com" className="flex items-center gap-2.5 text-sm font-medium hover:opacity-75 transition-all" style={{ color: NAVY, fontFamily: "'DM Sans', sans-serif" }}>
                         <span className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0" style={{ background: "rgba(0,184,169,0.08)", color: TEAL }}><MailIcon /></span>
-                        info@medzyhealthcare.com
+                       <p className="text-[#019d90]">info@medzyhealthcare.com</p> 
                       </a>
                       <div className="flex items-center gap-2.5 text-sm" style={{ color: "#7A8FA6", fontFamily: "'DM Sans', sans-serif" }}>
-                        <span className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0" style={{ background: "rgba(0,184,169,0.08)", color: TEAL }}><ClockIcon /></span>
-                        Mon–Sat: 9 AM – 6 PM
+                        <span className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 text-[#019d90]" ><ClockIcon /></span>
+                        <p className="text-[#019d90]">  Mon–Sat: 9 AM – 6 PM</p>
                       </div>
                     </div>
                     <div className="h-px w-full" style={{ background: "rgba(0,184,169,0.10)" }} />

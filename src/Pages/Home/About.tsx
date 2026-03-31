@@ -26,7 +26,6 @@ export default function AboutUs() {
                     <div className="w-full lg:w-1/2 text-center lg:text-left">
 
                         <SectionHeader
-                            eyebrow="Who We Are"
                             title="About Us"
                             centered={false}
                         />
@@ -36,13 +35,15 @@ export default function AboutUs() {
 
                         {/* Body */}
                         <p className="section-paragraph text-[#59606C] text-[15px] md:text-[16px] mb-8">
-                            Medzy Healthcare Pvt Ltd is a rapidly growing pharmaceutical distribution company dedicated to bridging the gap between manufacturers and healthcare providers. With a customer-centric approach and cutting-edge logistics infrastructure, we ensure that quality medicines reach those who need them most - on time, every time. Backed by industry expertise and a commitment to excellence, Medzy serves hospitals, clinics, pharmacies, and retail chains across India with unmatched reliability.
+                            Medzy Healthcare Pvt Ltd is a rapidly growing pharmaceutical distribution company dedicated to bridging the gap between manufacturers and healthcare providers. With a customer-centric approach and cutting-edge logistics infrastructure, we ensure that quality medicines reach those who need them most—on time, every time.
+                            Backed by industry expertise and a commitment to excellence, Medzy serves hospitals, clinics, pharmacies, and retail chains across India with unmatched reliability.
+                            
                         </p>
 
-                       
+
                         {/* CTA */}
                         <div className="hidden md:block">
-                            <Dealerbtn />
+                            <Dealerbtn title="Read More" />
                         </div>
 
                     </div>

@@ -70,7 +70,7 @@ const Footer = () => {
             </h2>
           </div>
           <a
-            href="mailto:info@gleebiotech.com"
+            href="info@medzyhealthcare.com"
             className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-lg text-white font-semibold text-sm tracking-wide whitespace-nowrap no-underline transition-all duration-200"
             style={{
               background: "linear-gradient(135deg, #00B5A5 0%, #008f82 100%)",
@@ -94,7 +94,7 @@ const Footer = () => {
       </div>
 
       {/* Main Footer Grid */}
-      <div className="max-w-[1200px] mx-auto px-6 pt-16 pb-10 grid gap-12 relative"
+      <div className="max-w-[1200px] mx-auto px-6 pt-8 pb-8 grid gap-12 relative"
         style={{ gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))" }}
       >
         {/* Brand Column */}
@@ -103,8 +103,8 @@ const Footer = () => {
           style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(24px)", transitionDelay: "0.1s" }}
         >
           <img
-            src="./img/MedzyLogo.webp"
-            alt="Glee Biotech"
+            src="./img/MedzyLogo.png"
+            alt="Medzy Logo"
             className="mb-4 brightness-110"
             style={{ width: "200px" }}
           />
@@ -122,8 +122,8 @@ const Footer = () => {
           <div className="flex gap-3">
             {[
               { href: "#", src: "https://pdpl-stuff.s3.ap-south-1.amazonaws.com/dynamic/ksshospitals.com/DOTMGYA1eh.webp", label: "Social" },
-              { href: "mailto:info@gleebiotech.com", src: "https://pdpl-stuff.s3.ap-south-1.amazonaws.com/dynamic/ksshospitals.com/FdxrYWtXRA.webp", label: "Email" },
-              { href: "tel:+911244014675", src: "https://pdpl-stuff.s3.ap-south-1.amazonaws.com/dynamic/ksshospitals.com/v7IfkPAIci.webp", label: "Phone" },
+              { href: "mailto:info@medzyhealthcare.com", src: "https://pdpl-stuff.s3.ap-south-1.amazonaws.com/dynamic/ksshospitals.com/FdxrYWtXRA.webp", label: "Email" },
+              { href: "tel:+91-9599773746", src: "https://pdpl-stuff.s3.ap-south-1.amazonaws.com/dynamic/ksshospitals.com/v7IfkPAIci.webp", label: "Phone" },
             ].map(({ href, src, label }) => (
               <a
                 key={label}
@@ -156,20 +156,23 @@ const Footer = () => {
           links={[
             { label: "Home", to: "/" },
             { label: "About Us", to: "/aboutus" },
-            { label: "Products", to: "/products" },
+            { label: "Services", to: "/services" },
+            { label: "Partners", to: "/partners" },
+            { label: "Contact Us", to: "/contactus" },
           ]}
           isRouter
         />
 
         {/* Support */}
         <NavColumn
-          title="Support"
+          title="Services"
           visible={visible}
           delay="0.3s"
           links={[
-            { label: "FAQs", href: "#faq" },
-            { label: "Contact Us", to: "/contact", isRouter: true },
-            { label: "Join Our Team", href: "mailto:info@gleebiotech.com" },
+            { label: "Wholesale Distribution" },
+            { label: "Hospital Supply"},
+            { label: "Retail Support" },
+            { label: "C&F Services" },
           ]}
         />
 
@@ -186,24 +189,24 @@ const Footer = () => {
               icon={
                 <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" fill="currentColor"/></svg>
               }
-              href="tel:+911244014675"
-              text="+91 124 401 4675"
+              href="tel:+91-9599773746"
+              text="+91 9599773746"
             />
             <ContactItem
               icon={
                 <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/></svg>
               }
-              href="mailto:info@gleebiotech.com"
-              text="info@gleebiotech.com"
+              href="mailto:info@medzyhealthcare.com"
+              text="info@medzyhealthcare.com"
             />
             <div className="flex gap-3 items-start">
               <span className="mt-0.5 shrink-0 text-[#00B5A5]">
                 <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/></svg>
               </span>
               <p className="text-[13px] leading-[1.65] m-0" style={{ color: "rgba(180,210,205,0.65)" }}>
-                315, 3rd Floor, SAS Towers,<br />
-                Medicity, Sector 38,<br />
-                Gurugram, Haryana
+                Building No-1, Block-10, Near AIPL Joy Street, Village Ramgarh,<br />
+                 Gurugram, Haryana – 122502
+                
               </p>
             </div>
           </div>
@@ -216,12 +219,15 @@ const Footer = () => {
         style={{ opacity: visible ? 1 : 0, transitionDelay: "0.5s" }}
       >
         <p className="text-[12.5px] m-0" style={{ color: "rgba(160,200,195,0.5)" }}>
-          © {year} Glee Biotech Pvt. Ltd. All rights reserved.
+          © {year} MEDZY HEALTHCARE PRIVATE LIMITED. All rights reserved.
         </p>
         <div className="flex gap-6">
+        
           {[
-            { label: "Terms of Service", to: "/terms" },
+            { label: "Terms & Conditions", to: "/terms" },
             { label: "Privacy Policy", to: "/privacy" },
+            { label: "Refund Policy", to: "/refund" },
+            { label: "Disclaimer", to: "/disclaimer" },
           ].map(({ label, to }) => (
             <Link
               key={to}

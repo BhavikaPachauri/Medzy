@@ -235,9 +235,9 @@ export default function VisionMission() {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            eyebrow="Vision & Mission"
-            title="Our Long-Term Direction"
-            subtitle="We grow with a clear purpose: reliable healthcare distribution, quality-first operations, and trusted long-term partnerships."
+            
+            title="Vision & Mission"
+  
             className="mb-12 sm:mb-14"
           />
 

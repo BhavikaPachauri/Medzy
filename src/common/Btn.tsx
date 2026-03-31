@@ -106,13 +106,13 @@ export default function LearnMoreButton() {
     <button
       ref={btnRef}
       type="button"
-      className="relative overflow-hidden inline-flex items-center gap-2 px-6 py-2 rounded-full border border-white text-white hover:text-black font-medium transition-colors duration-300"
+      className="relative overflow-hidden inline-flex items-center gap-2 px-6 py-2 rounded-full border border-[#017d77] text-[#017d77] hover:text-white hover:border-white font-medium transition-colors duration-300"
     >
       {/* Animated circle */}
       <span
         ref={circleRef}
         aria-hidden="true"
-        className="absolute rounded-full bg-white z-0"
+        className="absolute rounded-full bg-[#62dea0] z-0"
       />
 
       {/* Content */}

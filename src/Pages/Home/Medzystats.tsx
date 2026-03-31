@@ -193,12 +193,7 @@ export default function MedzyStats() {
       <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:32px_32px]" />
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader
-          eyebrow="Our Impact"
-          title="Numbers That Build Trust"
-          subtitle="Medzy powers healthcare delivery with strong network reach, consistent fulfillment, and measurable reliability."
-          className="mb-12 sm:mb-14"
-        />
+        
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {stats.map((stat, i) => (
             <StatCard key={stat.id} stat={stat} index={i} active={active} />

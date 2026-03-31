@@ -4,7 +4,7 @@ import { useEffect, useRef, type JSX } from "react";
 import gsap from "gsap";
 import { Link } from "react-router-dom";
 
-export default function LearnMoreButton(): JSX.Element {
+export default function LearnMoreButton({ title }: { title?: string }): JSX.Element {
   const btnRef = useRef<HTMLButtonElement | null>(null);
   const bgRef = useRef<HTMLSpanElement | null>(null);
 
@@ -60,7 +60,7 @@ export default function LearnMoreButton(): JSX.Element {
         aria-hidden="true"
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: "linear-gradient(90deg, #8ac43f 0%, #8ac43f 100%)",
+          background: "linear-gradient(90deg, #8ac43f 0%, #86dc5e 100%)",
           zIndex: 0,
           transform: "translateX(100%)",
         }}
@@ -71,7 +71,7 @@ export default function LearnMoreButton(): JSX.Element {
         to="/partners"
         className="flex gap-2 px-4 justify-center items-center relative z-10"
       >
-        Become a Partner
+        {title}
       </Link>
     </button>
   );

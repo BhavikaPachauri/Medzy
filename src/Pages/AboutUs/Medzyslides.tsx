@@ -16,7 +16,7 @@ interface Feature {
 const features: Feature[] = [
   {
     id: 1, num: "01", tag: "Logistics", title: "Supply Chain Excellence",
-    desc: "Advanced inventory management, demand forecasting, and streamlined order processing reach even remote locations without delay.",
+    desc: "We utilize advanced inventory management systems, demand forecasting tools, and streamlined order processing to reduce costs and improve service levels. Our logistics network ensures products reach even remote locations without delay.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" className="w-5 h-5">
         <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
@@ -25,7 +25,7 @@ const features: Feature[] = [
   },
   {
     id: 2, num: "02", tag: "Innovation", title: "Technology-Driven Ops",
-    desc: "From automated inventory tracking to real-time order management — full transparency and efficiency at every step.",
+    desc: "From automated inventory tracking to real-time order management, Medzy leverages technology at every step to enhance efficiency and full transparency.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" className="w-5 h-5">
         <rect x="2" y="3" width="20" height="14" rx="2" />
@@ -36,7 +36,7 @@ const features: Feature[] = [
   },
   {
     id: 3, num: "03", tag: "Alliances", title: "Strategic Partnerships",
-    desc: "Alliances with leading pharma manufacturers and healthcare providers extending market reach and fostering growth.",
+    desc: "We collaborate with leading pharmaceutical manufacturers and healthcare providers, creating mutually beneficial alliances that extend market reach and foster growth opportunities",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" className="w-5 h-5">
         <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857a5.002 5.002 0 019.288 0" strokeLinecap="round" />
@@ -45,8 +45,8 @@ const features: Feature[] = [
     ),
   },
   {
-    id: 4, num: "04", tag: "Service", title: "Customer-Centric Care",
-    desc: "Healthcare waits for no one. Responsive support, flexible payment terms, and customised solutions for every client.",
+    id: 4, num: "04", tag: "Service", title: "Customer-Centric Approach",
+    desc: "Understanding that healthcare waits for no one, we prioritize customer satisfaction through responsive support, flexible payment terms, and customized solutions tailored to specific needs.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" className="w-5 h-5">
         <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" strokeLinecap="round" />
@@ -54,8 +54,8 @@ const features: Feature[] = [
     ),
   },
   {
-    id: 5, num: "05", tag: "Sustainability", title: "Eco Responsibility",
-    desc: "Sustainable warehousing and distribution practices position Medzy as a responsible, eco-conscious partner for the future.",
+    id: 5, num: "05", tag: "Sustainability", title: "Environmental Responsibility",
+    desc: "Medzy employs sustainable practices in warehousing and distribution, building a reputation as a responsible and eco-conscious business.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" className="w-5 h-5">
         <circle cx="12" cy="12" r="9" />
@@ -126,14 +126,6 @@ export default function WhatSetsUsApart(): ReactNode {
 
   return (
     <div className="bg-[linear-gradient(145deg,#004d47_0%,#006b63_25%,#009e96_60%,#00756e_100%)]" style={{ fontFamily: "'DM Sans',sans-serif" }}>
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:wght@700;900&display=swap');
-        .display { font-family:'Fraunces',serif; }
-        .nav-item { transition: all .2s; }
-        .panel-in { animation: panelIn .3s cubic-bezier(.4,0,.2,1) both; }
-        @keyframes panelIn { from{opacity:0;transform:translateX(10px)} to{opacity:1;transform:translateX(0)} }
-      `}</style>
-
       <div className="max-w-6xl mx-auto  px-4 sm:px-6 py-12">
 
         

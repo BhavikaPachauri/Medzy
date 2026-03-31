@@ -11,8 +11,8 @@ function MainRoute() {
     <BrowserRouter>
     <Routes>
         <Route path='/' element={<HomePage />} />
-        <Route path='/about' element={<AboutPage />} />
-        <Route path='/contact' element={<ContactPage />} />
+        <Route path='/aboutus' element={<AboutPage />} />
+        <Route path='/contactus' element={<ContactPage />} />
         <Route path='/services' element={<ServicePage />} />
         <Route path='/partners' element={<Partnerpage />} />
         
