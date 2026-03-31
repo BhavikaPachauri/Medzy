@@ -72,14 +72,14 @@ function Navbar() {
         } bg-[#00a9ae]`}
       >
         <div className="px-4 py-4 space-y-2">
-          {["Home","About Us","Services","Partners","Contact"].map((item, i) => (
+          {["Home","About Us","Services","Partners","Contact Us"].map((item, i) => (
             <a
               key={i}
               href={`/${item === "Home" ? "" : item.toLowerCase().replace(/\s/g, "")}`}
               onClick={() => setIsMenuOpen(false)}
               className="block px-3 py-2 text-white rounded-md hover:bg-white/10"
             >
-              {item}
+              {item} 
             </a>
           ))}
         </div>
