@@ -12,7 +12,7 @@ export default function ServiceHero() {
 
   return (
     <section className="relative flex h-[90vh] bg-[#00a9ae] flex-col overflow-hidden ">
-      <div className="pointer-events-none absolute inset-0 bg-[url('./img/s2.png')] bg-cover opacity-70" />
+      <div className="pointer-events-none absolute inset-0 bg-[url('/img/s2.png')] bg-cover opacity-70" />
       <div className="pointer-events-none absolute right-[-10%] top-[-14%] h-[700px] w-[700px] rounded-full bg-[radial-gradient(circle,rgba(13,148,136,.16)_0%,transparent_64%)]" />
       <div className="pointer-events-none absolute bottom-[-10%] left-[-5%] h-[480px] w-[480px] rounded-full bg-[radial-gradient(circle,rgba(13,148,136,.09)_0%,transparent_70%)]" />
 

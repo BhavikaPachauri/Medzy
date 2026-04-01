@@ -6,7 +6,7 @@ const CenterImageSection: React.FC = () => {
       <div className="max-w-5xl mx-auto flex justify-center items-center">
         
         <img
-          src="./img/valueAdded.webp" 
+          src="/img/service.png" 
           alt="Centered"
           className="
             w-full 

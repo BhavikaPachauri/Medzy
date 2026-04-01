@@ -13,7 +13,7 @@ function Navbar() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <img 
-              src="./img/MedzyLogo.png"
+              src="/img/MedzyLogo.png"
               className="h-10 w-auto md:h-10"
               alt="Logo"
             />

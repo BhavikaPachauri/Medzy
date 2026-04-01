@@ -5,7 +5,7 @@ export default function DirectorSection() {
   const [teamRef, teamVisible] = useVisible(0.1);
 
   return (
-   <section className="relative py-20 px-5  bg-[url('./img/green_pattern_final.png')] opacity-96 bg-cover bg-center">
+   <section className="relative py-20 px-5  bg-[url('/img/green_pattern_final.png')] opacity-96 bg-cover bg-center">
         
         <div
           ref={teamRef}

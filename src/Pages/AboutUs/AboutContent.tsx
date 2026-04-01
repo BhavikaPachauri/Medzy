@@ -17,7 +17,7 @@ export default function AboutContent() {
             <div className="relative rounded-2xl overflow-hidden group">
               <img
                 loading="lazy"
-                src="./img/about1.png"
+                src="/img/about1.png"
                 alt="Medzy Healthcare team"
                 className="w-full h-[420px] object-cover transition-transform duration-700 group-hover:scale-105"
               />

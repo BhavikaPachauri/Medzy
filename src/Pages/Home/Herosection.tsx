@@ -12,7 +12,7 @@ export default function HeroCarousel(): JSX.Element {
 
   const slides: Slide[] = [
     {
-      image: './img/banner.webp',
+      image: '/img/banner.webp',
       subtitle:
         'Medzy Healthcare Pvt Ltd provides high-quality pharmaceutical products and efficient distribution services, ensuring timely delivery of essential healthcare solutions nationwide.',
     },

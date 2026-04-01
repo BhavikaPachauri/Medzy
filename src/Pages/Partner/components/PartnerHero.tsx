@@ -11,7 +11,7 @@ export default function PartnerHero() {
 
 
   return (
-    <section className="relative overflow-hidden border-b bg-[url('./img/p6.png')]  bg-cover bg-no-repeat " style={{ borderColor: B.border }}>
+    <section className="relative overflow-hidden border-b bg-[url('/img/p6.png')]  bg-cover bg-no-repeat " style={{ borderColor: B.border }}>
       <div className="absolute inset-0  bg-[#00a9ae]/50"></div>
       <div className="pointer-events-none absolute right-[-8%] top-[-12%] h-[620px] w-[620px] rounded-full bg-[radial-gradient(circle,rgba(11,163,127,.16)_0%,transparent_67%)]" />
       <div className="pointer-events-none absolute bottom-[-20%] left-[-10%] h-[480px] w-[480px] rounded-full bg-[radial-gradient(circle,rgba(200,212,0,.12)_0%,transparent_70%)]" />

@@ -151,7 +151,7 @@ export default function PartnerCta() {
        {/* Image */}
       <div style={styles.imageWrapper}>
         <img
-          src="./img/partnerdummy.png"
+          src="/img/partnerdummy.png"
           alt="Partner CTA"
           style={styles.image}
           loading="lazy"

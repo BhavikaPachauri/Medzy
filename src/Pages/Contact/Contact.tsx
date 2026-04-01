@@ -220,7 +220,7 @@ export default function Contact() {
             transition: "all 0.7s ease",
           }}
         >
-          <div className="absolute inset-0 bg-[url('./img/contactUs.jpg')] bg-cover opacity-20"></div>
+          <div className="absolute inset-0 bg-[url('/img/contactUs.jpg')] bg-cover opacity-20"></div>
           {/* grid texture */}
           <div className="absolute inset-0 pointer-events-none"
             style={{
