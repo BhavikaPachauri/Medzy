@@ -15,7 +15,7 @@ export default function AboutUs() {
                         <div className="relative rounded-2xl bg-[#00a9ae] overflow-hidden shadow-lg group">
                             <img
                                 loading="lazy"
-                                src="/img/about2.png"
+                                src="/img/ab3.png"
                                 alt="Pharmaceutical distribution and healthcare logistics"
                                 className="w-full h-full object-cover opacity-70 rounded-2xl transition-transform duration-500 group-hover:scale-105"
                             />
