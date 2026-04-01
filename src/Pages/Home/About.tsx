@@ -12,12 +12,12 @@ export default function AboutUs() {
 
                     {/* LEFT - IMAGE */}
                     <div className="w-full lg:w-1/2">
-                        <div className="relative rounded-2xl overflow-hidden shadow-lg group">
+                        <div className="relative rounded-2xl bg-[#00a9ae] overflow-hidden shadow-lg group">
                             <img
                                 loading="lazy"
-                                src="https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=1920&auto=format&fit=crop"
+                                src="./img/about2.png"
                                 alt="Pharmaceutical distribution and healthcare logistics"
-                                className="w-full h-full object-cover rounded-2xl transition-transform duration-500 group-hover:scale-105"
+                                className="w-full h-full object-cover opacity-70 rounded-2xl transition-transform duration-500 group-hover:scale-105"
                             />
                         </div>
                     </div>
@@ -42,7 +42,7 @@ export default function AboutUs() {
 
 
                         {/* CTA */}
-                        <div className="hidden md:block">
+                        <div className="hidden md:block btnp">
                             <Dealerbtn title="Read More" />
                         </div>
 

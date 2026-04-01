@@ -155,6 +155,7 @@ export default function PartnerCta() {
           alt="Partner CTA"
           style={styles.image}
           loading="lazy"
+          className=" md:hidden"
         />
       </div>
 

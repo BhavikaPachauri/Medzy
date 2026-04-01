@@ -208,12 +208,11 @@ export default function Contact() {
 
   return (
     <>
-      <div style={{ background: "linear-gradient(170deg, #ffffff 0%, #F4FBFA 100%)", minHeight: "100vh" }}>
-
-        {/* ── HERO BANNER ─────────────────────────────────── */}
+      <div  style={{ background: "linear-gradient(170deg, #ffffff 0%, #F4FBFA 100%)", minHeight: "100vh" }}>
+        
         <div
           ref={heroRef}
-          className="relative overflow-hidden py-16 px-6 w-full h-[300px] bg-gradient-to-br from-teal-700 via-teal-600 to-teal-400 rounded-b-[50%]"
+          className="relative overflow-hidden py-16 px-6 w-full h-[315px] bg-gradient-to-br from-teal-700 via-teal-600 to-teal-400 rounded-b-[30%]"
           style={{
            
             opacity: heroVisible ? 1 : 0,
@@ -221,7 +220,7 @@ export default function Contact() {
             transition: "all 0.7s ease",
           }}
         >
-          
+          <div className="absolute inset-0 bg-[url('./img/contactUs.jpg')] bg-cover opacity-20"></div>
           {/* grid texture */}
           <div className="absolute inset-0 pointer-events-none"
             style={{
@@ -235,18 +234,13 @@ export default function Contact() {
             style={{ background: "radial-gradient(circle, rgba(0,184,169,0.07) 0%, transparent 65%)" }} />
 
           <div className="relative max-w-5xl mx-auto text-center">
-            <span
-              className="inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-5"
-              style={{ background: "rgba(0,184,169,0.15)", color: "white", fontFamily: "'DM Sans', sans-serif" }}
-            >
-              Contact Us
-            </span>
+           
             <h1
               className="font-extrabold leading-tight mb-4"
               style={{ fontFamily: "'Syne', sans-serif", fontSize: "clamp(28px, 4vw, 46px)", color: "#fff" }}
             >
               Get in Touch with{" "}
-              <span style={{ color: "#63b658" }}>Medzy Healthcare</span>
+              <span style={{ color: "#80ee72" }}>Medzy Healthcare</span>
             </h1>
             <p
               className="max-w-5xl mx-auto text-sm leading-relaxed"

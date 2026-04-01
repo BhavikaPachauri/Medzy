@@ -78,7 +78,7 @@ export default function HeroCarousel(): JSX.Element {
           </p>
 
           <div className="mt-6">
-            <Btn />
+            <Btn title='Explore our service' />
           </div>
         </div>
       </div>
