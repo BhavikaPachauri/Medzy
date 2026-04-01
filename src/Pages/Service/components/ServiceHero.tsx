@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { HERO_WORDS } from "../serviceData";
 import Dealerbtn from "../../../common/Dealerbtn";
-import Btn from "../../../common/Btn";
 
 export default function ServiceHero() {
   const [tick, setTick] = useState(0);

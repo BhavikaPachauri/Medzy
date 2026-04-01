@@ -1,14 +1,9 @@
-import type { RefObject } from "react";
 import usePartnerReveal from "../hooks/usePartnerReveal";
 import { PARTNER_COLORS as B } from "../partnerTheme";
 import Dealerbtn from "../../../common/Dealerbtn";
 import Btn from "../../../common/Btn";
 
-type Props = {
-  formRef: RefObject<HTMLElement | null>;
-};
-
-export default function PartnerHero({ formRef }: Props) {
+export default function PartnerHero() {
 
   const r2 = usePartnerReveal<HTMLHeadingElement>(100);
   const r3 = usePartnerReveal<HTMLParagraphElement>(200);
