@@ -1,4 +1,4 @@
-import { useState, type FC, type ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 
 const T = "#2abfbf";
 const TD = "#178f8f";
@@ -66,63 +66,10 @@ const features: Feature[] = [
   },
 ];
 
-const Illustrations: Record<number, FC<{ color: string }>> = {
-  1: ({ color }) => (
-    <svg viewBox="0 0 120 90" fill="none" className="w-full h-full">
-      <rect x="8" y="20" width="22" height="55" rx="4" fill={color} opacity="0.12" stroke={color} strokeWidth="1.2"/>
-      <rect x="38" y="35" width="22" height="40" rx="4" fill={color} opacity="0.2" stroke={color} strokeWidth="1.2"/>
-      <rect x="68" y="14" width="22" height="61" rx="4" fill={color} opacity="0.3" stroke={color} strokeWidth="1.2"/>
-      <rect x="98" y="28" width="14" height="47" rx="4" fill={color} opacity="0.15" stroke={color} strokeWidth="1.2"/>
-      <path d="M8 78h108" stroke={color} strokeWidth="1" opacity="0.3"/>
-      <circle cx="19" cy="20" r="3" fill={color} opacity="0.5"/>
-      <circle cx="49" cy="35" r="3" fill={color} opacity="0.6"/>
-      <circle cx="79" cy="14" r="3" fill={color} opacity="0.7"/>
-      <path d="M19 20 L49 35 L79 14" stroke={color} strokeWidth="1.2" strokeDasharray="3 2" opacity="0.4"/>
-    </svg>
-  ),
-  2: ({ color }) => (
-    <svg viewBox="0 0 120 90" fill="none" className="w-full h-full">
-      <rect x="15" y="12" width="90" height="56" rx="6" fill={color} opacity="0.08" stroke={color} strokeWidth="1.2"/>
-      <rect x="22" y="20" width="76" height="40" rx="3" fill={color} opacity="0.1"/>
-      <path d="M30 45 L42 33 L54 40 L66 28 L78 36 L90 24" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" opacity="0.7"/>
-      <circle cx="30" cy="45" r="2.5" fill={color}/>
-      <circle cx="90" cy="24" r="2.5" fill={color}/>
-      <rect x="35" y="70" width="50" height="6" rx="3" fill={color} opacity="0.2"/>
-    </svg>
-  ),
-  3: ({ color }) => (
-    <svg viewBox="0 0 120 90" fill="none" className="w-full h-full">
-      <circle cx="40" cy="38" r="20" fill={color} opacity="0.1" stroke={color} strokeWidth="1.2"/>
-      <circle cx="80" cy="38" r="20" fill={color} opacity="0.1" stroke={color} strokeWidth="1.2"/>
-      <ellipse cx="60" cy="38" rx="12" ry="20" fill={color} opacity="0.15"/>
-      <circle cx="40" cy="34" r="7" fill={color} opacity="0.3"/>
-      <circle cx="80" cy="34" r="7" fill={color} opacity="0.3"/>
-      <path d="M20 70 Q40 58 60 62 Q80 58 100 70" stroke={color} strokeWidth="1.2" strokeDasharray="3 2" opacity="0.4"/>
-    </svg>
-  ),
-  4: ({ color }) => (
-    <svg viewBox="0 0 120 90" fill="none" className="w-full h-full">
-      <path d="M60 72 C60 72 20 52 20 32 a16 16 0 0128-10.4A16 16 0 0160 28a16 16 0 0112-6.4A16 16 0 01100 32c0 20-40 40-40 40z" fill={color} opacity="0.15" stroke={color} strokeWidth="1.2"/>
-      <circle cx="60" cy="36" r="8" fill={color} opacity="0.35"/>
-      <circle cx="38" cy="55" r="5" fill={color} opacity="0.2"/>
-      <circle cx="82" cy="55" r="5" fill={color} opacity="0.2"/>
-    </svg>
-  ),
-  5: ({ color }) => (
-    <svg viewBox="0 0 120 90" fill="none" className="w-full h-full">
-      <circle cx="60" cy="45" r="30" fill={color} opacity="0.08" stroke={color} strokeWidth="1.2"/>
-      <circle cx="60" cy="45" r="18" fill={color} opacity="0.12" stroke={color} strokeWidth="1" strokeDasharray="4 3"/>
-      <path d="M44 50 C48 38 64 36 72 44 C68 56 52 58 44 50z" fill={color} opacity="0.3" stroke={color} strokeWidth="1"/>
-      <path d="M60 62 V48" stroke={color} strokeWidth="1.5" strokeLinecap="round"/>
-      <path d="M44 30 C50 22 68 24 72 32" stroke={color} strokeWidth="1.2" strokeLinecap="round" strokeDasharray="3 2" opacity="0.5"/>
-    </svg>
-  ),
-};
-
 export default function WhatSetsUsApart(): ReactNode {
   const [active, setActive] = useState<number>(1);
   const f = features.find(x => x.id === active)!;
-  const Illo = Illustrations[active];
+
 
   return (
     <div className="bg-[linear-gradient(145deg,#004d47_0%,#006b63_25%,#009e96_60%,#00756e_100%)]" >

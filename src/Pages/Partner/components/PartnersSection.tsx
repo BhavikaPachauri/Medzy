@@ -16,7 +16,7 @@ type PartnerTabProps = {
 };
 
 function PartnerTab({ partner, isActive, onClick }: PartnerTabProps) {
-  const { num, label, headline, color, colorLight } = partner;
+  const { label, headline, color, colorLight } = partner;
 
   return (
     <button onClick={onClick} style={{ width: "100%", textAlign: "left", border: "none", cursor: "pointer", background: "none", padding: 0 }}>

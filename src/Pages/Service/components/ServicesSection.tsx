@@ -17,7 +17,7 @@ function handleCardKeyDown(event: KeyboardEvent<HTMLDivElement>, onClick: () => 
 }
 
 function ServiceDesktopCard({ svc, isActive, onClick }: ServiceCardProps) {
-  const {  color, bg, acc, label, title, desc, kpis, img } = svc;
+  const { color, bg, acc, title, desc, kpis, img } = svc;
 
   return (
     <div
@@ -92,7 +92,7 @@ function ServiceDesktopCard({ svc, isActive, onClick }: ServiceCardProps) {
 }
 
 function ServiceMobileCard({ svc, isActive, onClick }: ServiceCardProps) {
-  const {  color, bg, acc, label, title, desc, kpis, img } = svc;
+  const { color, bg, title, desc, kpis, img } = svc;
 
   return (
     <div

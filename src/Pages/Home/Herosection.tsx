@@ -37,7 +37,7 @@ export default function HeroCarousel(): JSX.Element {
     <section className="relative w-full h-[60vh] md:h-[95vh] overflow-hidden">
 
       {/* Slides */}
-      {slides.map((slide, index) => (
+      {slides.map((_, index) => (
         <div
           key={index}
           className={`absolute inset-0 transition-opacity duration-700 ${index === currentSlide ? 'opacity-100' : 'opacity-0'

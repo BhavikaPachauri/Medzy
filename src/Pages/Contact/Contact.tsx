@@ -61,16 +61,8 @@ const HandshakeIcon = () => (
     <path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 7.65l1.06 1.06L12 21.23l7.06-7.89 1.06-1.06a5.4 5.4 0 0 0 .3-7.7z" />
   </svg>
 );
-const SendIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <line x1="22" y1="2" x2="11" y2="13" /><polygon points="22 2 15 22 11 13 2 9 22 2" />
-  </svg>
-);
-const NavigationIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <polygon points="3 11 22 2 13 21 11 13 3 11" />
-  </svg>
-);
+
+
 
 
 /* ── info row component ── */
