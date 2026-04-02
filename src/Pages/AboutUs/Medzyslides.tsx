@@ -24,8 +24,8 @@ const features: Feature[] = [
     ),
   },
   {
-    id: 2, num: "02", tag: "Innovation", title: "Technology-Driven Ops",
-    desc: "From automated inventory tracking to real-time order management, Medzy leverages technology at every step to enhance efficiency and full transparency.",
+    id: 2, num: "02", tag: "Innovation", title: "Technology Driven Operations",
+    desc: "From automated inventory tracking to real time order management, Medzy leverages technology at every step to enhance efficiency and full transparency.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" className="w-5 h-5">
         <rect x="2" y="3" width="20" height="14" rx="2" />
@@ -36,7 +36,7 @@ const features: Feature[] = [
   },
   {
     id: 3, num: "03", tag: "Alliances", title: "Strategic Partnerships",
-    desc: "We collaborate with leading pharmaceutical manufacturers and healthcare providers, creating mutually beneficial alliances that extend market reach and foster growth opportunities",
+    desc: "We collaborate with leading pharmaceutical manufacturers and healthcare providers, creating mutually beneficial alliances that extend market reach and foster growth opportunities.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" className="w-5 h-5">
         <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857a5.002 5.002 0 019.288 0" strokeLinecap="round" />
@@ -55,7 +55,7 @@ const features: Feature[] = [
   },
   {
     id: 5, num: "05", tag: "Sustainability", title: "Environmental Responsibility",
-    desc: "Medzy employs sustainable practices in warehousing and distribution, building a reputation as a responsible and eco-conscious business.",
+    desc: "Medzy adopts sustainable practices in warehousing and distribution, building a reputation as a responsible and environmently responsible business.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" className="w-5 h-5">
         <circle cx="12" cy="12" r="9" />
@@ -125,12 +125,12 @@ export default function WhatSetsUsApart(): ReactNode {
   const Illo = Illustrations[active];
 
   return (
-    <div className="bg-[linear-gradient(145deg,#004d47_0%,#006b63_25%,#009e96_60%,#00756e_100%)]" style={{ fontFamily: "'DM Sans',sans-serif" }}>
+    <div className="bg-[linear-gradient(145deg,#004d47_0%,#006b63_25%,#009e96_60%,#00756e_100%)]" >
       <div className="max-w-6xl mx-auto  px-4 sm:px-6 py-12">
 
         
          <h2
-              className="text-4xl sm:text-4xl lg:text-5xl  text-white text-center leading-tight mb-5"      
+              className="font-heading  text-4xl sm:text-4xl lg:text-5xl  text-white text-center leading-tight mb-5"      
             >
               What Sets Us Apart
              
@@ -171,10 +171,8 @@ export default function WhatSetsUsApart(): ReactNode {
                   {item.icon}
                 </div>
                 <div className="hidden sm:block">
-                  <div className="text-[10px] font-black" style={{ color: active === item.id ? T : "#d1d5db" }}>
-                    {item.num}
-                  </div>
-                  <div className="text-xs font-semibold leading-tight" style={{ color: active === item.id ? "#111" : "#6b7280" }}>
+               
+                  <div className="font-body text-xs font-semibold leading-tight" style={{ color: active === item.id ? "#111" : "#6b7280" }}>
                     {item.title}
                   </div>
                 </div>
@@ -187,57 +185,21 @@ export default function WhatSetsUsApart(): ReactNode {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <span
-                  className="text-[10px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-full"
+                  className="text-[10px] font-body font-bold tracking-widest uppercase px-2.5 py-1 rounded-full"
                   style={{ background: TL, color: TD }}
                 >
                   {f.tag}
                 </span>
-                <span className="text-xs text-gray-300 font-mono">{f.num}</span>
+                
               </div>
 
-              <h2 className="display text-2xl sm:text-3xl font-black text-gray-900 leading-tight mb-3">
+              <h2 className="font-heading display text-2xl sm:text-3xl font-black text-gray-900 leading-tight mb-3">
                 {f.title}
               </h2>
-              <p className="text-gray-400 text-sm leading-relaxed max-w-sm">{f.desc}</p>
+              <p className="font-body text-gray-400 text-sm leading-relaxed max-w-sm">{f.desc}</p>
             </div>
 
-            {/* Bottom: illustration + arrows */}
-            <div className="flex items-end justify-between gap-4">
-              <div className="w-36 h-20 opacity-80">
-                <Illo color={T} />
-              </div>
-
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={() => setActive(a => a === 1 ? features.length : a - 1)}
-                  className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:border-[#2abfbf] hover:text-[#2abfbf] transition-colors"
-                >
-                  <svg viewBox="0 0 12 12" className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="2"><path d="M7.5 2L3.5 6l4 4"/></svg>
-                </button>
-
-                <div className="flex gap-1">
-                  {features.map(item => (
-                    <button
-                      key={item.id}
-                      onClick={() => setActive(item.id)}
-                      className="rounded-full transition-all duration-300"
-                      style={{
-                        width: item.id === active ? 16 : 5,
-                        height: 5,
-                        background: item.id === active ? T : "#e5e7eb",
-                      }}
-                    />
-                  ))}
-                </div>
-
-                <button
-                  onClick={() => setActive(a => a === features.length ? 1 : a + 1)}
-                  className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:border-[#2abfbf] hover:text-[#2abfbf] transition-colors"
-                >
-                  <svg viewBox="0 0 12 12" className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4.5 2L8.5 6l-4 4"/></svg>
-                </button>
-              </div>
-            </div>
+           
           </div>
         </div>
       </div>

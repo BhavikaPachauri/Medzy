@@ -2,6 +2,8 @@ import { useState } from "react";
 import type { RefObject } from "react";
 
 import { PARTNER_COLORS as B } from "../partnerTheme";
+// import Dealerbtn from "../../../common/Dealerbtn";
+import Btn from "../../../common/Btn";
 
 type Props = {
   formRef: RefObject<HTMLDivElement | null>;
@@ -56,7 +58,7 @@ export default function PartnerEnquiryForm({ formRef }: Props) {
     background: focused === name ? B.pPale : B.bg,
     outline: "none",
     transition: "all .2s",
-    fontFamily: "'Sora',sans-serif",
+   
     boxShadow: focused === name ? `0 0 0 3px ${B.p}12` : "none",
   });
 
@@ -105,7 +107,7 @@ export default function PartnerEnquiryForm({ formRef }: Props) {
             />
           </svg>
         </div>
-        <h3 style={{ fontFamily: "'Lora',serif", fontSize: 22, fontWeight: 600, color: B.dark, marginBottom: 10 }}>
+        <h3 style={{  fontSize: 22, fontWeight: 600, color: B.dark, marginBottom: 10 }}>
           Request received!
         </h3>
         <p style={{ fontSize: 14, color: B.muted, lineHeight: 1.75, maxWidth: 280 }}>
@@ -132,7 +134,7 @@ export default function PartnerEnquiryForm({ formRef }: Props) {
   }
 
   return (
-    <section style={{ padding: "80px 5% 88px", background: B.bg }} ref={formRef}>
+    <section  style={{ padding: "80px 5% 88px", background: B.bg }} ref={formRef}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         
         {/* ✅ FIXED GRID */}
@@ -193,12 +195,10 @@ export default function PartnerEnquiryForm({ formRef }: Props) {
                 </svg>
               </div>
               <div>
-                <h3 style={{ fontSize: 16, fontWeight: 700, color: B.dark }}>
+                <h3 className="font-heading " style={{ fontSize: 16, fontWeight: 700, color: B.dark }}>
                   Tell us about your business
                 </h3>
-                <p style={{ fontSize: 12, color: B.subtle }}>
-                  Takes under 3 minutes - All fields marked * are required
-                </p>
+                
               </div>
             </div>
 
@@ -286,26 +286,16 @@ export default function PartnerEnquiryForm({ formRef }: Props) {
               />
             </div>
 
-            <button
+            <Btn
+              title="Submit Partnership Request"
+              text="text-white"
+              bg="bg-[#00a9ae]"
+              border="border-[#00a9ae]"
+              hover="bg-[#8ac43f]"
               onClick={() => setSubmitted(true)}
-              style={{
-                width: "100%",
-                background: B.p,
-                color: "#fff",
-                border: "none",
-                borderRadius: 12,
-                padding: "15px 24px",
-                fontSize: 14,
-                fontWeight: 700,
-                cursor: "pointer",
-              }}
-            >
-              Submit Partnership Request
-            </button>
+            />
 
-            <p style={{ textAlign: "center", fontSize: 11.5, color: B.subtle, marginTop: 14 }}>
-              We respond within 48 hours - No obligation - Fully confidential
-            </p>
+           
           </div>
         </div>
       </div>

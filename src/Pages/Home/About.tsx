@@ -1,5 +1,6 @@
 'use client';
 
+import { Link } from "react-router-dom";
 import Dealerbtn from "../../common/Dealerbtn";
 import SectionHeader from "../../common/SectionHeader";
 
@@ -15,9 +16,9 @@ export default function AboutUs() {
                         <div className="relative rounded-2xl bg-[#00a9ae] overflow-hidden shadow-lg group">
                             <img
                                 loading="lazy"
-                                src="/img/ab3.png"
+                                src="/img/homeAbout.png"
                                 alt="Pharmaceutical distribution and healthcare logistics"
-                                className="w-full h-full object-cover opacity-70 rounded-2xl transition-transform duration-500 group-hover:scale-105"
+                                className="w-full h-[350px] object-cover opacity-90 rounded-2xl transition-transform duration-500 group-hover:scale-105"
                             />
                         </div>
                     </div>
@@ -35,15 +36,17 @@ export default function AboutUs() {
 
                         {/* Body */}
                         <p className="section-paragraph text-[#59606C] text-[15px] md:text-[16px] mb-8">
-                            Medzy Healthcare Pvt Ltd is a rapidly growing pharmaceutical distribution company dedicated to bridging the gap between manufacturers and healthcare providers. With a customer-centric approach and cutting-edge logistics infrastructure, we ensure that quality medicines reach those who need them most—on time, every time.
+                            Medzy Healthcare Pvt Ltd. is a rapidly growing pharmaceutical distribution company dedicated to bridging the gap between manufacturers and healthcare providers. With a customer centric approach and cutting edge logistics infrastructure, we ensure that quality medicines reach those who need them most on time.
                             Backed by industry expertise and a commitment to excellence, Medzy serves hospitals, clinics, pharmacies, and retail chains across India with unmatched reliability.
                             
                         </p>
 
 
                         {/* CTA */}
-                        <div className="hidden md:block btnp">
+                        <div  className="hidden md:block btnp">
+                        <Link to="/aboutus">
                             <Dealerbtn title="Read More" />
+                            </Link>
                         </div>
 
                     </div>

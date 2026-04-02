@@ -397,9 +397,6 @@ input:-webkit-autofill {
     flex-direction: column !important;
     align-items: flex-start !important;
   }
-  .partner-page .selector-label {
-    display: none !important;
-  }
 }
 
 @media (max-width: 540px) {

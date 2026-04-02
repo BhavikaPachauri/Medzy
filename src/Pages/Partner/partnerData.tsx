@@ -12,7 +12,7 @@ export type PartnerItem = {
   color: string;
   colorLight: string;
   colorMid: string;
-  icon: ReactElement;
+
 };
 
 export type ProcessStep = {
@@ -37,23 +37,18 @@ export const PARTNERS_DATA: PartnerItem[] = [
       "Sales and marketing support",
     ],
     models: ["Exclusive distribution agreements", "C&F agency partnerships", "Super stockist arrangements", "Regional distribution rights"],
+    
     color: B.p,
     colorLight: B.pLight,
     colorMid: B.pMid,
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" width="22">
-        <rect x="2" y="9" width="20" height="13" rx="2" stroke="currentColor" strokeWidth="1.7" />
-        <path d="M2 9l4-6h12l4 6" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
-        <path d="M9 16v5M15 16v5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-      </svg>
-    ),
+   
   },
   {
     id: "hospital",
     num: "02",
     label: "Hospitals & Healthcare Institutions",
     headline: "Zero-gap supply for uninterrupted care",
-    desc: "From IPD/OPD pharmacy management to emergency procurement, Medzy keeps your institution fully stocked with the right medicines at the right time - every time.",
+    desc: "From IPD/OPD pharmacy management to emergency procurement, Medzy keeps your institution fully stocked with the right medicines at the right time.",
     offers: [
       "Dedicated account management",
       "Comprehensive product portfolio",
@@ -63,15 +58,11 @@ export const PARTNERS_DATA: PartnerItem[] = [
       "Flexible credit terms",
     ],
     models: [],
-    color: B.aDark,
-    colorLight: B.aLight,
-    colorMid: B.aMid,
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" width="22">
-        <rect x="3" y="3" width="18" height="20" rx="2" stroke="currentColor" strokeWidth="1.7" />
-        <path d="M12 8v8M8 12h8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-      </svg>
-    ),
+   
+    color: B.p,
+    colorLight: B.pLight,
+    colorMid: B.pMid,
+   
   },
   {
     id: "retail",
@@ -91,13 +82,7 @@ export const PARTNERS_DATA: PartnerItem[] = [
     color: B.p,
     colorLight: B.pLight,
     colorMid: B.pMid,
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" width="22">
-        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
-        <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" strokeWidth="1.7" />
-        <path d="M16 10a4 4 0 01-8 0" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
-      </svg>
-    ),
+  
   },
 ];
 

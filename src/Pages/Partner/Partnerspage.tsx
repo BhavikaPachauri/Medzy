@@ -13,7 +13,7 @@ export default function PartnersPage() {
   return (
     <div className="partner-page min-h-screen font-['Sora',sans-serif]">
      
-      <PartnerHero />
+      <PartnerHero formRef={formRef} />
       <PartnersSection formRef={formRef} />
       
       <PartnerEnquiryForm formRef={formRef} />

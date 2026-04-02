@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import Btn from "../../common/Btn";
+import { Link } from "react-router-dom";
 
 /* ── brand tokens ── */
 const TEAL = "#019d90";
@@ -24,49 +26,49 @@ function useVisible(threshold = 0.1) {
 /* ── icons ── */
 const MapPinIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" />
   </svg>
 );
 const PhoneIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.7 13.5 19.79 19.79 0 0 1 1.62 4.9 2 2 0 0 1 3.59 2.73h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.09a16 16 0 0 0 6 6l.91-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 17.5z"/>
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.7 13.5 19.79 19.79 0 0 1 1.62 4.9 2 2 0 0 1 3.59 2.73h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.09a16 16 0 0 0 6 6l.91-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 17.5z" />
   </svg>
 );
 const MailIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" />
   </svg>
 );
 const GlobeIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>
-    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+    <circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" />
+    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
   </svg>
 );
 const ClockIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+    <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
   </svg>
 );
 
 const PackageIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>
+    <line x1="16.5" y1="9.4" x2="7.5" y2="4.21" /><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" /><polyline points="3.27 6.96 12 12.01 20.73 6.96" /><line x1="12" y1="22.08" x2="12" y2="12" />
   </svg>
 );
 const HandshakeIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 7.65l1.06 1.06L12 21.23l7.06-7.89 1.06-1.06a5.4 5.4 0 0 0 .3-7.7z"/>
+    <path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 7.65l1.06 1.06L12 21.23l7.06-7.89 1.06-1.06a5.4 5.4 0 0 0 .3-7.7z" />
   </svg>
 );
 const SendIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+    <line x1="22" y1="2" x2="11" y2="13" /><polygon points="22 2 15 22 11 13 2 9 22 2" />
   </svg>
 );
 const NavigationIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+    <polygon points="3 11 22 2 13 21 11 13 3 11" />
   </svg>
 );
 
@@ -82,15 +84,15 @@ function InfoRow({ icon, label, value, href }: { icon: React.ReactNode; label: s
         {icon}
       </div>
       <div>
-        <p className="text-xs font-semibold uppercase tracking-widest mb-0.5" style={{ color: TEAL,  }}>
+        <p className="text-xs font-semibold uppercase tracking-widest mb-0.5" style={{ color: TEAL, }}>
           {label}
         </p>
         {href ? (
-          <a href={href} className="text-sm font-medium hover:underline transition-all" style={{ color: NAVY,  textDecorationColor: TEAL }}>
+          <Link to={href} className="text-sm font-medium hover:underline transition-all" style={{ color: NAVY, textDecorationColor: TEAL }}>
             {value}
-          </a>
+          </Link>
         ) : (
-          <p className="text-sm font-medium" style={{ color: NAVY}}>{value}</p>
+          <p className="text-sm font-medium" style={{ color: NAVY }}>{value}</p>
         )}
       </div>
     </div>
@@ -116,24 +118,26 @@ function ChannelCard({ icon, title, email, phone, note }: { icon: React.ReactNod
         <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "rgba(0,184,169,0.09)", color: TEAL }}>
           {icon}
         </div>
-        <h4 className="font-bold text-base" style={{ color: NAVY, fontFamily: "'Syne', sans-serif" }}>{title}</h4>
+        <h4 className="font-bold text-base" style={{ color: NAVY }}>{title}</h4>
       </div>
       {email && (
         <div className="flex items-center gap-2 text-[#019d90]">
           <MailIcon />
-          <a href={`mailto:${email}`} className="text-sm font-medium text-[#019d90]" >{email}</a>
+          <Link to={`mailto:${email}`} className="text-sm font-medium text-[#019d90]" >
+            {email}
+          </Link>
         </div>
       )}
       {phone && (
         <div className="flex items-center gap-2 text-[#019d90]">
           <PhoneIcon />
-          <a href={`tel:${phone}`} className="text-sm font-medium text-[#019d90]" >
+          <Link to={`tel:${phone}`} className="text-sm font-medium text-[#019d90]" >
             {phone}
-          </a>
+          </Link>
         </div>
       )}
       {note && (
-        <p className="text-xs px-3 py-2 rounded-lg" style={{ background: "rgba(0,184,169,0.06)", color: "#7A8FA6", fontFamily: "'DM Sans', sans-serif" }}>
+        <p className="text-xs px-3 py-2 rounded-lg" style={{ background: "rgba(0,184,169,0.06)", color: "#7A8FA6" }}>
           {note}
         </p>
       )}
@@ -157,7 +161,6 @@ function Field({
     border: `1.5px solid ${focused ? TEAL : "rgba(28,53,87,0.12)"}`,
     outline: "none",
     fontSize: 14,
-    fontFamily: "'DM Sans', sans-serif",
     color: NAVY,
     background: focused ? "rgba(0,184,169,0.02)" : "#fafafa",
     transition: "all 0.2s",
@@ -166,7 +169,7 @@ function Field({
   };
   return (
     <div className="flex flex-col gap-1.5">
-      <label className="text-xs font-semibold uppercase tracking-widest" style={{ color: TEAL, fontFamily: "'DM Sans', sans-serif" }}>
+      <label className="text-xs font-semibold uppercase tracking-widest" style={{ color: TEAL }}>
         {label}{required && <span style={{ color: "#E05A5A" }}> *</span>}
       </label>
       {textarea ? (
@@ -208,13 +211,13 @@ export default function Contact() {
 
   return (
     <>
-      <div  style={{ background: "linear-gradient(170deg, #ffffff 0%, #F4FBFA 100%)", minHeight: "100vh" }}>
-        
+      <div style={{ background: "linear-gradient(170deg, #ffffff 0%, #F4FBFA 100%)", minHeight: "100vh" }}>
+
         <div
           ref={heroRef}
           className="relative overflow-hidden py-16 px-6 w-full h-[315px] bg-gradient-to-br from-teal-700 via-teal-600 to-teal-400 rounded-b-[30%]"
           style={{
-           
+
             opacity: heroVisible ? 1 : 0,
             transform: heroVisible ? "translateY(0)" : "translateY(-16px)",
             transition: "all 0.7s ease",
@@ -234,22 +237,22 @@ export default function Contact() {
             style={{ background: "radial-gradient(circle, rgba(0,184,169,0.07) 0%, transparent 65%)" }} />
 
           <div className="relative max-w-5xl mx-auto text-center">
-           
+
             <h1
-              className="font-extrabold leading-tight mb-4"
-              style={{ fontFamily: "'Syne', sans-serif", fontSize: "clamp(28px, 4vw, 46px)", color: "#fff" }}
+              className="font-heading font-extrabold leading-tight mb-4 mt-5 text-4xl"
+              style={{  color: "#fff" }}
             >
               Get in Touch with{" "}
-              <span style={{ color: "#80ee72" }}>Medzy Healthcare</span>
+              <span  className="font-heading  text-4xl " style={{ color: "#80ee72" }}>Medzy Healthcare</span>
             </h1>
             <p
-              className="max-w-5xl mx-auto text-sm leading-relaxed"
-              style={{ color: "white", fontFamily: "'DM Sans', sans-serif" }}
+              className="font-body max-w-5xl mx-auto text-sm leading-relaxed hidden md:block"
+              style={{ color: "white" }}
             >
-             We're here to serve you. Reach out for product inquiries, partnership opportunities, or general information. Whether you need assistance with our products, customer support, or partnership opportunities, our team is ready to assist you. 
+              We're here to serve you. Reach out for product inquiries, partnership opportunities, or general information. Whether you need assistance with our products, customer support, or partnership opportunities, our team is ready to assist you.
             </p>
 
-            
+
           </div>
         </div>
 
@@ -266,15 +269,15 @@ export default function Contact() {
             <div className="rounded-2xl overflow-hidden" style={{ border: "1px solid rgba(0,184,169,0.12)", background: "#fff", boxShadow: "0 4px 16px rgba(28,53,87,0.06)" }}>
               {/* card header */}
               <div className="px-6 py-4 flex items-center gap-3" style={{ background: `linear-gradient(90deg, ${NAVY}, #019d90)` }}>
-                
-                <h3 className="font-bold text-base text-white" style={{ fontFamily: "'Syne', sans-serif" }}>Corporate Office</h3>
+
+                <h3 className="font-heading font-bold text-base text-white" >Corporate Office</h3>
               </div>
               <div className="px-6 py-4 flex flex-col">
                 {/* company name banner */}
                 <div className="mb-4 px-4 py-2.5 rounded-xl flex items-center gap-2"
                   style={{ background: "rgba(0,184,169,0.06)", border: "1px solid rgba(0,184,169,0.12)" }}>
                   <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: TEAL }} />
-                  <span className="text-xs font-bold uppercase tracking-widest" style={{ color: NAVY, fontFamily: "'Syne', sans-serif" }}>
+                  <span className="font-body text-xs font-bold uppercase tracking-widest" style={{ color: NAVY}}>
                     MEDZY HEALTHCARE PRIVATE LIMITED
                   </span>
                 </div>
@@ -291,19 +294,15 @@ export default function Contact() {
               {/* Warehouse */}
               <div className="rounded-2xl overflow-hidden" style={{ border: "1px solid rgba(0,184,169,0.12)", background: "#fff", boxShadow: "0 4px 16px rgba(28,53,87,0.06)" }}>
                 <div className="px-6 py-4 flex items-center gap-3" style={{ background: `linear-gradient(90deg, ${NAVY},#019d90)` }}>
-                  
-                  <h3 className="font-bold text-base text-white" style={{ fontFamily: "'Syne', sans-serif" }}>Warehouse Address</h3>
+
+                  <h3 className="font-heading font-bold text-base text-white">Warehouse Address</h3>
                 </div>
                 <div className="px-6 py-4">
                   <div className="flex items-start gap-3 py-2">
-                    <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0" style={{ background: "rgba(0,184,169,0.08)", color: TEAL }}>
-                      <MapPinIcon />
-                    </div>
+                  
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-widest mb-1" style={{ color: TEAL, fontFamily: "'DM Sans', sans-serif" }}>Location</p>
-                      <p className="text-xs px-3 py-2 rounded-lg italic" style={{ background: "rgba(0,184,169,0.05)", color: "#7A8FA6", fontFamily: "'DM Sans', sans-serif", border: "1px dashed rgba(0,184,169,0.20)" }}>
-                        To be updated — warehouse address to be confirmed
-                      </p>
+                      
+                     <InfoRow icon={<MapPinIcon />} label="Address" value="Building No-1, Block-10, Near AIPL Joy Street, Village Ramgarh, Gurugram, Haryana – 122502" />
                     </div>
                   </div>
                 </div>
@@ -312,8 +311,8 @@ export default function Contact() {
               {/* Contact Channels */}
               <div className="rounded-2xl overflow-hidden" style={{ border: "1px solid rgba(0,184,169,0.12)", background: "#fff", boxShadow: "0 4px 16px rgba(28,53,87,0.06)" }}>
                 <div className="px-6 py-4 flex items-center gap-3" style={{ background: `linear-gradient(90deg, ${NAVY}, #019d90)` }}>
-                 
-                  <h3 className="font-bold text-base text-white" style={{ fontFamily: "'Syne', sans-serif" }}>Contact </h3>
+
+                  <h3 className="font-heading font-bold text-base text-white">Contact </h3>
                 </div>
                 <div className="px-6 py-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <ChannelCard
@@ -341,10 +340,10 @@ export default function Contact() {
             <div className="rounded-2xl overflow-hidden" style={{ border: "1px solid rgba(0,184,169,0.12)", background: "#fff", boxShadow: "0 4px 20px rgba(28,53,87,0.06)" }}>
               {/* form header */}
               <div className="px-6 md:px-10 py-5 flex items-center gap-3" style={{ background: `linear-gradient(90deg, ${NAVY}, #019d90)` }}>
-                
+
                 <div>
-                  <h3 className="font-bold text-base text-white" style={{ fontFamily: "'Syne', sans-serif" }}>Quick Contact Form</h3>
-                 
+                  <h3 className="font-bold text-base text-white" >Quick Contact Form</h3>
+
                 </div>
               </div>
 
@@ -353,11 +352,11 @@ export default function Contact() {
                   <div className="flex flex-col items-center justify-center py-10 gap-4 fade-up">
                     <div className="w-16 h-16 rounded-full flex items-center justify-center" style={{ background: "rgba(0,184,169,0.10)", animation: "checkPop 0.4s ease" }}>
                       <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                        <path d="M20 6L9 17l-5-5" stroke={TEAL} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M20 6L9 17l-5-5" stroke={TEAL} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     </div>
-                    <h4 className="font-bold text-lg" style={{ color: NAVY, fontFamily: "'Syne', sans-serif" }}>Message Sent!</h4>
-                    <p className="text-sm text-center max-w-xs" style={{ color: "#7A8FA6", fontFamily: "'DM Sans', sans-serif" }}>
+                    <h4 className="font-bold text-lg" style={{ color: NAVY }}>Message Sent!</h4>
+                    <p className="text-sm text-center max-w-xs" style={{ color: "#7A8FA6" }}>
                       Thank you for reaching out. Our team will respond within 24 hours.
                     </p>
                   </div>
@@ -374,22 +373,10 @@ export default function Contact() {
                     <Field label="Message" name="message" placeholder="Tell us how we can help you..." value={formData.message} onChange={handleChange} textarea />
 
                     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-2">
-                      <p className="text-xs" style={{ color: "#a0adb8", fontFamily: "'DM Sans', sans-serif" }}>
+                      <p className="text-xs" style={{ color: "#a0adb8" }}>
                         <span style={{ color: "#E05A5A" }}>*</span> Required fields
                       </p>
-                      <button
-                        type="submit"
-                        className="flex items-center gap-2.5 px-7 py-3 rounded-xl font-semibold text-sm text-white transition-all duration-200 hover:opacity-90 active:scale-95"
-                        style={{
-                          background: `linear-gradient(120deg, ${TEAL} 0%, #0097a7 100%)`,
-                          fontFamily: "'DM Sans', sans-serif",
-                          boxShadow: "0 6px 20px rgba(0,184,169,0.28)",
-                          letterSpacing: "0.02em",
-                        }}
-                      >
-                        <SendIcon />
-                        Send Message
-                      </button>
+                      <Btn title="  Send Message " text="text-white" bg="bg-[#00a9ae]" border="border-[#00a9ae]" hover="bg-[#8ac43f]" type="submit" />
                     </div>
                   </form>
                 )}
@@ -408,13 +395,13 @@ export default function Contact() {
               {/* header */}
               <div className="px-6 md:px-10 py-5 flex items-center justify-between" style={{ background: `linear-gradient(90deg, ${NAVY}, #019d90)` }}>
                 <div className="flex items-center gap-3">
-                  
+
                   <div>
-                    <h3 className="font-bold text-base text-white" style={{ fontFamily: "'Syne', sans-serif" }}>Find Us on the Map</h3>
-                    <p className="text-xs" style={{ color: "white", fontFamily: "'DM Sans', sans-serif" }}>Building No-1, Block-10, Near AIPL Joy Street, Gurugram</p>
+                    <h3 className="font-heading font-bold text-base text-white" >Find Us on the Map</h3>
+                    <p className="text-xs" style={{ color: "white" }}>Building No-1, Block-10, Near AIPL Joy Street, Gurugram</p>
                   </div>
                 </div>
-              
+
               </div>
 
               {/* map + info side layout */}
@@ -437,7 +424,7 @@ export default function Contact() {
                     style={{ background: "rgba(255,255,255,0.96)", boxShadow: "0 4px 16px rgba(28,53,87,0.14)" }}
                   >
                     <span className="w-2.5 h-2.5 rounded-full animate-pulse" style={{ background: TEAL }} />
-                    <span className="text-xs font-semibold" style={{ color: NAVY, fontFamily: "'DM Sans', sans-serif" }}>Medzy Healthcare Pvt. Ltd.</span>
+                    <span className="font-body text-xs font-semibold" style={{ color: NAVY }}>Medzy Healthcare Pvt. Ltd.</span>
                   </div>
                 </div>
 
@@ -449,24 +436,24 @@ export default function Contact() {
                   <div className="flex flex-col gap-5">
                     {/* address */}
                     <div>
-                      <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: TEAL, fontFamily: "'DM Sans', sans-serif" }}>Registered Address</p>
-                      <p className="text-sm leading-relaxed" style={{ color: NAVY, fontFamily: "'DM Sans', sans-serif", fontWeight: 500 }}>
+                      <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: TEAL }}>Registered Address</p>
+                      <p className="font-body text-sm leading-relaxed" style={{ color: NAVY, fontWeight: 500 }}>
                         Building No-1, Block-10,<br />Near AIPL Joy Street,<br />Village Ramgarh,<br />Gurugram, Haryana – 122502
                       </p>
                     </div>
                     <div className="h-px w-full" style={{ background: "rgba(0,184,169,0.10)" }} />
                     {/* quick contacts */}
-                    <div className="flex flex-col gap-3">
-                      <p className="text-xs font-bold uppercase tracking-widest" style={{ color: TEAL, fontFamily: "'DM Sans', sans-serif" }}>Quick Contact</p>
-                      <a href="tel:+919599773746" className="flex items-center gap-2.5 text-sm font-medium hover:opacity-75 transition-all" style={{ color: NAVY, fontFamily: "'DM Sans', sans-serif" }}>
-                        <span className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0" style={{ background: "rgba(0,184,169,0.08)", color: TEAL }}><PhoneIcon /></span>
+                    <div className="font-body flex flex-col gap-3">
+                      <p className="text-xs font-bold uppercase tracking-widest" style={{ color: TEAL }}>Quick Contact</p>
+                      <Link to="tel:+919599773746" className="flex items-center gap-2.5 text-sm font-medium hover:opacity-75 transition-all" style={{ color: NAVY }}>
+                        <span className="font-body w-8 h-8 rounded-lg flex items-center justify-center shrink-0" style={{ background: "rgba(0,184,169,0.08)", color: TEAL }}><PhoneIcon /></span>
                         +91-9599773746
-                      </a>
-                      <a href="mailto:info@medzyhealthcare.com" className="flex items-center gap-2.5 text-sm font-medium hover:opacity-75 transition-all" style={{ color: NAVY, fontFamily: "'DM Sans', sans-serif" }}>
+                      </Link>
+                      <Link to="mailto:info@medzyhealthcare.com" className="flex items-center gap-2.5 text-sm font-medium hover:opacity-75 transition-all" style={{ color: NAVY }}>
                         <span className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0" style={{ background: "rgba(0,184,169,0.08)", color: TEAL }}><MailIcon /></span>
-                       <p className="text-[#019d90]">info@medzyhealthcare.com</p> 
-                      </a>
-                      <div className="flex items-center gap-2.5 text-sm" style={{ color: "#7A8FA6", fontFamily: "'DM Sans', sans-serif" }}>
+                        <p className="text-[#019d90]">info@medzyhealthcare.com</p>
+                      </Link>
+                      <div className="flex items-center gap-2.5 text-sm" style={{ color: "#7A8FA6" }}>
                         <span className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 text-[#019d90]" ><ClockIcon /></span>
                         <p className="text-[#019d90]">  Mon–Sat: 9 AM – 6 PM</p>
                       </div>
@@ -474,23 +461,22 @@ export default function Contact() {
                     <div className="h-px w-full" style={{ background: "rgba(0,184,169,0.10)" }} />
                     {/* landmark */}
                     <div>
-                      <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: TEAL, fontFamily: "'DM Sans', sans-serif" }}>Nearby Landmark</p>
-                      <p className="text-xs leading-relaxed" style={{ color: "#7A8FA6", fontFamily: "'DM Sans', sans-serif" }}>
+                      <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: TEAL}}>Nearby Landmark</p>
+                      <p className="text-xs leading-relaxed" style={{ color: "#4ea49d" }}>
                         Near AIPL Joy Street, Sector 66 area, Gurugram — easily accessible via NH-48.
                       </p>
                     </div>
                   </div>
                   {/* CTA */}
-                  <a
-                    href="https://maps.google.com/?q=AIPL+Joy+Street+Village+Ramgarh+Gurugram+Haryana+122502"
+                  <Link
+                    to="https://maps.google.com/?q=AIPL+Joy+Street+Village+Ramgarh+Gurugram+Haryana+122502"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-6 flex items-center justify-center gap-2 w-full py-3 rounded-xl text-sm font-semibold transition-all hover:opacity-90"
-                    style={{ background: `linear-gradient(120deg, ${TEAL} 0%, #0097a7 100%)`, color: "#fff", fontFamily: "'DM Sans', sans-serif", boxShadow: "0 6px 20px rgba(0,184,169,0.24)" }}
                   >
-                    <NavigationIcon />
-                    Open in Google Maps
-                  </a>
+                    <Btn title="Open in Google Maps" text="text-white" bg="bg-[#00a9ae]" border="border-[#00a9ae]" hover="bg-[#8ac43f]" as="span" />
+                  
+                  </Link>
                 </div>
               </div>
             </div>

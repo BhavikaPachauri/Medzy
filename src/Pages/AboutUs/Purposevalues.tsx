@@ -24,7 +24,7 @@ const values = [
     title: "Reliability",
     tagline: "Delivered. Every time.",
     description:
-      "Trust is the foundation of every relationship we build. We ensure hassle-free distribution of healthcare products to providers and patients—every single time.",
+      "Trust is the foundation of every relationship we build. We ensure hassle free distribution of healthcare products to providers and patients on every single time.",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
         <path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.25C17.25 22.15 21 17.25 21 12V7L12 2Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round"/>
@@ -37,7 +37,7 @@ const values = [
     title: "Excellence",
     tagline: "Highest standards, always.",
     description:
-      "Maintaining the highest standards of quality and professionalism, we ensure our pharmaceutical distribution is handled with the utmost care and attention.",
+      "Maintaining the highest standards of quality and professionalism, We ensure our pharmaceutical distribution is handled with the utmost care and attention.",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round"/>
@@ -49,7 +49,7 @@ const values = [
     title: "Integrity",
     tagline: "Transparent. Honest. Accountable.",
     description:
-      "We believe in transparency, honesty, and accountability—forging strong, lasting relationships with healthcare providers, suppliers, and manufacturers.",
+      "We believe in transparency, honesty, and accountability with lasting relationships with healthcare providers, suppliers, and manufacturers.",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
@@ -63,7 +63,7 @@ const values = [
     title: "Innovation",
     tagline: "Forward-thinking healthcare.",
     description:
-      "We embrace technology and forward-thinking practices to continuously improve healthcare access and our operational efficiency.",
+      "We embrace technology and forward thinking practices to continuously improve healthcare access and our operational efficiency.",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
         <path d="M9 18h6M10 22h4M12 2a7 7 0 0 1 7 7c0 2.5-1.5 4.5-3 6H8c-1.5-1.5-3-3.5-3-6a7 7 0 0 1 7-7Z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
@@ -75,7 +75,7 @@ const values = [
     title: "Compliance",
     tagline: "Regulation is our standard.",
     description:
-      "Strict adherence to regulatory standards is not a checkbox—it is a core part of how we do business, every day.",
+      "Strict adherence to regulatory standards is not a checkbox.It is a core part of how we do business every day.",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
         <path d="M9 11l3 3L22 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
@@ -109,17 +109,12 @@ export default function PurposeValues() {
           className="text-center mb-12 transition-all duration-700"
           style={{ opacity: hdrVisible ? 1 : 0, transform: hdrVisible ? "translateY(0)" : "translateY(24px)" }}
         >
-          <span
-            className="inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4"
-            style={{ background: "rgba(0,184,169,0.10)", color: TEAL, fontFamily: "'Helvetica Neue', sans-serif" }}
-          >
-            Who We Are
-          </span>
+         
           <h2
             className="font-bold text-4xl leading-tight mb-4"
-            style={{ fontFamily: "'Georgia', serif", color: NAVY }}
+            style={{  color: NAVY }}
           >
-            Our Purpose &amp; <span style={{ color: TEAL }}>Values</span>
+            Our Purpose &amp; <span className="font-heading " style={{ color: TEAL }}>Values</span>
           </h2>
           <div className="flex justify-center">
             <div className="h-px w-48 rounded-full"
@@ -155,7 +150,7 @@ export default function PurposeValues() {
 
             
 
-                <div className="relative p-6" style={{ fontFamily: "'Helvetica Neue', Arial, sans-serif" }}>
+                <div className="relative p-6" >
                   {/* icon */}
                   <div
                     className="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
@@ -169,23 +164,22 @@ export default function PurposeValues() {
                     {v.icon}
                   </div>
 
-                  {/* tagline */}
-                  <p className="text-[10px] font-bold uppercase tracking-widest mb-1" style={{ color: TEAL }}>
-                    {v.tagline}
-                  </p>
+                 
 
                   {/* title */}
                   <h3
-                    className="font-bold mb-2 tracking-tight"
-                    style={{ fontFamily: "'Georgia', serif", fontSize: "17px", color: NAVY }}
+                    className=" mb-2 tracking-tight font-heading "
+                    style={{  fontSize: "17px", color: NAVY }}
                   >
                     {v.title}
                   </h3>
+                 
 
                   {/* body */}
                   <p className="text-sm leading-relaxed" style={{ color: "#5A6A7E" }}>
                     {v.description}
                   </p>
+                  
                 </div>
               </div>
             );

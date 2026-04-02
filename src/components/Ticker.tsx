@@ -10,8 +10,6 @@ export default function Ticker(): JSX.Element {
     "Custom Packaging",
     "Market Intelligence",
     "Regulatory Assistance",
-    "Emergency Procurement",
-    "Product Education",
   ];
 
   const allItems = [...items, ...items];
@@ -19,7 +17,7 @@ export default function Ticker(): JSX.Element {
   return (
     <>
       {/* Ticker */}
-      <div className="bg-teal-400 overflow-hidden py-3">
+      <div className="bg-teal-400 overflow-hidden py-5">
         <div
           className="flex gap-16 w-max hover:[animation-play-state:paused]"
           style={{
@@ -32,7 +30,7 @@ export default function Ticker(): JSX.Element {
               className="text-white text-xs font-bold uppercase tracking-widest whitespace-nowrap opacity-90"
             >
               {item}
-              <span className="opacity-40 ml-4"> ◆ </span>
+              {/* <span className="opacity-40 ml-4"> ◆ </span> */}
             </span>
           ))}
         </div>

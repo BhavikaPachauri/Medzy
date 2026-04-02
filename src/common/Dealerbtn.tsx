@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { Link } from "react-router-dom";
 
 export default function LearnMoreButton({ title }: { title?: string }): JSX.Element {
-  const btnRef = useRef<HTMLButtonElement | null>(null);
+  const btnRef = useRef<HTMLAnchorElement | null>(null);
   const bgRef = useRef<HTMLSpanElement | null>(null);
 
   useEffect(() => {
@@ -49,9 +49,9 @@ export default function LearnMoreButton({ title }: { title?: string }): JSX.Elem
   }, []);
 
   return (
-    <button
+    <Link
       ref={btnRef}
-      type="button"
+      to="/partners"
       className="relative flex overflow-hidden inline-flex items-center gap-2 py-1 ps-2 pe-1 rounded-full bg-[#00a9ae] text-white font-medium"
     >
       {/* sliding background */}
@@ -67,12 +67,9 @@ export default function LearnMoreButton({ title }: { title?: string }): JSX.Elem
       />
 
       {/* content */}
-      <Link
-        to="/partners"
-        className="flex gap-2 px-4 justify-center items-center relative z-10"
-      >
+      <span className="flex gap-2 px-4 justify-center items-center relative z-10">
         {title}
-      </Link>
-    </button>
+      </span>
+    </Link>
   );
 }

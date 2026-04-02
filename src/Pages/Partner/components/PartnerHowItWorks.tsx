@@ -14,7 +14,7 @@ export default function PartnerHowItWorks() {
           <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: B.aLight, border: `1px solid ${B.aMid}`, borderRadius: 9, padding: "5px 14px", marginBottom: 16 }}>
             <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: ".18em", textTransform: "uppercase", color: B.aDark }}>How it works</span>
           </div>
-          <h2 style={{ fontFamily: "'Lora',serif", fontSize: "clamp(2rem,3.5vw,2.8rem)", fontWeight: 600, color: B.dark, lineHeight: 1.1 }}>Simple. Fast. Transparent.</h2>
+          <h2 style={{  fontSize: "clamp(2rem,3.5vw,2.8rem)", fontWeight: 600, color: B.dark, lineHeight: 1.1 }}>Simple. Fast. Transparent.</h2>
         </div>
 
         <div className="process-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 20, position: "relative" }}>

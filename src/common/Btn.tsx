@@ -3,9 +3,21 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
-export default function LearnMoreButton({ title, text, bg, border, hover }: { title?: string; text?: string; bg?: string; border?: string; hover  ?: string }) {
-  const btnRef = useRef<HTMLButtonElement | null>(null);
+type BtnProps = {
+  title?: string;
+  text?: string;
+  bg?: string;
+  border?: string;
+  hover?: string;
+  onClick?: () => void;
+  as?: "button" | "span";
+  type?: "button" | "submit" | "reset";
+};
+
+export default function LearnMoreButton({ title, text, bg, border, hover, onClick, as = "button", type = "button" }: BtnProps) {
+  const btnRef = useRef<HTMLElement | null>(null);
   const circleRef = useRef<HTMLSpanElement | null>(null);
+  const Component = as;
 
   useEffect(() => {
     const btn = btnRef.current;
@@ -103,9 +115,10 @@ export default function LearnMoreButton({ title, text, bg, border, hover }: { ti
   }, []);
 
   return (
-    <button
+    <Component
       ref={btnRef}
-      type="button"
+      {...(as === "button" ? { type } : {})}
+      {...(onClick ? { onClick } : {})}
       className={ `${bg} ${text || 'text-white'} relative overflow-hidden inline-flex items-center gap-2 px-6 py-2 rounded-full border ${border || 'border-[#017d77]'} font-medium transition-colors duration-300` }
     >
       {/* Animated circle */}
@@ -117,6 +130,6 @@ export default function LearnMoreButton({ title, text, bg, border, hover }: { ti
 
       {/* Content */}
       <span className="relative z-10">{title}</span>
-    </button>
+    </Component>
   );
 }

@@ -12,9 +12,9 @@ export default function DirectorSection() {
           className="max-w-[900px] mx-auto transition-all duration-700"
           style={{ opacity: teamVisible ? 1 : 0, transform: teamVisible ? "translateY(0)" : "translateY(24px)" }}
         >
-          <div className="text-center mb-10" style={{ fontFamily: "'Helvetica Neue', Arial, sans-serif" }}>
-            <h2 className="text-white text-[clamp(26px,3.5vw,38px)] font-bold tracking-tight"
-              style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}>
+          <div className="text-center mb-10" >
+            <h2 className="font-heading text-white text-[clamp(26px,3.5vw,38px)] font-bold tracking-tight"
+             >
               Meet Our Director
             </h2>
           </div>
@@ -25,18 +25,18 @@ export default function DirectorSection() {
 
 
 
-            <div style={{ fontFamily: "'Helvetica Neue', Arial, sans-serif" }}>
-              <h3 className="text-white text-[22px] font-bold mb-1"
-                style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}>
+            <div >
+              <h3 className="font-heading text-white text-[22px] font-bold mb-1"
+              >
                 Mr. Tushar Bhatia
               </h3>
-              <p className="text-white text-[12px] font-semibold uppercase tracking-[0.15em] mb-4">
-                Director, Medzy Healthcare Pvt Ltd
+              <p className="font-body text-white text-[12px] font-semibold uppercase tracking-[0.15em] mb-4">
+                Director, Medzy Healthcare Pvt Ltd.
               </p>
               <div className="w-50 h-[1px] rounded-full mb-5"
                 style={{ background: "linear-gradient(90deg, #fff, transparent)" }} />
-              <p className="text-[rgba(200,225,220,0.75)] text-[15px] leading-[1.85]">
-                Under the leadership of Mr. Tushar Bhatia, Medzy Healthcare has grown into a reliable and forward-thinking pharmaceutical distribution company. His vision for quality, compliance, and customer-first service drives the company's mission and culture at every level.
+              <p className="text-white text-[15px] leading-[1.85]">
+                Under the leadership of Mr. Tushar Bhatia, Medzy Healthcare has grown into a reliable and forward-thinking pharmaceutical distribution company. His vision for quality, compliance, and commitment to exceptional service drives the company's mission and culture at every level.
               </p>
             </div>
           </div>

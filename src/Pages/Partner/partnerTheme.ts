@@ -1,5 +1,5 @@
 export const PARTNER_COLORS = {
-  p: "#0BA37F",
+  p: "#37a996",
   pDark: "#088A6B",
   pDeep: "#065C47",
   pLight: "#E6F7F2",
@@ -8,7 +8,7 @@ export const PARTNER_COLORS = {
   a: "#C8D400",
   aDark: "#A8B200",
   aLight: "#F5F9C0",
-  aMid: "#E2EB6A",
+  aMid: "#41cead",
   dark: "#0B2B24",
   darkMid: "#113529",
   text: "#0D2018",

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Dealerbtn from './Dealerbtn'
+import { Link } from 'react-router-dom'
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -14,7 +15,12 @@ function Navbar() {
           <div className="flex-shrink-0">
             <img 
               src="/img/MedzyLogo.png"
-              className="h-10 w-auto md:h-10"
+              className="hidden md:block h-10 w-auto md:h-10"
+              alt="Logo"
+            />
+              <img 
+              src="/img/MedzyLogo.png"
+              className="block md:hidden h-8 w-auto "
               alt="Logo"
             />
           </div>
@@ -22,13 +28,13 @@ function Navbar() {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             {["Home","About Us","Services","Partners","Contact Us"].map((item, i) => (
-              <a
+              <Link
                 key={i}
-                href={`/${item === "Home" ? "" : item.toLowerCase().replace(/\s/g, "")}`}
-                className="text-[#8C8C8C] hover:text-[#00a9ae] font-medium transition"
+                to={`/${item === "Home" ? "" : item.toLowerCase().replace(/\s/g, "")}`}
+                className="font-body text-[#8C8C8C] hover:text-[#00a9ae] font-medium transition"
               >
                 {item}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -41,8 +47,8 @@ function Navbar() {
           <div className="flex items-center gap-2 md:hidden">
 
             {/* Small Button */}
-            <button className="bg-[#00a9ae] text-white px-3 py-1 rounded-full text-sm">
-              Dealer
+            <button className="font-body bg-[#00a9ae] text-white px-3 py-1 rounded-full text-sm">
+              Become a Dealer
             </button>
 
             {/* Hamburger */}
@@ -73,14 +79,14 @@ function Navbar() {
       >
         <div className="px-4 py-4 space-y-2">
           {["Home","About Us","Services","Partners","Contact Us"].map((item, i) => (
-            <a
+            <Link
               key={i}
-              href={`/${item === "Home" ? "" : item.toLowerCase().replace(/\s/g, "")}`}
+              to={`/${item === "Home" ? "" : item.toLowerCase().replace(/\s/g, "")}`}
               onClick={() => setIsMenuOpen(false)}
-              className="block px-3 py-2 text-white rounded-md hover:bg-white/10"
+              className="font-body block px-3 py-2 text-white rounded-md hover:bg-white/10"
             >
               {item} 
-            </a>
+            </Link>
           ))}
         </div>
       </div>

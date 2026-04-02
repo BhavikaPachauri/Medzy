@@ -68,7 +68,7 @@ const features: Feature[] = [
     icon: <ClockIcon />,
     tag: "DELIVERY",
     title: "Timely Fulfillment",
-    desc: "Streamlined logistics powered by real-time tracking ensures your orders arrive exactly when promised, every single time.",
+    desc: "Streamlined logistics powered by real time tracking ensures your orders arrives exactly when promised, every single time.",
    
   },
   {
@@ -76,7 +76,7 @@ const features: Feature[] = [
     icon: <StarIcon />,
     tag: "VALUE",
     title: "Competitive Pricing",
-    desc: "Cost-effective pharmaceutical solutions without ever compromising on quality, giving you the best value for every rupee.",
+    desc: "Cost effective pharmaceutical solutions without ever compromising on quality, giving you the best value for every rupees.",
 
   },
   {
@@ -186,7 +186,7 @@ function FeatureCard({ feature, index, visible }: FeatureCardProps) {
         {/* Text */}
         <div className="flex flex-col gap-1.5">
           <h3
-            className="text-lg font-bold text-gray-900 leading-snug font-heading"
+            className="text-lg font-semibold text-gray-900 leading-snug font-heading"
             style={{ letterSpacing: "-0.01em" }}
           >
             {feature.title}
@@ -258,6 +258,7 @@ export default function WhyChooseMedzy() {
                   background: "linear-gradient(120deg, #00b2a9 0%, #00d4c8 50%, #00958d 100%)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
+                  fontWeight: "900",
                     }}
                   >
                     Medzy

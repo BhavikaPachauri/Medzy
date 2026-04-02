@@ -22,12 +22,19 @@ export default function AboutHero() {
         style={{ opacity: heroVisible ? 1 : 0, transform: heroVisible ? "translateY(0)" : "translateY(28px)" }}
       >
 
-        <h1 className="text-white text-[clamp(36px,6vw,64px)] font-bold leading-[1.1] tracking-tight mb-6">
+        <h1 className=" font-heading text-white text-start md:text-center text-[clamp(36px,6vw,64px)] font-bold leading-[1.1] tracking-tight mb-6">
           We Are<br />
-          <span style={{ color: "#05f7c2" }}>Medzy Healthcare</span>
+          <span
+
+            style={{
+              background: "linear-gradient(120deg, #00b2a9 0%, #04c1b7 50%, #06d3c9 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              fontWeight: "900",
+            }}>Medzy Healthcare</span>
         </h1>
 
-        <p className="text-white text-[16px] leading-[1.85] max-w-[600px] mx-auto">
+        <p className="font-body text-white text-start md:text-center  text-[16px] leading-[1.85] max-w-[600px] mx-auto">
           Trusted pharmaceutical distributor committed to delivering health and empowering lives across every corner of India.
         </p>
       </div>

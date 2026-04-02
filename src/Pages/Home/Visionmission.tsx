@@ -46,7 +46,7 @@ const visionPoints: string[] = [
   "India's most trusted pharmaceutical distributor",
   "Uncompromising quality across every delivery",
   "Full regulatory compliance at every step",
-  "Deep-rooted customer satisfaction culture",
+  "Deep rooted customer satisfaction culture",
 ];
 
 const missionPoints: string[] = [
@@ -151,15 +151,15 @@ function Card({ type, icon, tag, heading, body, points, delay, visible }: CardPr
 
         {/* Heading + body */}
         <div className="relative z-10 flex flex-col gap-3">
-          <h3
-            className="text-2xl font-black leading-snug font-heading"
+          <p
+            className="text-2xl  leading-snug font-heading"
             style={{
               color: isVision ? "#0f1a19" : "#ffffff",
               letterSpacing: "-0.02em",
             }}
           >
             {heading}
-          </h3>
+          </p>
           <p
             className="text-sm leading-relaxed font-body"
             style={{
@@ -258,7 +258,7 @@ export default function VisionMission() {
               icon={<MissionIcon />}
               tag="Our Mission"
               heading="Delivering Healthcare With Purpose"
-              body="To deliver essential healthcare products efficiently while maintaining the highest standards of quality, safety, and regulatory compliance — every single day."
+              body="To deliver essential healthcare products efficiently while maintaining the highest standards of quality, safety, and regulatory compliance every single day."
               points={missionPoints}
               delay={0.25}
               visible={visible}
