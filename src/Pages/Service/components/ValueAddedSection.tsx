@@ -10,7 +10,7 @@ type ValueCardProps = {
 function ValueAddedCard({ item, isLast }: ValueCardProps) {
   const ref = useReveal<HTMLDivElement>(80);
   const [isHovered, setIsHovered] = useState(false);
-  const { num, title,  desc,  img, flip, accent } = item;
+  const { title, desc, img, flip, accent } = item;
 
   return (
     <div style={{ marginBottom: isLast ? 0 : 14 }}>

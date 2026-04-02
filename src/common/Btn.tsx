@@ -15,12 +15,12 @@ type BtnProps = {
 };
 
 export default function LearnMoreButton({ title, text, bg, border, hover, onClick, as = "button", type = "button" }: BtnProps) {
-  const btnRef = useRef<HTMLElement | null>(null);
+  const buttonRef = useRef<HTMLButtonElement | null>(null);
+  const spanRef = useRef<HTMLSpanElement | null>(null);
   const circleRef = useRef<HTMLSpanElement | null>(null);
-  const Component = as;
 
   useEffect(() => {
-    const btn = btnRef.current;
+    const btn = as === "span" ? spanRef.current : buttonRef.current;
     const circle = circleRef.current;
 
     if (!btn || !circle) return;
@@ -55,7 +55,8 @@ export default function LearnMoreButton({ title, text, bg, border, hover, onClic
       return (requiredRadius / circleRadius) * 1.05;
     };
 
-    const enter = (e: PointerEvent) => {
+    const enter = (event: Event) => {
+      const e = event as PointerEvent;
       const rect = btn.getBoundingClientRect();
 
       const cx = e.clientX - rect.left;
@@ -114,22 +115,34 @@ export default function LearnMoreButton({ title, text, bg, border, hover, onClic
     };
   }, []);
 
+  const className = `${bg} ${text || 'text-white'} relative overflow-hidden inline-flex items-center gap-2 px-6 py-2 rounded-full border ${border || 'border-[#017d77]'} font-medium transition-colors duration-300`;
+
+  if (as === "span") {
+    return (
+      <span ref={spanRef} className={className}>
+        <span
+          ref={circleRef}
+          aria-hidden="true"
+          className={` ${hover} absolute rounded-full  z-0` }
+        />
+        <span className="relative z-10">{title}</span>
+      </span>
+    );
+  }
+
   return (
-    <Component
-      ref={btnRef}
-      {...(as === "button" ? { type } : {})}
-      {...(onClick ? { onClick } : {})}
-      className={ `${bg} ${text || 'text-white'} relative overflow-hidden inline-flex items-center gap-2 px-6 py-2 rounded-full border ${border || 'border-[#017d77]'} font-medium transition-colors duration-300` }
+    <button
+      ref={buttonRef}
+      type={type}
+      onClick={onClick}
+      className={className}
     >
-      {/* Animated circle */}
       <span
         ref={circleRef}
         aria-hidden="true"
         className={` ${hover} absolute rounded-full  z-0` }
       />
-
-      {/* Content */}
       <span className="relative z-10">{title}</span>
-    </Component>
+    </button>
   );
 }
