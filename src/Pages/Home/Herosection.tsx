@@ -7,6 +7,7 @@ type Slide = {
   image: string;
   subtitle: string;
   mobileImage?: string;
+  tabletImage?: string;
 };
 
 export default function HeroCarousel(): JSX.Element {
@@ -16,6 +17,7 @@ export default function HeroCarousel(): JSX.Element {
     {
       image: '/img/banner.webp',
       mobileImage: '/img/mobile-hero.png',
+      tabletImage: '/img/tabBanner.png',
       subtitle:
         'Medzy Healthcare Pvt Ltd. provides high quality pharmaceutical products and efficient distribution services, ensuring timely delivery of essential healthcare solutions nationwide.',
     },
@@ -44,11 +46,16 @@ export default function HeroCarousel(): JSX.Element {
             }`}
         >
           {/* Background */}
-          
-          <div
-            className="w-full h-full bg-cover xl:bg-[url('./img/banner.webp')]  md:bg-[url('./img/tabBanner.png')] bg-[url('./img/mobile-hero.png')] bg-center scale-110"
-           
-          />
+          <picture>
+            <source media="(min-width: 1280px)" srcSet={slides[index].image} />
+            <source media="(min-width: 768px)" srcSet={slides[index].tabletImage || slides[index].image} />
+            <img
+              src={slides[index].mobileImage || slides[index].image}
+              alt=""
+              aria-hidden="true"
+              className="w-full h-full object-cover object-center scale-110"
+            />
+          </picture>
 
         </div>
       ))}
@@ -71,7 +78,7 @@ export default function HeroCarousel(): JSX.Element {
             {" "}Across India
           </h1>
 
-          <p className="mt-6 max-w-2xl text-sm md:text-lg text-[#017d77">
+          <p className="mt-6 max-w-2xl text-sm md:text-lg text-[#017d77]">
             {slides[currentSlide].subtitle}
           </p>
 
@@ -81,13 +88,14 @@ export default function HeroCarousel(): JSX.Element {
 
           <div className="mt-6">
             <Link to="/services" >
-            <Btn
-              title="Explore our service"
-              text="text-white"
-              bg="bg-[#00a9ae]"
-              border="border-[#00a9ae]"
-              hover="bg-[#8ac43f]"
-            />
+              <Btn
+                title="Explore our service"
+                text="text-white"
+                bg="bg-[#00a9ae]"
+                border="border-[#00a9ae]"
+                hover="bg-[#8ac43f]"
+                as="span"
+              />
             </Link>
           
         </div>
