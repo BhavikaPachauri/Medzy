@@ -83,9 +83,9 @@ export default function PartnerHero({ formRef }: Props) {
                  <Btn
               title="Partner With Us"
               text="text-white"
-              bg="bg-[#00a9ae]"
-              border="border-[#00a9ae]"
-              hover="bg-[#8ac43f]"
+              bg="bg-[#b0f276]"
+              border="border-[#b0f276]"
+              hover="bg-[#1fb7b3]"
               onClick={handlePartnerClick}
             />
           

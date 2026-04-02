@@ -33,7 +33,7 @@ function PartnerTab({ partner, isActive, onClick }: PartnerTabProps) {
           transition: "all .3s cubic-bezier(.22,1,.36,1)",
         }}
       >
-        
+
         <div style={{ flex: 1, minWidth: 0 }}>
           <p className="selector-label text-gray-500" style={{ fontSize: 10, fontWeight: 700, letterSpacing: ".14em", textTransform: "uppercase", color: isActive ? color : B.subtle, marginBottom: 2, transition: "color .3s" }}>
             {label}
@@ -72,9 +72,9 @@ function PartnerDetail({ partner, formRef }: PartnerDetailProps) {
       <div style={{ background: color, padding: "28px 32px", display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 16 }}>
         <div>
           <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: ".16em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", marginBottom: 6 }}>{label}</p>
-          <h3 className="font-heading" style={{  fontSize: "clamp(1.2rem,2vw,1.6rem)", fontWeight: 100, color: "#fff", lineHeight: 1.25 }}>{headline}</h3>
+          <h3 className="font-heading" style={{ fontSize: "clamp(1.2rem,2vw,1.6rem)", fontWeight: 100, color: "#fff", lineHeight: 1.25 }}>{headline}</h3>
         </div>
-        
+
       </div>
 
       <div style={{ background: B.white, padding: "28px 32px" }}>
@@ -107,6 +107,7 @@ function PartnerDetail({ partner, formRef }: PartnerDetailProps) {
           </>
         )}
 
+
         <Btn
           title="Apply as Partner"
           text="text-white"
@@ -115,6 +116,8 @@ function PartnerDetail({ partner, formRef }: PartnerDetailProps) {
           hover="bg-[#8ac43f]"
           onClick={() => formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })}
         />
+
+
       </div>
     </div>
   );
@@ -128,12 +131,13 @@ export default function PartnersSection({ formRef }: SharedProps) {
     <section style={{ padding: "88px 5% 80px", background: B.bg }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <div ref={ref} className="reveal" style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", flexWrap: "wrap", gap: 20, marginBottom: 52 }}>
-          <div>
-          
-            <h2 className="font-heading text-4xl" style={{  fontWeight: 600, color: B.dark, lineHeight: 1.1 }}>
-              A partnership for
+          <div className="group">
+            <h2 className="font-heading text-4xl font-semibold text-[color:var(--dark)] leading-[1.1]">
+              A partnership for 
               every stakeholder
             </h2>
+
+            <div className="h-[3px] rounded-full bg-gradient-to-r from-[#00b2a9] via-[#00958d] to-[#8ac43f] w-[120px] group-hover:w-[570px] transition-[width] duration-500 ease-out mt-3 shadow-sm"></div>
           </div>
         </div>
 

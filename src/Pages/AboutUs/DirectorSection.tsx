@@ -17,6 +17,13 @@ export default function DirectorSection() {
              >
               Meet Our Director
             </h2>
+             <div className="flex items-center justify-center gap-3 mt-4">
+
+          <div
+            className="h-px w-80 rounded-full"
+            style={{ background: "linear-gradient(90deg,transparent, #fefffd, transparent)" }}
+          />
+        </div>
           </div>
 
           {/* Director card */}

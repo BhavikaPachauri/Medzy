@@ -265,14 +265,7 @@ export default function Contact() {
                 <h3 className="font-heading font-bold text-base text-white" >Corporate Office</h3>
               </div>
               <div className="px-6 py-4 flex flex-col">
-                {/* company name banner */}
-                <div className="mb-4 px-4 py-2.5 rounded-xl flex items-center gap-2"
-                  style={{ background: "rgba(0,184,169,0.06)", border: "1px solid rgba(0,184,169,0.12)" }}>
-                  <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: TEAL }} />
-                  <span className="font-body text-xs font-bold uppercase tracking-widest" style={{ color: NAVY}}>
-                    MEDZY HEALTHCARE PRIVATE LIMITED
-                  </span>
-                </div>
+              
                 <InfoRow icon={<MapPinIcon />} label="Address" value="Building No-1, Block-10, Near AIPL Joy Street, Village Ramgarh, Gurugram, Haryana – 122502" />
                 <InfoRow icon={<PhoneIcon />} label="Phone" value="+91-9599773746" href="tel:+919599773746" />
                 <InfoRow icon={<MailIcon />} label="Email" value="info@medzyhealthcare.com" href="mailto:info@medzyhealthcare.com" />

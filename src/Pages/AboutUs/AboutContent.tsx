@@ -31,10 +31,14 @@ export default function AboutContent() {
           className="transition-all duration-700 delay-150"
           style={{ opacity: bodyVisible ? 1 : 0, transform: bodyVisible ? "translateX(0)" : "translateX(28px)" }}
         >
-          <h2 className="font-heading  text-[#1A2E44] text-4xl font-bold leading-[1.15] tracking-tight mb-4">
+          <div className="group">
+             <h2 className="font-heading  text-[#1A2E44] text-5xl font-bold leading-[1.15] tracking-tight mb-4">
             About Us
           </h2>
-          <div className="w-10 h-[3px] rounded-full mb-6" style={{ background: "linear-gradient(90deg, #00B5A5, #1A2E44)" }} />
+                <div className="h-[2px] rounded-full bg-gradient-to-r from-[#00b2a9] via-[#00958d] to-[#8ac43f] w-[100px] group-hover:w-[200px] transition-[width] duration-500 ease-out  mb-3 shadow-sm"></div>
+          </div>
+          
+         
 
           <p className="font-body text-[#59606C] text-[15.5px]  leading-[1.85] mb-5 text-justify">
             Medzy Healthcare Pvt Ltd. is a trusted and rapidly growing pharmaceutical distributor committed to delivering health and empowering lives. Founded with a vision to revolutionize pharmaceutical distribution in India. We are dedicated to providing genuine healthcare products under a robust regulatory framework while ensuring reliability, safety, and complete customer satisfaction.<br />

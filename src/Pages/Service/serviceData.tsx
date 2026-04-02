@@ -30,7 +30,7 @@ export const HERO_WORDS = ["Precision", "Reliability", "Speed", "Trust"] as cons
 export const SERVICES: ReadonlyArray<ServiceItem> = [
   {
     id: 0,
-    color: "#0d9488",
+    color: "#0891b2",
     bg: "#f0fdfa",
     acc: "rgba(13,148,136,.09)",
     label: "Wholesale",
@@ -65,7 +65,7 @@ export const SERVICES: ReadonlyArray<ServiceItem> = [
   },
   {
     id: 2,
-    color: "#3ecaca",
+    color: "#0891b2",
     bg: "#f5feff",
     acc: "rgba(58, 225, 237, 0.09)",
     label: "Retail",

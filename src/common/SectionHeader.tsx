@@ -18,6 +18,7 @@ export default function SectionHeader({
   return (
     <div className={`${centered ? "text-center" : "text-left"} ${className}`.trim()}>
       <h2 className="section-title">{title}</h2>
+      
       {subtitle ? <p className="section-subtitle">{subtitle}</p> : null}
     </div>
   );

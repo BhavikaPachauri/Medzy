@@ -137,11 +137,11 @@ export default function WhatSetsUsApart(): ReactNode {
             </h2> 
 
             {/* Decorative divider */}
-            <div className="flex items-center justify-center gap-3 mt-8">
+            <div className="flex items-center justify-center gap-3 mt-2 mb-6">
              
               <div
-                className="h-px w-80 rounded-full"
-                style={{ background: "linear-gradient(90deg,transparent, #00b2a9, transparent)" }}
+                className="h-[1px] w-80 rounded-full"
+                style={{ background: "linear-gradient(90deg,transparent, #ffffff, transparent)" }}
               />
             </div>
         {/* Main card: sidebar + panel */}

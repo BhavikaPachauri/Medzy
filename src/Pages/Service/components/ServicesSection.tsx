@@ -174,8 +174,19 @@ export default function ServicesSection() {
   return (
     <section id="core-services" style={{ background: "#fff", padding: "72px 5%", scrollMarginTop: "96px" }}>
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-        <div ref={ref} style={{ marginBottom: 36 }}>
-          <h2 className="font-heading" style={{ fontSize: "clamp(2rem,3.5vw,2.8rem)", fontWeight: 700, color: "#0a2523", lineHeight: 1.05, margin: 0 }}>Our Core Services</h2>
+        
+
+          <div ref={ref} style={{ marginBottom: 36 }}>
+          <h2 className="font-heading text-center" style={{ fontSize: "clamp(2rem,3.5vw,2.8rem)", fontWeight: 700, color: "#0a2523", lineHeight: 1.05, margin: 0 }}>
+            Our Core <em style={{ fontStyle: "italic", color: "#0d9488" }}>Services</em>
+          </h2>
+            <div className="flex items-center justify-center gap-3 mt-4">
+             
+              <div
+                className="h-px w-80 rounded-full"
+                style={{ background: "linear-gradient(90deg,transparent, #00b2a9, transparent)" }}
+              />
+            </div>
         </div>
 
         <div className="sdtop" style={{ display: "flex", gap: 14, alignItems: "stretch", minHeight: 440 }}>

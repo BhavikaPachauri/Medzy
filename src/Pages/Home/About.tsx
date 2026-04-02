@@ -25,14 +25,18 @@ export default function AboutUs() {
 
                     {/* RIGHT - CONTENT */}
                     <div className="w-full lg:w-1/2 text-center lg:text-left">
-
-                        <SectionHeader
+                       <div className="group">
+                           <SectionHeader
                             title="About Us"
                             centered={false}
                         />
+                         <div className="h-[3px] rounded-full bg-gradient-to-r from-[#00b2a9] via-[#00958d] to-[#8ac43f] w-[100px] group-hover:w-[200px] transition-[width] duration-500 ease-out mt-1 mb-3 shadow-sm"></div>
+                       </div>
+                      
+                        
 
                         {/* Teal underline accent */}
-                        <div className="w-10 h-[3px] bg-[#00B5A5] rounded-full mb-6 mx-auto lg:mx-0" />
+                        {/* <div className="w-10 h-[3px] bg-[#00B5A5] rounded-full mb-6 mx-auto lg:mx-0" /> */}
 
                         {/* Body */}
                         <p className="section-paragraph text-[#59606C] text-[15px] md:text-[16px] mb-8">
