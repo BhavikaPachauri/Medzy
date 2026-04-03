@@ -130,7 +130,7 @@ export default function WhatSetsUsApart(): ReactNode {
 
         
          <h2
-              className="text-4xl sm:text-4xl lg:text-5xl  text-white text-center leading-tight mb-5"      
+              className=" text-3xl lg:text-4xl  text-white text-center leading-tight mb-5"      
             >
               What Sets Us Apart
              

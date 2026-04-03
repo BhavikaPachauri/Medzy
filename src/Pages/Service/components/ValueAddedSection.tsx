@@ -16,7 +16,7 @@ function ValueAddedCard({ item, isLast }: ValueCardProps) {
     <div style={{ marginBottom: isLast ? 0 : 14 }}>
       <div
         ref={ref}
-        className="valcard"
+        className="valcard h-60"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         style={{

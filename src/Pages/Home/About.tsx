@@ -30,7 +30,7 @@ export default function AboutUs() {
                             title="About Us"
                             centered={false}
                         />
-                         <div className="h-[3px] rounded-full bg-gradient-to-r from-[#00b2a9] via-[#00958d] to-[#8ac43f] w-[100px] group-hover:w-[200px] transition-[width] duration-500 ease-out mt-1 mb-3 shadow-sm"></div>
+                         <div className="h-[3px] rounded-full bg-gradient-to-r from-[#00b2a9] via-[#00958d] to-[#8ac43f] w-[100px] md:group-hover:w-[200px] transition-[width] duration-500 ease-out mt-1 mb-3 shadow-sm"></div>
                        </div>
                       
                         

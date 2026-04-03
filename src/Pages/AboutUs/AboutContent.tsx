@@ -33,7 +33,7 @@ export default function AboutContent() {
           style={{ opacity: bodyVisible ? 1 : 0, transform: bodyVisible ? "translateX(0)" : "translateX(28px)" }}
         >
           <div className="group">
-             <h2 className="font-heading  text-[#1A2E44] text-5xl font-bold leading-[1.15] tracking-tight mb-4">
+             <h2 className="font-heading  text-[#1A2E44] text-3xl md:text-4xl font-bold leading-[1.15] tracking-tight mb-4">
             About Us
           </h2>
                 <div className="h-[2px] rounded-full bg-gradient-to-r from-[#00b2a9] via-[#00958d] to-[#8ac43f] w-[100px] group-hover:w-[200px] transition-[width] duration-500 ease-out  mb-3 shadow-sm"></div>

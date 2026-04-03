@@ -145,15 +145,15 @@ function StatCard({
         <div>
           {/* number */}
           <div className="flex items-end gap-3 mb-2">
-            <span className="text-5xl font-extrabold text-white tracking-tight">
+            <span className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">
               {count}
             </span>
-            <span className="text-2xl font-extrabold text-white/70 mb-1">
+            <span className="text-xl md:text-2xl font-extrabold text-white/70 mb-1">
               {stat.suffix}
             </span>
           </div>
 
-          <h3 className="text-lg font-bold text-white mb-1 font-heading">
+          <h3 className="text-md md:text-lg font-bold text-white mb-1 font-heading">
             {stat.label}
           </h3>
 

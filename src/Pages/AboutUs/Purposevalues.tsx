@@ -111,7 +111,7 @@ export default function PurposeValues() {
         >
          
           <h2
-            className="font-bold text-4xl leading-tight mb-4"
+            className="font-bold text-3xl lg:text-4xl leading-tight mb-4"
             style={{  color: NAVY }}
           >
             Our Purpose &amp; <span className="font-heading " style={{ color: TEAL }}>Values</span>

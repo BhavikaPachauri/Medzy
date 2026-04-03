@@ -31,8 +31,8 @@ export const SERVICES: ReadonlyArray<ServiceItem> = [
   {
     id: 0,
     color: "#0891b2",
-    bg: "#f0fdfa",
-    acc: "rgba(13,148,136,.09)",
+    bg: "#f0f9ff",
+    acc: "rgba(8,145,178,.09)",
     label: "Wholesale",
     title: "Wholesale Distribution",
     desc: "Medzy serves as a comprehensive wholesale distributor for pharmaceutical products, connecting manufacturers with retailers, hospitals, and healthcare institutions.",
@@ -66,7 +66,7 @@ export const SERVICES: ReadonlyArray<ServiceItem> = [
   {
     id: 2,
     color: "#0891b2",
-    bg: "#f5feff",
+    bg: "#f0f9ff",
     acc: "rgba(58, 225, 237, 0.09)",
     label: "Retail",
     title: "Retail Pharmacy Support",

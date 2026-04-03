@@ -132,7 +132,7 @@ export default function PartnersSection({ formRef }: SharedProps) {
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <div ref={ref} className="reveal" style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", flexWrap: "wrap", gap: 20, marginBottom: 52 }}>
           <div className="group">
-            <h2 className="font-heading text-4xl font-semibold text-[color:var(--dark)] leading-[1.1]">
+            <h2 className="font-heading text-3xl md:text-4xl font-semibold text-[color:var(--dark)] leading-[1.1]">
               A partnership for 
               every stakeholder
             </h2>
