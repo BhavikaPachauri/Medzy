@@ -18,7 +18,7 @@ export default function PartnerHero({ formRef }: Props) {
 
   return (
     <section
-      className="relative overflow-hidden border-b bg-[url('/img/p6.png')] bg-cover bg-center bg-no-repeat"
+      className="relative overflow-hidden border-b bg-[url('/img/p6.webp')] bg-cover bg-center bg-no-repeat"
       style={{ borderColor: B.border }}
     >
       {/* Overlay */}

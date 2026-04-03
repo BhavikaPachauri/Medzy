@@ -150,7 +150,7 @@ export default function PartnerEnquiryForm({ formRef }: Props) {
 
           {/* ✅ FIXED IMAGE */}
           <div className="h-full">
-            <div className="bg-[url('/img/penquiry.png')] bg-cover bg-no-repeat bg-center rounded-md h-full w-full" ></div>
+            <div className="bg-[url('/img/penquiry.webp')] bg-cover bg-no-repeat bg-center rounded-md h-full w-full" ></div>
           </div>
 
           {/* ✅ FIXED FORM HEIGHT */}
