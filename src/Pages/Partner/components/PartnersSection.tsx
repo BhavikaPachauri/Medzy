@@ -137,7 +137,7 @@ export default function PartnersSection({ formRef }: SharedProps) {
               every stakeholder
             </h2>
 
-            <div className="h-[3px] rounded-full bg-gradient-to-r from-[#00b2a9] via-[#00958d] to-[#8ac43f] w-[120px] group-hover:w-[570px] transition-[width] duration-500 ease-out mt-3 shadow-sm"></div>
+            <div className="h-[3px] rounded-full bg-gradient-to-r from-[#00b2a9] via-[#00958d] to-[#8ac43f] w-[120px] md:group-hover:w-[570px]  duration-500 ease-out mt-3 shadow-sm"></div>
           </div>
         </div>
 

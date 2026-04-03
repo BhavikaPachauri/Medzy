@@ -63,7 +63,7 @@ export default function HeroCarousel(): JSX.Element {
       {/* Content */}
       <div className="relative z-10 max-w-4xl h-full flex flex-col justify-center px-6 md:px-16 text-[#017d77]">
         <div key={currentSlide} className="animate-fade-in-up">
-          <h1 className="text-2xl md:text-5xl lg:text-6xl font-bold leading-tight">
+          <h1 className="text-2xl md:text-5xl lg:text-[58px] font-bold leading-tight">
 
             Leading{" "}
             <span
@@ -78,7 +78,7 @@ export default function HeroCarousel(): JSX.Element {
             {" "}Across India
           </h1>
 
-          <p className="mt-6 max-w-2xl text-sm md:text-lg text-[#017d77]">
+          <p className="mt-6 max-w-xl text-sm md:text-lg text-[#017d77]">
             {slides[currentSlide].subtitle}
           </p>
 
