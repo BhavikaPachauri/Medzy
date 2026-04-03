@@ -49,7 +49,7 @@ function Navbar() {
           <div className="flex items-center gap-2 md:hidden">
 
             {/* Small Button */}
-            <Link to="partners" className="font-body bg-[#00a9ae] text-white px-3 py-1 rounded-full text-sm">
+            <Link to="/partners" className="font-body bg-[#00a9ae] text-white px-3 py-1 rounded-full text-sm">
               Become a Dealer
             </Link>
 
