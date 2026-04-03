@@ -5,25 +5,26 @@ export default function AboutContent() {
   const [bodyRef, bodyVisible] = useVisible(0.1);
 
   return (
-    <section className="max-w-[1200px] mx-auto px-5 py-20">
+    <section className="relative max-w-[1300px] mx-auto px-5 py-20">
+      <div className="absolute  inset-0 bg-[url('/img/aboutSection.webp')] bg-cover bg-center"></div>
       <div className="grid lg:grid-cols-2 gap-14 items-center">
-
+         
         {/* image */}
         <div
           ref={bodyRef}
           className="transition-all duration-700"
           style={{ opacity: bodyVisible ? 1 : 0, transform: bodyVisible ? "translateX(0)" : "translateX(-28px)" }}
         >
-          <div className="relative rounded-2xl overflow-hidden group">
+          {/* <div className="relative rounded-2xl  group">
             <img
               loading="lazy"
-              src="/img/about1.png"
+              src="/img/aboutSection.webp"
               alt="Medzy Healthcare team"
-              className="w-full h-[420px] object-cover transition-transform duration-700 group-hover:scale-105"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
 
 
-          </div>
+          </div> */}
         </div>
 
         {/* text */}

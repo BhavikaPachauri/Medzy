@@ -5,7 +5,7 @@ import DirectorSection from "./DirectorSection";
 export default function About() {
  
   return (
-    <main className="bg-[#F7FAFA] min-h-screen" >
+    <main className=" min-h-screen" >
      <AboutHero/>
      <AboutContent/>
      <DirectorSection/>   
