@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 
 function Delhivery() {
-  const [hovered, setHovered] = useState(false);
+
 
   return (
     <div
