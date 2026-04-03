@@ -1,22 +1,20 @@
 import  { useState } from "react";
 
 function Delhivery() {
-
+  const [hovered, setHovered] = useState(false);
 
   return (
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="
+      className={`
         fixed top-1/2 right-0 -translate-y-1/2 z-[9999] cursor-pointer
         flex flex-col items-center justify-center gap-[11px]
         py-[16px] px-[5px] w-[40px] min-h-[168px]
         rounded-l-[16px]
-        bg-[#9ee856]
-        hover:bg-[#00B5BF]
-        hover:shadow-[-2px_0_0_0_#007A83,-8px_0_28px_rgba(0,180,190,0.55)]
+        ${hovered ? "bg-[#00B5BF] shadow-[-2px_0_0_0_#007A83,-8px_0_28px_rgba(0,180,190,0.55)]" : "bg-[#9ee856]"}
         transition-all duration-200 ease-in-out
-      "
+      `}
     >
       {/* Delivery */}
       <span
