@@ -16,7 +16,7 @@ function ValueAddedCard({ item, isLast }: ValueCardProps) {
     <div style={{ marginBottom: isLast ? 0 : 14 }}>
       <div
         ref={ref}
-        className="valcard h-60"
+        className="valcard h-auto md:h-60"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         style={{
@@ -31,7 +31,16 @@ function ValueAddedCard({ item, isLast }: ValueCardProps) {
 
         </div>
 
-        <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", padding: "28px 36px" }}>
+        <div
+          style={{
+            flex: 1,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            padding: "22px 20px",
+          }}
+          className="md:px-9 md:py-7"
+        >
           <h3 className="font-heading " style={{ fontSize: "clamp(1.4rem,2.2vw,2rem)", fontWeight: 700, color: "#0a2523", lineHeight: 1.15, marginBottom: 10 }}>{title}</h3>
           <div className="font-body" style={{ height: 2.5, borderRadius: 2, background: accent, width: isHovered ? 52 : 24, transition: "width .3s", marginBottom: 12 }} />
           <p style={{ fontSize: 13.5, color: "#6b9e98", lineHeight: 1.8, marginBottom: 16, maxWidth: 400 }}>{desc}</p>

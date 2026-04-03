@@ -13,6 +13,7 @@ function Navbar() {
 
           {/* Logo */}
           <div className="flex-shrink-0">
+            <Link to="/">
             <img 
               src="/img/MedzyLogo.png"
               className="hidden md:block h-10 w-auto md:h-10"
@@ -23,6 +24,7 @@ function Navbar() {
               className="block md:hidden h-8 w-auto "
               alt="Logo"
             />
+            </Link >
           </div>
 
           {/* Desktop Menu */}
