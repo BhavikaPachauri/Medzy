@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import  { Suspense, lazy } from 'react'
 import Loader from './Loader'
+import ScrollToTop from './ScrollToTop'
 
 // Lazy load pages
 const HomePage = lazy(() => import('../components/HomePage'))
@@ -12,6 +13,7 @@ const Partnerpage = lazy(() => import('../components/Partnerpage'))
 function MainRoute() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Suspense fallback={<Loader/>}>
         <Routes>
           <Route path='/' element={<HomePage />} />
