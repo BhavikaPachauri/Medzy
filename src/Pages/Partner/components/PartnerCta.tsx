@@ -135,7 +135,7 @@ export default function PartnerCta() {
       <div style={styles.imageWrapper}>
         <img
           src="/img/partnerdummy.png"
-          alt="Partner CTA"
+          alt="Partner with Medzy Distributor for Reliable Pharmaceutical Distribution"
           style={styles.image}
           loading="lazy"
           className=" md:hidden"

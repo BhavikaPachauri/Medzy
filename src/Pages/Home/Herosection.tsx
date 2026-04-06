@@ -49,7 +49,7 @@ export default function HeroCarousel(): JSX.Element {
             <source media="(min-width: 768px)" srcSet={slides[index].tabletImage || slides[index].image} />
             <img
               src={slides[index].mobileImage || slides[index].image}
-              alt=""
+              alt="Medzy Healthcare - Leading Pharmaceutical Distributor Across India"
               aria-hidden="true"
               fetchPriority={index === 0 ? 'high' : 'auto'}
               loading={index === 0 ? 'eager' : 'lazy'}

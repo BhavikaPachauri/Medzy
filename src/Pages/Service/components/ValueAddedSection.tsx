@@ -25,7 +25,7 @@ function ValueAddedCard({ item, isLast }: ValueCardProps) {
         }}
       >
         <div className="vimgcol" style={{ position: "relative", flexShrink: 0, overflow: "hidden", minHeight: 150, width: "38%" }}>
-          <img src={img} alt={title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transition: "transform .5s", transform: isHovered ? "scale(1.05)" : "scale(1)" }} />
+          <img src={img} alt={title}  loading="lazy"  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transition: "transform .5s", transform: isHovered ? "scale(1.05)" : "scale(1)" }} />
           <div style={{ position: "absolute", inset: 0, background: flip ? "linear-gradient(to right,transparent 42%,rgba(248,255,254,.96) 100%)" : "linear-gradient(to left,transparent 42%,rgba(248,255,254,.96) 100%)" }} />
 
 

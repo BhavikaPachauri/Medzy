@@ -1,24 +1,28 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import HomePage from '../components/HomePage'
-import AboutPage from '../components/AboutPage'
-import ContactPage from '../components/ContactPage'
-import ServicePage from '../components/ServicePage'
-import Partnerpage from '../components/Partnerpage'
+import React, { Suspense, lazy } from 'react'
+import Loader from './Loader'
+
+// Lazy load pages
+const HomePage = lazy(() => import('../components/HomePage'))
+const AboutPage = lazy(() => import('../components/AboutPage'))
+const ContactPage = lazy(() => import('../components/ContactPage'))
+const ServicePage = lazy(() => import('../components/ServicePage'))
+const Partnerpage = lazy(() => import('../components/Partnerpage'))
 
 function MainRoute() {
   return (
-    <>
     <BrowserRouter>
-    <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/aboutus' element={<AboutPage />} />
-        <Route path='/contactus' element={<ContactPage />} />
-        <Route path='/services' element={<ServicePage />} />
-        <Route path='/partners' element={<Partnerpage />} />
+      <Suspense fallback={<Loader/>}>
+        <Routes>
+          <Route path='/' element={<HomePage />} />
+          <Route path='/aboutus' element={<AboutPage />} />
+          <Route path='/contactus' element={<ContactPage />} />
+          <Route path='/services' element={<ServicePage />} />
+          <Route path='/partners' element={<Partnerpage />} />
         
-    </Routes>
+        </Routes>
+      </Suspense>
     </BrowserRouter>
-    </>
   )
 }
 

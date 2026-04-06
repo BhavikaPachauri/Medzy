@@ -11,10 +11,12 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.2",
+    "@types/react-helmet": "^6.1.11",
     "gsap": "^3.14.2",
     "lucide-react": "^1.7.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
+    "react-helmet": "^6.1.0",
     "react-router-dom": "^7.13.2",
     "tailwindcss": "^4.2.2",
     "tailwindcss-animated": "^2.0.0"

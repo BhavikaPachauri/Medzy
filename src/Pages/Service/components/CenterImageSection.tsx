@@ -7,7 +7,8 @@ const CenterImageSection: React.FC = () => {
         
         <img
           src="/img/service.png" 
-          alt="Centered"
+          alt="harmaceutical distribution services in India"
+           loading="lazy" 
           className="
             w-full 
             max-w-xs 

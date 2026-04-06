@@ -17,7 +17,7 @@ export default function AboutUs() {
                             <img
                                 loading="lazy"
                                 src="/img/homeAbout.png"
-                                alt="Pharmaceutical distribution and healthcare logistics"
+                                alt="Trusted Pharma Distribution Partnership"
                                 className="w-full h-[350px] object-cover opacity-90 rounded-2xl transition-transform duration-500 group-hover:scale-105"
                             />
                         </div>

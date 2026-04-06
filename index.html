@@ -1,24 +1,93 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Medzy is a pharmaceutical distribution partner delivering quality healthcare products with reliable pan-India logistics and customer-first support."
-    />
-    <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="Medzy | Trusted Pharma Distribution" />
-    <meta
-      property="og:description"
-      content="Reliable pharmaceutical distribution across India with quality, compliance, and timely fulfillment."
-    />
-    <meta property="og:type" content="website" />
-    <title>Medzy | Trusted Pharma Distribution</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/favicon.ico" />
+
+  <!-- Viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Title -->
+  <title>Medzy Healthcare Pvt Ltd | Pharmaceutical Distribution Company in India</title>
+
+  <!-- SEO Meta -->
+  <meta name="title" content="Medzy Healthcare Pvt Ltd | Pharma Distribution in India" />
+  <meta name="description"
+    content="Medzy Healthcare Pvt Ltd is a leading pharmaceutical distribution company in India, connecting manufacturers with hospitals, clinics, pharmacies, and retailers through reliable and efficient supply chain solutions." />
+  <meta name="keywords"
+    content="Pharmaceutical distribution India, medicine supplier India, pharma logistics company, Medzy Healthcare, drug distribution company, medical supply chain India" />
+
+  <!-- Robots -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- Author -->
+  <meta name="author" content="Medzy Healthcare Pvt Ltd" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.medzyhealthcare.com/" />
+
+  <!-- Open Graph (Facebook, LinkedIn) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.medzyhealthcare.com/" />
+  <meta property="og:title" content="Medzy Healthcare Pvt Ltd | Pharma Distribution Company" />
+  <meta property="og:description"
+    content="Connecting pharmaceutical manufacturers with healthcare providers through efficient logistics and reliable distribution services across India." />
+  <meta property="og:image" content="https://www.medzyhealthcare.com/medzy-banner.jpg" />
+  <meta property="og:site_name" content="Medzy Healthcare" />
+  <meta property="og:locale" content="en_IN" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Medzy Healthcare Pvt Ltd" />
+  <meta name="twitter:description"
+    content="Reliable pharmaceutical distribution company serving hospitals, clinics, and pharmacies across India." />
+  <meta name="twitter:image" content="https://www.medzyhealthcare.com/medzy-banner.jpg" />
+
+  <!-- Geo SEO -->
+  <meta name="geo.region" content="IN" />
+  <meta name="geo.placename" content="India" />
+
+  <!-- Google Analytics (Replace ID) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <!-- Structured Data (IMPORTANT for SEO 🔥) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Medzy Healthcare Pvt Ltd",
+    "url": "https://www.medzyhealthcare.com/",
+    "logo": "https://www.medzyhealthcare.com/logo.png",
+    "description": "Medzy Healthcare Pvt Ltd is a pharmaceutical distribution company connecting manufacturers with healthcare providers across India.",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-XXXXXXXXXX",
+      "contactType": "customer service",
+      "areaServed": "IN",
+      "availableLanguage": ["English", "Hindi"]
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/medzy-healthcare",
+      "https://www.facebook.com/medzyhealthcare"
+    ]
+  }
+  </script>
+
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
 </html>

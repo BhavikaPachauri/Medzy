@@ -240,7 +240,11 @@ export default function VisionMission() {
   
             className="mb-12 sm:mb-14"
           />
-
+          
+            <div
+            className="h-px w-80 rounded-full flex justify-center mx-auto mb-20 -mt-[30px]"
+            style={{ background: "linear-gradient(90deg,transparent, #00b2a9, transparent)" }}
+          />
           {/* ── Cards Grid ── */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             <Card

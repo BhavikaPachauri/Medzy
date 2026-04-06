@@ -36,7 +36,7 @@ function ServiceDesktopCard({ svc, isActive, onClick }: ServiceCardProps) {
       }}
     >
       <div className="simgw" style={{ height: isActive ? 200 : 130 }}>
-        <img src={img} alt={title} />
+        <img src={img} alt={title}  loading="lazy"  />
       </div>
       <div style={{ padding: isActive ? "22px 20px" : "18px 16px", flex: 1, display: "flex", flexDirection: "column", position: "relative" }}>
         <div style={{ position: "absolute", top: -28, right: -28, width: 88, height: 88, borderRadius: "50%", background: acc, opacity: isActive ? 1 : 0, transition: "opacity .4s", pointerEvents: "none" }} />
@@ -114,7 +114,7 @@ function ServiceMobileCard({ svc, isActive, onClick }: ServiceCardProps) {
       }}
     >
       <div style={{ height: isActive ? 180 : 110, overflow: "hidden", transition: "height .4s" }}>
-        <img src={img} alt={title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transition: "transform .4s", transform: isActive ? "scale(1.04)" : "scale(1)" }} />
+        <img src={img} alt={title}  loading="lazy"  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transition: "transform .4s", transform: isActive ? "scale(1.04)" : "scale(1)" }} />
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: 12, padding: "14px 16px" }}>
         
