@@ -15,13 +15,13 @@ function Navbar() {
           <div className="flex-shrink-0">
             <Link to="/">
               <img
-                src="/img/MedzyLogo.png"
+                src="/img/MedzyLogo1.webp"
                 className="hidden md:block h-10 w-auto md:h-10"
                 alt="Medzy Logo"
                 loading="lazy"
               />
               <img
-                src="/img/MedzyLogo.png"
+                src="/img/MedzyLogo1.webp"
                 className="block md:hidden h-7 w-auto "
                 alt="Medzy Logo"
                 loading="lazy"

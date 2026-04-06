@@ -6,7 +6,7 @@ const CenterImageSection: React.FC = () => {
       <div className="max-w-5xl mx-auto flex justify-center items-center">
         
         <img
-          src="/img/service.png" 
+          src="/img/service.webp" 
           alt="harmaceutical distribution services in India"
            loading="lazy" 
           className="

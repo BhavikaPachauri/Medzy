@@ -95,7 +95,7 @@ const Footer = () => {
           style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(24px)", transitionDelay: "0.1s" }}
         >
           <img
-            src="/img/MedzyLogo.png"
+            src="/img/MedzyLogo1.webp"
             alt="Medzy Logo"
             className="mb-4 brightness-110"
             style={{ width: "200px" }}

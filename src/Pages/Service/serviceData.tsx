@@ -89,7 +89,7 @@ export const VALUE_ADDED: ReadonlyArray<ValueAddedItem> = [
     title: "Custom Packaging",
     desc: "End-to-end custom packaging engineered for regulatory compliance, brand consistency, and client-specific requirements across all therapeutic categories.",
     
-    img: "./img/v1.jpeg",
+    img: "./img/v1.webp",
     flip: false,
          accent: "#0891b2",
   },
@@ -99,7 +99,7 @@ export const VALUE_ADDED: ReadonlyArray<ValueAddedItem> = [
    
     desc: "Structured training programs, accredited e-learning modules, and clinical materials empowering healthcare professionals to deliver better patient outcomes.",
 
-    img: "./img/v3.jpeg",
+    img: "./img/v3.webp",
     flip: true,
     accent: "#0891b2",
   },
@@ -109,7 +109,7 @@ export const VALUE_ADDED: ReadonlyArray<ValueAddedItem> = [
    
     desc: "Expert guidance through India's complex drug licensing landscape, from Schedule documentation to state-level compliance and every regulatory touchpoint.",
 
-    img: "./img/v4.jpeg",
+    img: "./img/v4.webp",
     flip: false,
    accent: "#0891b2",
   },
@@ -119,7 +119,7 @@ export const VALUE_ADDED: ReadonlyArray<ValueAddedItem> = [
   
     desc: "Real time performance dashboards, AI powered demand forecasting, and competitive analytics that turn supply chain data into actionable intelligence.",
     
-    img: "./img/v2.jpeg",
+    img: "./img/v2.webp",
     flip: true,
      accent: "#0891b2",
   },

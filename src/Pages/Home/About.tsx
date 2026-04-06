@@ -16,7 +16,7 @@ export default function AboutUs() {
                         <div className="relative rounded-2xl bg-[#00a9ae] overflow-hidden shadow-lg group">
                             <img
                                 loading="lazy"
-                                src="/img/homeAbout.png"
+                                src="/img/homeAbout.webp"
                                 alt="Trusted Pharma Distribution Partnership"
                                 className="w-full h-[350px] object-cover opacity-90 rounded-2xl transition-transform duration-500 group-hover:scale-105"
                             />

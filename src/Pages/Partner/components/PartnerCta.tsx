@@ -134,7 +134,7 @@ export default function PartnerCta() {
        {/* Image */}
       <div style={styles.imageWrapper}>
         <img
-          src="/img/partnerdummy.png"
+          src="/img/partnerdummy.webp"
           alt="Partner with Medzy Distributor for Reliable Pharmaceutical Distribution"
           style={styles.image}
           loading="lazy"

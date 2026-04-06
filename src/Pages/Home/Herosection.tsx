@@ -13,8 +13,8 @@ type Slide = {
 const slides: Slide[] = [
   {
     image: '/img/banner.webp',
-    mobileImage: '/img/mobile-hero.png',
-    tabletImage: '/img/tabBanner.png',
+    mobileImage: '/img/mobile-hero.webp',
+    tabletImage: '/img/tabBanner.webp',
     subtitle:
       'Medzy Healthcare Pvt Ltd. provides high quality pharmaceutical products and efficient distribution services, ensuring timely delivery of essential healthcare solutions nationwide.',
   },
