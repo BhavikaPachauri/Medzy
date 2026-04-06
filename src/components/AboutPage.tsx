@@ -3,18 +3,20 @@ import Footer from '../common/Footer'
 import About from '../Pages/AboutUs/About'
 import PurposeValues from '../Pages/AboutUs/Purposevalues'
 import MedzySlides from '../Pages/AboutUs/Medzyslides'
-import { Helmet } from 'react-helmet'
+
+import SEO from '../common/SEO'
+
 
 function AboutPage() {
   return (
     <>
-      <Helmet>
-        <title>About Medzy Healthcare Pvt Ltd | Pharma Distribution Company</title>
-        <meta
-          name="description"
-          content="Medzy Healthcare Pvt Ltd is a trusted pharmaceutical distribution company with a customer-centric approach, delivering quality medicines to hospitals, clinics, and pharmacies across India."
-        />
-      </Helmet>
+
+      <SEO
+        title="About Medzy Healthcare Pvt Ltd | Pharma Distribution Company"
+        description="Learn about Medzy Healthcare, a trusted pharma distributor connecting manufacturers with hospitals, clinics, and pharmacies across India."
+        keywords="about Medzy, pharma company India, medicine distribution company, healthcare logistics"
+      />
+
       <Navbar />
       <About />
       <PurposeValues />

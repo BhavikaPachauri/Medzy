@@ -1,18 +1,17 @@
 import Navbar from '../common/Navbar'
 import Footer from '../common/Footer'
 import Contact from '../Pages/Contact/Contact'
-import { Helmet } from 'react-helmet'
+import SEO from '../common/SEO'
+
 
 function ContactPage() {
   return (
     <>
-      <Helmet>
-        <title>Contact Medzy Healthcare Pvt Ltd | Pharma Distributor India</title>
-        <meta
-          name="description"
-          content="Get in touch with Medzy Healthcare Pvt Ltd for pharmaceutical distribution and healthcare logistics solutions across India. We ensure reliable and timely delivery of medicines."
-        />
-      </Helmet>
+      <SEO
+        title="Contact Medzy Healthcare | Pharma Distributor India"
+        description="Get in touch with Medzy Healthcare for pharma distribution services, partnerships, and business inquiries across India."
+        keywords="contact pharma distributor, Medzy contact, medicine supplier India, pharma inquiry"
+      />
       <Navbar />
       <Contact />
       <Footer />
