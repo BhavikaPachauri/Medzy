@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import Dealerbtn from './Dealerbtn'
-import { Link } from 'react-router-dom'
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -13,47 +12,53 @@ function Navbar() {
 
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link to="/">
+            <a href="/">
               <img
                 src="/img/MedzyLogo1.webp"
-                className="hidden md:block h-10 w-auto md:h-10"
                 alt="Medzy Logo"
-                loading="lazy"
+                className="h-7 md:h-10 w-auto"
+                loading="eager"
+                width="160"
+                height="40"
               />
-              <img
-                src="/img/MedzyLogo1.webp"
-                className="block md:hidden h-7 w-auto "
-                alt="Medzy Logo"
-                loading="lazy"
-              />
-            </Link >
+
+            </a >
           </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            {["Home", "About Us", "Services", "Partners", "Contact Us"].map((item, i) => (
-              <Link
+            {/* {["Home", "About Us", "Services", "Partners", "Contact"].map((item, i) => (
+              <a
                 key={i}
                 to={`/${item === "Home" ? "" : item.toLowerCase().replace(/\s/g, "")}`}
                 className="font-body text-[#8C8C8C] hover:text-[#00a9ae] font-medium transition"
               >
+                 {item}
+              </a>
+            ))} */}
+            {["Home", "About Us", "Services", "Partners", "Contact Us"].map((item, i) => (
+              <a
+                key={i}
+                href={`/${item === "Home" ? "" : item.toLowerCase().replace(/\s+/g, "-")}`}
+                className="font-body text-[#8C8C8C] hover:text-[#00a9ae] font-medium transition"
+              >
                 {item}
-              </Link>
+              </a>
             ))}
           </div>
 
           {/* Desktop Button */}
           <div className="hidden md:block">
-            <Dealerbtn title='Become a Dealer' />
+            <Dealerbtn title='Become a Dealer' href="/partners" />
           </div>
 
           {/* Mobile Right Section */}
           <div className="flex items-center gap-2 md:hidden">
 
             {/* Small Button */}
-            <Link to="/partners" className="font-body bg-[#00a9ae] text-white px-3 py-1 rounded-full text-[12px] sm:text-sm">
+            <a href="/partners" className="font-body bg-[#00a9ae] text-white px-3 py-1 rounded-full text-[12px] sm:text-sm">
               Become a Dealer
-            </Link>
+            </a>
 
             {/* Hamburger */}
             <button
@@ -82,14 +87,15 @@ function Navbar() {
       >
         <div className="px-4 py-4 space-y-2">
           {["Home", "About Us", "Services", "Partners", "Contact Us"].map((item, i) => (
-            <Link
+            <a
               key={i}
-              to={`/${item === "Home" ? "" : item.toLowerCase().replace(/\s/g, "")}`}
+              href={`/${item === "Home" ? "" : item.toLowerCase().replace(/\s+/g, "-")}`}
               onClick={() => setIsMenuOpen(false)}
               className="font-body block px-3 py-2 text-white rounded-md hover:bg-white/10"
             >
+
               {item}
-            </Link>
+            </a>
           ))}
         </div>
       </div>

@@ -4,7 +4,7 @@ import { useEffect, useRef, type JSX } from "react";
 import gsap from "gsap";
 import { Link } from "react-router-dom";
 
-export default function LearnMoreButton({ title }: { title?: string }): JSX.Element {
+export default function LearnMoreButton({ title, href }: { title?: string, href: string }): JSX.Element {
   const btnRef = useRef<HTMLAnchorElement | null>(null);
   const bgRef = useRef<HTMLSpanElement | null>(null);
 
@@ -51,7 +51,7 @@ export default function LearnMoreButton({ title }: { title?: string }): JSX.Elem
   return (
     <Link
       ref={btnRef}
-      to="/partners"
+      to={href}
       className="relative flex overflow-hidden inline-flex items-center gap-2 py-1 ps-2 pe-1 rounded-full bg-[#00a9ae] text-white font-medium"
     >
       {/* sliding background */}

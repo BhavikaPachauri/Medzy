@@ -1,6 +1,5 @@
 'use client';
 
-import { Link } from "react-router-dom";
 import Dealerbtn from "../../common/Dealerbtn";
 import SectionHeader from "../../common/SectionHeader";
 
@@ -48,9 +47,9 @@ export default function AboutUs() {
 
                         {/* CTA */}
                         <div  className="hidden md:block btnp">
-                        <Link to="/aboutus">
-                            <Dealerbtn title="Read More" />
-                            </Link>
+                     
+                            <Dealerbtn title="Read More" href="/about-us" />
+                           
                         </div>
 
                     </div>

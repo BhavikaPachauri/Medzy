@@ -17,8 +17,8 @@ function MainRoute() {
       <Suspense fallback={<Loader/>}>
         <Routes>
           <Route path='/' element={<HomePage />} />
-          <Route path='/aboutus' element={<AboutPage />} />
-          <Route path='/contactus' element={<ContactPage />} />
+          <Route path='/about-us' element={<AboutPage />} />
+          <Route path='/contact-us' element={<ContactPage />} />
           <Route path='/services' element={<ServicePage />} />
           <Route path='/partners' element={<Partnerpage />} />
         

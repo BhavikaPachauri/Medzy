@@ -196,9 +196,11 @@ export default function Contact() {
   };
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    console.log("Form submitted:", formData);
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 3500);
     setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+    
   };
 
   return (
@@ -215,7 +217,7 @@ export default function Contact() {
             transition: "all 0.7s ease",
           }}
         >
-          <div className="absolute inset-0 bg-[url('/img/contactUs.')] bg-cover opacity-20"></div>
+          <div className="absolute inset-0 bg-[url('/img/contactUs.webp')] bg-cover opacity-20"></div>
           {/* grid texture */}
           <div className="absolute inset-0 pointer-events-none"
             style={{

@@ -240,7 +240,7 @@ export default function WhyChooseMedzy() {
 
           {/* ── Header ── */}
           <div
-            className="text-center max-w-3xl mx-auto mb-16 sm:mb-20"
+            className="text-center max-w-3xl mx-auto mb-16"
             style={{
               opacity: visible ? 1 : 0,
               transform: visible ? "translateY(0)" : "translateY(30px)",
@@ -269,7 +269,7 @@ export default function WhyChooseMedzy() {
             />
 
             {/* Decorative divider */}
-            <div className="flex items-center justify-center gap-3 mt-8">
+            <div className="flex items-center justify-center gap-3 mt-4">
              
               <div
                 className="h-px w-80 rounded-full"

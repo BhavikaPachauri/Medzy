@@ -242,7 +242,7 @@ export default function VisionMission() {
           />
           
             <div
-            className="h-px w-80 rounded-full flex justify-center mx-auto mb-20 -mt-[30px]"
+            className="h-px w-80 rounded-full flex justify-center mx-auto mb-16 -mt-[40px]"
             style={{ background: "linear-gradient(90deg,transparent, #00b2a9, transparent)" }}
           />
           {/* ── Cards Grid ── */}

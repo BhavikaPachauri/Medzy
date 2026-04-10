@@ -122,7 +122,7 @@ export default function PartnerCta() {
           </p>
 
           <div className="font-body" style={styles.buttonGroup}>
-           <Link to="/contactus">
+           <Link to="/contact-us">
             <Btn title="Contact Us " text="text-white" bg="bg-[#00a9ae]" border="border-[#00a9ae]" hover="bg-[#8ac43f]" /> 
            </Link>
            

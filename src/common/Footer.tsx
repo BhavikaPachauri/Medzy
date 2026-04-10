@@ -1,6 +1,6 @@
 "use client";
 
-import { Link } from "react-router-dom";
+
 import { useEffect, useRef, useState } from "react";
 import Btn from "./Btn";
 
@@ -70,8 +70,8 @@ const Footer = () => {
               Advancing Healthcare Together
             </h2>
           </div>
-          <Link
-            to="/contactus"
+          <a
+            href="/contact-us"
             className="inline-flex items-center rounded-lg text-white font-semibold text-sm tracking-wide whitespace-nowrap no-underline transition-all duration-200"
             onMouseEnter={e => {
               (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-2px)";
@@ -81,7 +81,7 @@ const Footer = () => {
             }}
           >
             <Btn title=" Get in Touch " text="text-white" bg="bg-[#00a9ae]" border="border-[#00a9ae]" hover="bg-[#8ac43f]" as="span" />
-          </Link>
+          </a>
         </div>
       </div>
 
@@ -114,13 +114,14 @@ const Footer = () => {
           {/* Social Icons */}
           <div className="flex gap-3">
             {[
-              { href: "#", src: "https://pdpl-stuff.s3.ap-south-1.amazonaws.com/dynamic/ksshospitals.com/DOTMGYA1eh.webp", label: "Social" },
-              { href: "mailto:info@medzyhealthcare.com", src: "https://pdpl-stuff.s3.ap-south-1.amazonaws.com/dynamic/ksshospitals.com/FdxrYWtXRA.webp", label: "Email" },
-              { href: "tel:+91-9599773746", src: "https://pdpl-stuff.s3.ap-south-1.amazonaws.com/dynamic/ksshospitals.com/v7IfkPAIci.webp", label: "Phone" },
+              { href: "https://www.linkedin.com/company/medzypharmadistributor/", src: "https://pdpl-stuff.s3.ap-south-1.amazonaws.com/dynamic/ksshospitals.com/DOTMGYA1eh.webp", label: "Social" },
+              { href: "mailto:info@medzyhealthcare.com", src: "https://pdpl-stuff.s3.ap-south-1.amazonaws.com/dynamic/ksshospitals.com/FdxrYWtXRA.webp", label: "" },
+              { href: "https://wa.me/919599773746", src: "https://pdpl-stuff.s3.ap-south-1.amazonaws.com/dynamic/ksshospitals.com/v7IfkPAIci.webp", label: "Phone" },
+               { href: "https://www.instagram.com/medzyhealthcare?igsh=Z3o2d2k2aHAxeHpn", src: "https://pdpl-stuff.s3.ap-south-1.amazonaws.com/dynamic/ksshospitals.com/v7IfkPAIci.webp", label: "Instagram" },
             ].map(({ href, src, label }) => (
-              <Link
+              <a
                 key={label}
-                to={href}
+                href={href}
                 aria-label={label}
                 className="flex items-center justify-center w-[38px] h-[38px] rounded-lg transition-all duration-200"
                 style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.09)" }}
@@ -136,7 +137,7 @@ const Footer = () => {
                 }}
               >
                 <img src={src} alt={label} className="w-[18px] opacity-85" loading="lazy" />
-              </Link>
+              </a>
             ))}
           </div>
         </div>
@@ -148,10 +149,10 @@ const Footer = () => {
           delay="0.2s"
           links={[
             { label: "Home", to: "/" },
-            { label: "About Us", to: "/aboutus" },
+            { label: "About Us", to: "/about-us" },
             { label: "Services", to: "/services" },
             { label: "Partners", to: "/partners" },
-            { label: "Contact Us", to: "/contactus" },
+            { label: "Contact Us", to: "/contact-us" },
           ]}
           isRouter
         />
@@ -196,11 +197,11 @@ const Footer = () => {
               <span className="mt-0.5 shrink-0 text-[#00B5A5]">
                 <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor" /></svg>
               </span>
-              <Link to="https://www.google.com/maps?q=AIPL+Joy+Street+Village+Ramgarh+Gurugram+Haryana+122502" className="text-[rgba(180,210,205,0.65)]  text-[13px] leading-[1.65] m-0 hover:text-[#00B5A5] " >
+              <a href="https://www.google.com/maps?q=AIPL+Joy+Street+Village+Ramgarh+Gurugram+Haryana+122502" className="text-[rgba(180,210,205,0.65)]  text-[13px] leading-[1.65] m-0 hover:text-[#00B5A5] " >
                 Building No-1, Block-10, Near AIPL Joy Street, Village Ramgarh,<br />
                 Gurugram, Haryana – 122502
 
-              </Link>
+              </a>
             </div>
           </div>
         </div>
@@ -214,26 +215,6 @@ const Footer = () => {
         <p className="text-[12.5px] m-0" style={{ color: "rgba(160,200,195,0.5)" }}>
           © {year} MEDZY HEALTHCARE PRIVATE LIMITED. All rights reserved.
         </p>
-        {/* <div className="flex gap-6">
-        
-          {[
-            { label: "Terms & Conditions", to: "/terms" },
-            { label: "Privacy Policy", to: "/privacy" },
-            { label: "Refund Policy", to: "/refund" },
-            { label: "Disclaimer", to: "/disclaimer" },
-          ].map(({ label, to }) => (
-            <Link
-              key={to}
-              to={to}
-              className="text-[12.5px] no-underline transition-colors duration-200"
-              style={{ color: "rgba(160,200,195,0.5)" }}
-              onMouseEnter={e => (e.currentTarget.style.color = "rgba(0,181,165,0.9)")}
-              onMouseLeave={e => (e.currentTarget.style.color = "rgba(160,200,195,0.5)")}
-            >
-              {label}
-            </Link>
-          ))}
-        </div> */}
       </div>
     </footer>
   );
@@ -285,9 +266,9 @@ const NavColumn = ({
         return (
           <li key={label}>
             {isLink && to ? (
-              <Link to={to} style={baseStyle} onMouseEnter={hoverIn} onMouseLeave={hoverOut}>
+              <a href={to} style={baseStyle} onMouseEnter={hoverIn} onMouseLeave={hoverOut}>
                 {arrow} {label}
-              </Link>
+              </a>
             ) : (
               <a href={href} style={baseStyle} onMouseEnter={hoverIn} onMouseLeave={hoverOut}>
                 {arrow} {label}
@@ -309,8 +290,8 @@ const ContactItem = ({
   href: string;
   text: string;
 }) => (
-  <Link
-    to={href}
+  <a
+    href={href}
     className="flex items-center gap-3 no-underline text-[13.5px] transition-colors duration-200"
     style={{ color: "rgba(180,210,205,0.75)" }}
     onMouseEnter={e => (e.currentTarget.style.color = "rgba(0,181,165,1)")}
@@ -318,7 +299,7 @@ const ContactItem = ({
   >
     <span className="shrink-0 text-[#00B5A5]">{icon}</span>
     {text}
-  </Link>
+  </a>
 );
 
 export default Footer;
