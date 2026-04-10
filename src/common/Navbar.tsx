@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Dealerbtn from './Dealerbtn'
+import { Link } from 'react-router-dom'
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -12,7 +13,7 @@ function Navbar() {
 
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="/">
+            <Link to="/">
               <img
                 src="/img/MedzyLogo1.webp"
                 alt="Medzy Logo"
@@ -22,28 +23,28 @@ function Navbar() {
                 height="40"
               />
 
-            </a >
+            </Link >
           </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             {/* {["Home", "About Us", "Services", "Partners", "Contact"].map((item, i) => (
-              <a
+              <Link
                 key={i}
                 to={`/${item === "Home" ? "" : item.toLowerCase().replace(/\s/g, "")}`}
                 className="font-body text-[#8C8C8C] hover:text-[#00a9ae] font-medium transition"
               >
                  {item}
-              </a>
+              </Link>
             ))} */}
             {["Home", "About Us", "Services", "Partners", "Contact Us"].map((item, i) => (
-              <a
+              <Link
                 key={i}
-                href={`/${item === "Home" ? "" : item.toLowerCase().replace(/\s+/g, "-")}`}
+                to={`/${item === "Home" ? "" : item.toLowerCase().replace(/\s+/g, "-")}`}
                 className="font-body text-[#8C8C8C] hover:text-[#00a9ae] font-medium transition"
               >
                 {item}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -56,9 +57,9 @@ function Navbar() {
           <div className="flex items-center gap-2 md:hidden">
 
             {/* Small Button */}
-            <a href="/partners" className="font-body bg-[#00a9ae] text-white px-3 py-1 rounded-full text-[12px] sm:text-sm">
+            <Link to="/partners" className="font-body bg-[#00a9ae] text-white px-3 py-1 rounded-full text-[12px] sm:text-sm">
               Become a Dealer
-            </a>
+            </Link>
 
             {/* Hamburger */}
             <button
@@ -87,15 +88,15 @@ function Navbar() {
       >
         <div className="px-4 py-4 space-y-2">
           {["Home", "About Us", "Services", "Partners", "Contact Us"].map((item, i) => (
-            <a
+            <Link
               key={i}
-              href={`/${item === "Home" ? "" : item.toLowerCase().replace(/\s+/g, "-")}`}
+              to={`/${item === "Home" ? "" : item.toLowerCase().replace(/\s/g, "-")}`}
               onClick={() => setIsMenuOpen(false)}
               className="font-body block px-3 py-2 text-white rounded-md hover:bg-white/10"
             >
 
               {item}
-            </a>
+            </Link>
           ))}
         </div>
       </div>
