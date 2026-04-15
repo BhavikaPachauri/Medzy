@@ -10,10 +10,9 @@ function App() {
 
   return (
     <>
-    <BacktoTop />
-    <MainRoute/>
-  
-      
+    
+      <BacktoTop />
+      <MainRoute />
     </>
   )
 }

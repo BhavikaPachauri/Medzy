@@ -5,11 +5,60 @@
   --brand-teal: #70da4a;
   --brand-teal-dark: #009682;
   --brand-teal-hover: #70da4a;
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 html {
   scrollbar-width: thin;
   scrollbar-color: var(--brand-teal) var(--brand-teal-dark);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #ffffff;
+}
+
+::selection {
+  background: rgba(112, 218, 74, 0.24);
+  color: #042f2e;
+}
+
+a,
+button,
+input,
+textarea,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+*:focus-visible {
+  outline: 3px solid #8ac43f;
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1000;
+  transform: translateY(-200%);
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  background: #0b766e;
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 12px 30px rgba(11, 118, 110, 0.22);
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
 }
 
 ::-webkit-scrollbar {
@@ -28,4 +77,19 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, var(--brand-teal-hover) 0%, var(--brand-teal) 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

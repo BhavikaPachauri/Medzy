@@ -32,7 +32,7 @@ export default function HeroCarousel(): JSX.Element {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [slides.length]);
+  }, []);
 
   return (
     <section className="relative w-full min-h-[540px] overflow-hidden sm:min-h-[620px] md:h-[95vh] md:min-h-0">
@@ -40,9 +40,8 @@ export default function HeroCarousel(): JSX.Element {
       {slides.map((_, index) => (
         <div
           key={index}
-          className={`absolute inset-0 transition-opacity duration-700 ${
-            index === currentSlide ? 'opacity-100' : 'opacity-0'
-          }`}
+          className={`absolute inset-0 transition-opacity duration-700 ${index === currentSlide ? 'opacity-100' : 'opacity-0'
+            }`}
         >
           <picture>
             <source media="(min-width: 1280px)" srcSet={slides[index].image} />
@@ -50,8 +49,6 @@ export default function HeroCarousel(): JSX.Element {
             <img
               src={slides[index].mobileImage || slides[index].image}
               alt="Medzy Healthcare - Leading Pharmaceutical Distributor Across India"
-              aria-hidden="true"
-              fetchPriority={index === 0 ? 'high' : 'auto'}
               loading={index === 0 ? 'eager' : 'lazy'}
               decoding="async"
               sizes="100vw"
@@ -91,7 +88,7 @@ export default function HeroCarousel(): JSX.Element {
           <div className="mt-6 sm:mt-7">
             <Link to="/services">
               <Btn
-                title="Explore our service"
+                title="Explore Our Services"
                 text="text-white"
                 bg="bg-[#00a9ae]"
                 border="border-[#00a9ae]"

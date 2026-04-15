@@ -11,9 +11,12 @@ function ContactPage() {
         title="Contact Medzy Healthcare | Pharma Distributor India"
         description="Get in touch with Medzy Healthcare for pharma distribution services, partnerships, and business inquiries across India."
         keywords="contact pharma distributor, Medzy contact, medicine supplier India, pharma inquiry"
+        path="/contact-us"
       />
       <Navbar />
-      <Contact />
+      <main id="main-content">
+        <Contact />
+      </main>
       <Footer />
     </>
   )

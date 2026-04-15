@@ -16,9 +16,10 @@ function HomePage() {
         title="Medzy Healthcare | Pharma Distributor in India"
         description="Medzy Healthcare Pvt Ltd is a leading pharmaceutical distribution company delivering medicines across India with fast and reliable logistics."
         keywords="pharma distributor India, medicine supplier, pharmaceutical distribution, Medzy Healthcare"
+        path="/"
       />
       <Navbar />
-      <main>
+      <main id="main-content">
         <HeroCarousel />
         <AboutUs />
         <VisionMission />

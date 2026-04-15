@@ -113,7 +113,7 @@ export default function LearnMoreButton({ title, text, bg, border, hover, onClic
       btn.removeEventListener("focus", handleFocus);
       btn.removeEventListener("blur", leave);
     };
-  }, []);
+  }, [as]);
 
   const className = `${bg} ${text || 'text-white'} relative overflow-hidden inline-flex items-center gap-2 px-6 py-2 rounded-full border ${border || 'border-[#017d77]'} font-medium transition-colors duration-300`;
 

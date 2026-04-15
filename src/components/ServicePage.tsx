@@ -12,10 +12,13 @@ function ServicePage() {
         title="Pharma Distribution Services | Medzy Healthcare India"
         description="Explore Medzy Healthcare services including medicine distribution, supply chain management, and healthcare logistics solutions across India."
         keywords="pharma services India, medicine distribution services, supply chain pharma, healthcare logistics"
+        path="/services"
       />
 
       <Navbar />
-      <MedzyServicesPage />
+      <main id="main-content">
+        <MedzyServicesPage />
+      </main>
       <Footer />
     </>
   )

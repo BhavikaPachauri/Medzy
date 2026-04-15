@@ -1,8 +1,43 @@
-"use client";
-
-import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import Btn from "./Btn";
+import { SITE_CONFIG } from "./siteConfig";
+
+const companyLinks = [
+  { label: "Home", to: "/" },
+  { label: "About Us", to: "/about-us" },
+  { label: "Services", to: "/services" },
+  { label: "Partners", to: "/partners" },
+  { label: "Contact Us", to: "/contact-us" },
+];
+
+const serviceHighlights = [
+  "Wholesale distribution",
+  "Hospital supply support",
+  "Retail pharmacy fulfillment",
+  "Reliable last-mile coordination",
+];
+
+const socialLinks = [
+  {
+    href: SITE_CONFIG.socialLinks.linkedin,
+    label: "LinkedIn",
+    icon: LinkedInIcon,
+  },
+  {
+    href: SITE_CONFIG.socialLinks.instagram,
+    label: "Instagram",
+    icon: InstagramIcon,
+  },
+  {
+    href: SITE_CONFIG.socialLinks.whatsapp,
+    label: "WhatsApp",
+    icon: WhatsAppIcon,
+  },
+];
+
+const linkClassName =
+  "text-sm text-[#b5d6d0] transition-colors duration-200 hover:text-white";
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -11,295 +46,347 @@ const Footer = () => {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
+      ([entry]) => {
+        if (entry.isIntersecting) setVisible(true);
+      },
       { threshold: 0.1 }
     );
-    if (footerRef.current) observer.observe(footerRef.current);
+
+    const node = footerRef.current;
+    if (node) observer.observe(node);
+
     return () => observer.disconnect();
   }, []);
 
   return (
     <footer
       ref={footerRef}
-      className="relative overflow-hidden"
-      style={{ background: "linear-gradient(160deg, #071a14 0%, #0b1e1a 45%, #0d2420 100%)" }}
+      className="relative overflow-hidden border-t border-white/5"
+      style={{
+        background:
+          "linear-gradient(160deg, #071a14 0%, #0b1e1a 45%, #0d2420 100%)",
+      }}
     >
-      {/* Background grid */}
       <div
-        className="absolute inset-0 pointer-events-none"
+        className="pointer-events-none absolute inset-0"
         style={{
-          backgroundImage: `
-            linear-gradient(rgba(0,181,165,0.04) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0,181,165,0.04) 1px, transparent 1px)
-          `,
+          backgroundImage:
+            "linear-gradient(rgba(0,181,165,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,181,165,0.04) 1px, transparent 1px)",
           backgroundSize: "48px 48px",
         }}
       />
 
-      {/* Glowing orb top-right */}
       <div
-        className="absolute pointer-events-none rounded-full"
+        className="pointer-events-none absolute -right-20 -top-20 h-80 w-80 rounded-full"
         style={{
-          top: "-80px", right: "-80px",
-          width: "360px", height: "360px",
-          background: "radial-gradient(circle, rgba(0,181,165,0.10) 0%, transparent 70%)",
+          background:
+            "radial-gradient(circle, rgba(0,181,165,0.14) 0%, transparent 72%)",
         }}
       />
 
-      {/* Glowing orb bottom-left */}
       <div
-        className="absolute pointer-events-none rounded-full"
+        className="pointer-events-none absolute -bottom-16 -left-16 h-72 w-72 rounded-full"
         style={{
-          bottom: "-60px", left: "-60px",
-          width: "280px", height: "280px",
-          background: "radial-gradient(circle, rgba(0,181,165,0.07) 0%, transparent 70%)",
+          background:
+            "radial-gradient(circle, rgba(138,196,63,0.12) 0%, transparent 72%)",
         }}
       />
 
-      {/* CTA Banner */}
-      <div className="relative border-b border-white/[0.07] py-10">
+      <div className="relative border-b border-white/[0.08] py-10">
         <div
-          className="max-w-[1200px] mx-auto px-6 flex flex-wrap items-center justify-between gap-5 transition-all duration-700"
-          style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)" }}
+          className="mx-auto flex max-w-[1200px] flex-wrap items-center justify-between gap-5 px-6 transition-all duration-700"
+          style={{
+            opacity: visible ? 1 : 0,
+            transform: visible ? "translateY(0)" : "translateY(18px)",
+          }}
         >
           <div>
-            <p className="text-[#00B5A5] text-[12px] font-semibold uppercase tracking-[3px] mb-1.5">
-              Partner with us
+            <p className="mb-1.5 text-[12px] font-semibold uppercase tracking-[3px] text-[#8ac43f]">
+              Build With Medzy
             </p>
-            <h2 className="font-heading  text-white font-bold m-0 tracking-tight text-[clamp(20px,3vw,28px)]">
-              Advancing Healthcare Together
+            <h2 className="font-heading text-[clamp(20px,3vw,30px)] font-bold tracking-tight text-white">
+              Advancing healthcare supply with speed and trust
             </h2>
           </div>
-          <Link
-            to="/contact-us"
-            className="inline-flex items-center rounded-lg text-white font-semibold text-sm tracking-wide whitespace-nowrap no-underline transition-all duration-200"
-            onMouseEnter={e => {
-              (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-2px)";
-            }}
-            onMouseLeave={e => {
-              (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0)";
-            }}
-          >
-            <Btn title=" Get in Touch " text="text-white" bg="bg-[#00a9ae]" border="border-[#00a9ae]" hover="bg-[#8ac43f]" as="span" />
+
+          <Link to="/contact-us" className="inline-flex rounded-full">
+            <Btn
+              title="Get in Touch"
+              text="text-white"
+              bg="bg-[#00a9ae]"
+              border="border-[#00a9ae]"
+              hover="bg-[#8ac43f]"
+              as="span"
+            />
           </Link>
         </div>
       </div>
 
-      {/* Main Footer Grid */}
-      <div className="max-w-[1200px] mx-auto px-6 pt-8 pb-8 grid gap-12 relative"
-        style={{ gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))" }}
-      >
-        {/* Brand Column */}
+      <div className="relative mx-auto grid max-w-[1200px] gap-10 px-6 py-10 md:grid-cols-[1.3fr_0.9fr_0.9fr_1.1fr]">
         <div
           className="transition-all duration-700"
-          style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(24px)", transitionDelay: "0.1s" }}
+          style={{
+            opacity: visible ? 1 : 0,
+            transform: visible ? "translateY(0)" : "translateY(22px)",
+            transitionDelay: "0.05s",
+          }}
         >
           <img
             src="/img/MedzyLogo1.webp"
-            alt="Medzy Logo"
-            className="mb-4 brightness-110"
-            style={{ width: "200px" }}
+            alt="Medzy Healthcare"
+            className="mb-4 h-auto w-[190px]"
             loading="lazy"
+            width="190"
+            height="48"
           />
-          <p className="font-body text-sm leading-7 m-0 mb-6" style={{ color: "rgba(180,210,205,0.75)" }}>
-            Delivering innovation in healthcare with trust, precision, and quality.
+          <p className="max-w-md text-sm leading-7 text-[#b5d6d0]">
+            Medzy Healthcare helps manufacturers, hospitals, clinics, and
+            pharmacies stay connected through responsive pharmaceutical
+            distribution and dependable service.
           </p>
 
-          {/* Divider */}
-          <div
-            className="mb-5 rounded-full"
-            style={{ width: "32px", height: "2px", background: "linear-gradient(90deg, #00B5A5, transparent)" }}
-          />
-
-          {/* Social Icons */}
-          <div className="flex gap-3">
-            {[
-              { href: "https://www.linkedin.com/company/medzypharmadistributor/", src: "https://pdpl-stuff.s3.ap-south-1.amazonaws.com/dynamic/ksshospitals.com/DOTMGYA1eh.webp", label: "Social" },
-              { href: "mailto:info@medzyhealthcare.com", src: "https://pdpl-stuff.s3.ap-south-1.amazonaws.com/dynamic/ksshospitals.com/FdxrYWtXRA.webp", label: "" },
-              { href: "https://wa.me/919599773746", src: "https://pdpl-stuff.s3.ap-south-1.amazonaws.com/dynamic/ksshospitals.com/v7IfkPAIci.webp", label: "Phone" },
-               { href: "https://www.instagram.com/medzyhealthcare?igsh=Z3o2d2k2aHAxeHpn", src: "https://pdpl-stuff.s3.ap-south-1.amazonaws.com/dynamic/ksshospitals.com/v7IfkPAIci.webp", label: "Instagram" },
-            ].map(({ href, src, label }) => (
-              <Link
+          <div className="mt-6 flex gap-3">
+            {socialLinks.map(({ href, label, icon: Icon }) => (
+              <a
                 key={label}
-                to={href}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={label}
-                className="flex items-center justify-center w-[38px] h-[38px] rounded-lg transition-all duration-200"
-                style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.09)" }}
-                onMouseEnter={e => {
-                  (e.currentTarget as HTMLAnchorElement).style.background = "rgba(0,181,165,0.18)";
-                  (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(0,181,165,0.5)";
-                  (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-2px)";
-                }}
-                onMouseLeave={e => {
-                  (e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.06)";
-                  (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(255,255,255,0.09)";
-                  (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0)";
-                }}
+                className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-[#d9f2ed] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#00b5a5] hover:bg-[#0b3b37]"
               >
-                <img src={src} alt={label} className="w-[18px] opacity-85" loading="lazy" />
-              </Link>
+                <Icon />
+              </a>
             ))}
           </div>
         </div>
 
-        {/* Quick Links */}
-        <NavColumn
+        <FooterColumn
           title="Company"
           visible={visible}
-          delay="0.2s"
-          links={[
-            { label: "Home", to: "/" },
-            { label: "About Us", to: "/about-us" },
-            { label: "Services", to: "/services" },
-            { label: "Partners", to: "/partners" },
-            { label: "Contact Us", to: "/contact-us" },
-          ]}
-          isRouter
+          delay="0.12s"
+          content={
+            <ul className="flex list-none flex-col gap-3 p-0">
+              {companyLinks.map(({ label, to }) => (
+                <li key={to}>
+                  <Link to={to} className={linkClassName}>
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          }
         />
 
-        {/* Support */}
-        <NavColumn
+        <FooterColumn
           title="Services"
           visible={visible}
-          delay="0.3s"
-          links={[
-            { label: "Wholesale Distribution", to: "/" },
-            { label: "Hospital Supply", to: "/" },
-            { label: "Retail Support", to: "/" },
-            { label: "C&F Services", to: "/" },
-          ]}
+          delay="0.2s"
+          content={
+            <ul className="flex list-none flex-col gap-3 p-0">
+              {serviceHighlights.map((item) => (
+                <li key={item} className="text-sm text-[#b5d6d0]">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          }
         />
 
-        {/* Contact */}
-        <div
-          className="transition-all duration-700"
-          style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(24px)", transitionDelay: "0.4s" }}
-        >
-          <h3 className="text-white text-[13px] font-semibold tracking-[2.5px] uppercase mb-6 opacity-50">
-            Contact
-          </h3>
-          <div className="flex flex-col gap-4">
-            <ContactItem
-              icon={
-                <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" fill="currentColor" /></svg>
-              }
-              href="tel:+91-9599773746"
-              text="+91 9599773746"
-            />
-            <ContactItem
-              icon={
-                <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor" /></svg>
-              }
-              href="mailto:info@medzyhealthcare.com"
-              text="info@medzyhealthcare.com"
-            />
-            <div className="flex gap-3 items-start hover:text-[#00B5A5]">
-              <span className="mt-0.5 shrink-0 text-[#00B5A5]">
-                <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor" /></svg>
-              </span>
-              <Link to="https://www.google.com/maps?q=AIPL+Joy+Street+Village+Ramgarh+Gurugram+Haryana+122502" className="text-[rgba(180,210,205,0.65)]  text-[13px] leading-[1.65] m-0 hover:text-[#00B5A5] " >
-                Building No-1, Block-10, Near AIPL Joy Street, Village Ramgarh,<br />
-                Gurugram, Haryana – 122502
+        <FooterColumn
+          title="Contact"
+          visible={visible}
+          delay="0.28s"
+          content={
+            <div className="flex flex-col gap-4 text-sm text-[#b5d6d0]">
+              <a href={SITE_CONFIG.phoneHref} className="flex items-start gap-3 hover:text-white">
+                <PhoneIcon className="mt-0.5 text-[#8ac43f]" />
+                <span>{SITE_CONFIG.phoneDisplay}</span>
+              </a>
 
-              </Link>
+              <a href={SITE_CONFIG.emailHref} className="flex items-start gap-3 hover:text-white">
+                <MailIcon className="mt-0.5 text-[#8ac43f]" />
+                <span>{SITE_CONFIG.email}</span>
+              </a>
+
+              <a
+                href={SITE_CONFIG.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 hover:text-white"
+              >
+                <MapPinIcon className="mt-0.5 shrink-0 text-[#8ac43f]" />
+                <address className="not-italic">
+                  {SITE_CONFIG.addressLines.map((line) => (
+                    <span key={line} className="block">
+                      {line}
+                    </span>
+                  ))}
+                </address>
+              </a>
             </div>
-          </div>
-        </div>
+          }
+        />
       </div>
 
-      {/* Bottom Bar */}
       <div
-        className="border-t border-white/[0.07] py-5 px-6 max-w-[1200px] mx-auto flex flex-wrap justify-between items-center gap-3 transition-opacity duration-700"
-        style={{ opacity: visible ? 1 : 0, transitionDelay: "0.5s" }}
+        className="relative mx-auto flex max-w-[1200px] flex-wrap items-center justify-between gap-3 border-t border-white/[0.07] px-6 py-5 text-[12.5px] text-[#8cb9b1] transition-opacity duration-700"
+        style={{ opacity: visible ? 1 : 0, transitionDelay: "0.35s" }}
       >
-        <p className="text-[12.5px] m-0" style={{ color: "rgba(160,200,195,0.5)" }}>
-          © {year} MEDZY HEALTHCARE PRIVATE LIMITED. All rights reserved.
-        </p>
+        <p>{year} Medzy Healthcare Private Limited. All rights reserved.</p>
+        <p>Serving pharmaceutical distribution needs across India.</p>
       </div>
     </footer>
   );
 };
 
-/* ── Sub-components ─────────────────────────────────────────── */
-
-type LinkItem = {
-  label: string;
-  to?: string;
-  href?: string;
-  isRouter?: boolean;
-};
-
-const NavColumn = ({
+function FooterColumn({
   title,
-  links,
   visible,
   delay,
-  isRouter,
+  content,
 }: {
   title: string;
-  links: LinkItem[];
   visible: boolean;
   delay: string;
-  isRouter?: boolean;
-}) => (
-  <div
-    className="transition-all duration-700"
-    style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(24px)", transitionDelay: delay }}
-  >
-    <h3 className="text-white text-[13px] font-semibold tracking-[2.5px] uppercase mb-6 opacity-50">
-      {title}
-    </h3>
-    <ul className="list-none m-0 p-0 flex flex-col gap-3.5">
-      {links.map(({ label, to, href, isRouter: itemRouter }) => {
-        const isLink = isRouter || itemRouter;
-        const baseStyle: React.CSSProperties = { color: "rgba(180,210,205,0.7)", textDecoration: "none", fontSize: "14px", display: "inline-flex", alignItems: "center", gap: "6px", transition: "color 0.2s, gap 0.2s" };
-        const hoverIn = (e: React.MouseEvent<HTMLElement>) => {
-          (e.currentTarget as HTMLElement).style.color = "rgba(0,181,165,1)";
-          (e.currentTarget as HTMLElement).style.gap = "9px";
-        };
-        const hoverOut = (e: React.MouseEvent<HTMLElement>) => {
-          (e.currentTarget as HTMLElement).style.color = "rgba(180,210,205,0.7)";
-          (e.currentTarget as HTMLElement).style.gap = "6px";
-        };
-        const arrow = <span style={{ fontSize: "10px", opacity: 0.6 }}>›</span>;
+  content: React.ReactNode;
+}) {
+  return (
+    <div
+      className="transition-all duration-700"
+      style={{
+        opacity: visible ? 1 : 0,
+        transform: visible ? "translateY(0)" : "translateY(22px)",
+        transitionDelay: delay,
+      }}
+    >
+      <h3 className="mb-5 text-[13px] font-semibold uppercase tracking-[2.5px] text-white/55">
+        {title}
+      </h3>
+      {content}
+    </div>
+  );
+}
 
-        return (
-          <li key={label}>
-            {isLink && to ? (
-              <Link to={to} style={baseStyle} onMouseEnter={hoverIn} onMouseLeave={hoverOut}>
-                {arrow} {label}
-              </Link>
-            ) : (
-              <a href={href} style={baseStyle} onMouseEnter={hoverIn} onMouseLeave={hoverOut}>
-                {arrow} {label}
-              </a>
-            )}
-          </li>
-        );
-      })}
-    </ul>
-  </div>
-);
+function LinkedInIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+      width="18"
+      height="18"
+    >
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
+      <rect x="2" y="9" width="4" height="12" rx="1" />
+      <circle cx="4" cy="4" r="2" />
+    </svg>
+  );
+}
 
-const ContactItem = ({
-  icon,
-  href,
-  text,
-}: {
-  icon: React.ReactNode;
-  href: string;
-  text: string;
-}) => (
-  <Link
-    to={href}
-    className="flex items-center gap-3 no-underline text-[13.5px] transition-colors duration-200"
-    style={{ color: "rgba(180,210,205,0.75)" }}
-    onMouseEnter={e => (e.currentTarget.style.color = "rgba(0,181,165,1)")}
-    onMouseLeave={e => (e.currentTarget.style.color = "rgba(180,210,205,0.75)")}
-  >
-    <span className="shrink-0 text-[#00B5A5]">{icon}</span>
-    {text}
-  </Link>
-);
+function InstagramIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+      width="18"
+      height="18"
+    >
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+function WhatsAppIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+      width="18"
+      height="18"
+    >
+      <path d="M20 11.5A8.5 8.5 0 0 1 7.3 19l-4.3 1 1.2-4.1A8.5 8.5 0 1 1 20 11.5Z" />
+      <path d="M9.4 8.9c.2-.5.4-.5.7-.5h.6c.2 0 .4.1.5.4l.8 1.8c.1.2.1.4 0 .6l-.4.6c-.1.2-.1.3 0 .5.4.7 1 1.3 1.8 1.8.2.1.3.1.5 0l.6-.4c.2-.1.4-.1.6 0l1.8.8c.3.1.4.3.4.5v.6c0 .3 0 .5-.5.7-.5.2-1.7.3-3.4-.5a9.4 9.4 0 0 1-4.4-4.4c-.8-1.7-.7-2.9-.5-3.4Z" />
+    </svg>
+  );
+}
+
+function PhoneIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+      width="16"
+      height="16"
+    >
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.7 13.5 19.8 19.8 0 0 1 1.62 4.9 2 2 0 0 1 3.59 2.73h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11l-.94.73a16 16 0 0 0 6 6l.91-.92a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7a2 2 0 0 1 1.73 2.02Z" />
+    </svg>
+  );
+}
+
+function MailIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+      width="16"
+      height="16"
+    >
+      <rect x="3" y="5" width="18" height="14" rx="2" />
+      <path d="m4 7 8 6 8-6" />
+    </svg>
+  );
+}
+
+function MapPinIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+      width="16"
+      height="16"
+    >
+      <path d="M12 21s-7-4.35-7-11a7 7 0 1 1 14 0c0 6.65-7 11-7 11Z" />
+      <circle cx="12" cy="10" r="2.5" />
+    </svg>
+  );
+}
 
 export default Footer;

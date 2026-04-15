@@ -12,9 +12,12 @@ function Partnerpage() {
         title="Partner with Medzy | Pharma Distribution Network India"
         description="Join Medzy Healthcare as a partner and grow your pharmaceutical business with our strong distribution network across India."
         keywords="pharma partnership India, distributor partner, Medzy partner program, pharma network"
+        path="/partners"
       />
       <Navbar />
-      <PartnersPage />
+      <main id="main-content">
+        <PartnersPage />
+      </main>
       <Footer />
     </>
   )

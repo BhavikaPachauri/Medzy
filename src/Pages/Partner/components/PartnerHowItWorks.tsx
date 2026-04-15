@@ -20,30 +20,40 @@ export default function PartnerHowItWorks() {
         <div className="process-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 20, position: "relative" }}>
           <div style={{ position: "absolute", top: 28, left: "12.5%", right: "12.5%", height: 1, background: `linear-gradient(to right, ${B.pMid}, ${B.aMid})`, zIndex: 0, pointerEvents: "none" }} />
 
-          {PROCESS_STEPS.map((step, i) => {
-            const stepRef = usePartnerReveal<HTMLDivElement>(i * 100);
-
-            return (
-              <div key={step.num} ref={stepRef} className="reveal" style={{ position: "relative", zIndex: 1 }}>
-                <div
-                  style={{ width: 56, height: 56, borderRadius: 16, background: i % 2 === 0 ? B.pLight : B.aLight, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 18, color: i % 2 === 0 ? B.p : B.aDark, border: `1.5px solid ${i % 2 === 0 ? B.pMid : B.aMid}`, boxShadow: `0 4px 16px ${i % 2 === 0 ? B.p : B.aDark}18`, transition: "transform .2s" }}
-                  onMouseEnter={(event) => {
-                    event.currentTarget.style.transform = "scale(1.08)";
-                  }}
-                  onMouseLeave={(event) => {
-                    event.currentTarget.style.transform = "none";
-                  }}
-                >
-                  {step.icon}
-                </div>
-                <div style={{ fontSize: 10, fontWeight: 800, letterSpacing: ".14em", textTransform: "uppercase", color: i % 2 === 0 ? B.p : B.aDark, marginBottom: 6 }}>Step {step.num}</div>
-                <h3 style={{ fontSize: 15, fontWeight: 700, color: B.dark, marginBottom: 8 }}>{step.title}</h3>
-                <p style={{ fontSize: 13, color: B.muted, lineHeight: 1.72 }}>{step.desc}</p>
-              </div>
-            );
-          })}
+          {PROCESS_STEPS.map((step, i) => (
+            <StepCard key={step.num} step={step} index={i} />
+          ))}
         </div>
       </div>
     </section>
+  );
+}
+
+function StepCard({
+  step,
+  index,
+}: {
+  step: (typeof PROCESS_STEPS)[number];
+  index: number;
+}) {
+  const stepRef = usePartnerReveal<HTMLDivElement>(index * 100);
+
+  return (
+    <div ref={stepRef} className="reveal" style={{ position: "relative", zIndex: 1 }}>
+      <div
+        style={{ width: 56, height: 56, borderRadius: 16, background: index % 2 === 0 ? B.pLight : B.aLight, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 18, color: index % 2 === 0 ? B.p : B.aDark, border: `1.5px solid ${index % 2 === 0 ? B.pMid : B.aMid}`, boxShadow: `0 4px 16px ${index % 2 === 0 ? B.p : B.aDark}18`, transition: "transform .2s" }}
+        onMouseEnter={(event) => {
+          event.currentTarget.style.transform = "scale(1.08)";
+        }}
+        onMouseLeave={(event) => {
+          event.currentTarget.style.transform = "none";
+        }}
+      >
+        {step.icon}
+      </div>
+      <div style={{ fontSize: 10, fontWeight: 800, letterSpacing: ".14em", textTransform: "uppercase", color: index % 2 === 0 ? B.p : B.aDark, marginBottom: 6 }}>Step {step.num}</div>
+      <h3 style={{ fontSize: 15, fontWeight: 700, color: B.dark, marginBottom: 8 }}>{step.title}</h3>
+      <p style={{ fontSize: 13, color: B.muted, lineHeight: 1.72 }}>{step.desc}</p>
+    </div>
   );
 }
