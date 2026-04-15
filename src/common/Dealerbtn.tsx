@@ -1,73 +1,25 @@
 "use client";
 
-import { useEffect, useRef, type JSX } from "react";
-import gsap from "gsap";
+import type { JSX } from "react";
 import { Link } from "react-router-dom";
 
-export default function LearnMoreButton({ title, href }: { title?: string, href: string}): JSX.Element {
-  const btnRef = useRef<HTMLAnchorElement | null>(null);
-  const bgRef = useRef<HTMLSpanElement | null>(null);
-
-  useEffect(() => {
-    const btn = btnRef.current;
-    const bg = bgRef.current;
-
-    if (!btn || !bg) return;
-
-    // initial position
-    gsap.set(bg, { x: "100%" });
-
-    const hoverIn = () => {
-      gsap.killTweensOf(bg);
-      gsap.to(bg, {
-        x: "0%",
-        duration: 0.45,
-        ease: "power3.out",
-      });
-    };
-
-    const hoverOut = () => {
-      gsap.killTweensOf(bg);
-      gsap.to(bg, {
-        x: "100%",
-        duration: 0.45,
-        ease: "power3.inOut",
-      });
-    };
-
-    btn.addEventListener("mouseenter", hoverIn);
-    btn.addEventListener("mouseleave", hoverOut);
-    btn.addEventListener("focus", hoverIn);
-    btn.addEventListener("blur", hoverOut);
-
-    return () => {
-      btn.removeEventListener("mouseenter", hoverIn);   
-      btn.removeEventListener("mouseleave", hoverOut);
-      btn.removeEventListener("focus", hoverIn);
-      btn.removeEventListener("blur", hoverOut);
-    };
-  }, []);
-
+export default function LearnMoreButton({
+  title,
+  href,
+}: {
+  title?: string;
+  href: string;
+}): JSX.Element {
   return (
     <Link
-      ref={btnRef}
       to={href}
-      className="relative flex overflow-hidden inline-flex items-center gap-2 py-1 ps-2 pe-1 rounded-full bg-[#00a9ae] text-white font-medium"
+      className="group relative inline-flex items-center overflow-hidden rounded-full bg-[#00a9ae] py-1 ps-2 pe-1 font-medium text-white transition-transform duration-200 ease-out hover:-translate-y-0.5 focus-visible:-translate-y-0.5"
     >
-      {/* sliding background */}
       <span
-        ref={bgRef}
         aria-hidden="true"
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: "linear-gradient(90deg, #8ac43f 0%, #86dc5e 100%)",
-          zIndex: 0,
-          transform: "translateX(100%)",
-        }}
+        className="absolute inset-0 origin-left scale-x-0 bg-[linear-gradient(90deg,#8ac43f_0%,#86dc5e_100%)] transition-transform duration-300 ease-out group-hover:scale-x-100 group-focus-visible:scale-x-100"
       />
-
-      {/* content */}
-      <span className="flex gap-2 px-4 justify-center items-center relative z-10">
+      <span className="relative z-10 flex items-center justify-center gap-2 px-4">
         {title}
       </span>
     </Link>

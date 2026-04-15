@@ -1,13 +1,14 @@
 
+import { Suspense, lazy } from 'react'
 import Navbar from '../common/Navbar'
 import HeroCarousel from '../Pages/Home/Herosection'
-import AboutUs from '../Pages/Home/About'
-import Footer from '../common/Footer'
-import WhyChooseMedzy from '../Pages/Home/Whychoosemedzy'
-import MedzyStats from '../Pages/Home/Medzystats'
-import VisionMission from '../Pages/Home/Visionmission'
 import SEO from '../common/SEO'
 
+const AboutUs = lazy(() => import('../Pages/Home/About'))
+const VisionMission = lazy(() => import('../Pages/Home/Visionmission'))
+const MedzyStats = lazy(() => import('../Pages/Home/Medzystats'))
+const WhyChooseMedzy = lazy(() => import('../Pages/Home/Whychoosemedzy'))
+const Footer = lazy(() => import('../common/Footer'))
 
 function HomePage() {
   return (
@@ -21,12 +22,16 @@ function HomePage() {
       <Navbar />
       <main id="main-content">
         <HeroCarousel />
-        <AboutUs />
-        <VisionMission />
-        <MedzyStats />
-        <WhyChooseMedzy />
+        <Suspense fallback={null}>
+          <AboutUs />
+          <VisionMission />
+          <MedzyStats />
+          <WhyChooseMedzy />
+        </Suspense>
       </main>
-      <Footer />
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
 
     </>
   )

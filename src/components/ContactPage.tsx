@@ -1,8 +1,9 @@
+import { Suspense, lazy } from 'react'
 import Navbar from '../common/Navbar'
-import Footer from '../common/Footer'
 import Contact from '../Pages/Contact/Contact'
 import SEO from '../common/SEO'
 
+const Footer = lazy(() => import('../common/Footer'))
 
 function ContactPage() {
   return (
@@ -17,7 +18,9 @@ function ContactPage() {
       <main id="main-content">
         <Contact />
       </main>
-      <Footer />
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
     </>
   )
 }

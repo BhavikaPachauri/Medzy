@@ -1,11 +1,11 @@
+import { Suspense, lazy } from 'react'
 import Navbar from '../common/Navbar'
-import Footer from '../common/Footer'
 import About from '../Pages/AboutUs/About'
-import PurposeValues from '../Pages/AboutUs/Purposevalues'
-import MedzySlides from '../Pages/AboutUs/Medzyslides'
-
 import SEO from '../common/SEO'
 
+const PurposeValues = lazy(() => import('../Pages/AboutUs/Purposevalues'))
+const MedzySlides = lazy(() => import('../Pages/AboutUs/Medzyslides'))
+const Footer = lazy(() => import('../common/Footer'))
 
 function AboutPage() {
   return (
@@ -21,10 +21,14 @@ function AboutPage() {
       <Navbar />
       <main id="main-content">
         <About />
-        <PurposeValues />
-        <MedzySlides />
+        <Suspense fallback={null}>
+          <PurposeValues />
+          <MedzySlides />
+        </Suspense>
       </main>
-      <Footer />
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
     </>
   )
 }

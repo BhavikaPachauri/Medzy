@@ -50,8 +50,11 @@ export default function HeroCarousel(): JSX.Element {
               src={slides[index].mobileImage || slides[index].image}
               alt="Medzy Healthcare - Leading Pharmaceutical Distributor Across India"
               loading={index === 0 ? 'eager' : 'lazy'}
+              fetchPriority={index === 0 ? 'high' : 'auto'}
               decoding="async"
               sizes="100vw"
+              width="1600"
+              height="900"
               className="h-full w-full object-cover object-center md:scale-105"
             />
           </picture>

@@ -1,14 +1,19 @@
 "use client";
+import { Suspense, lazy } from "react";
 import AboutHero from "./AboutHero";
-import AboutContent from "./AboutContent";
-import DirectorSection from "./DirectorSection";
+
+const AboutContent = lazy(() => import("./AboutContent"));
+const DirectorSection = lazy(() => import("./DirectorSection"));
+
 export default function About() {
  
   return (
     <main className=" min-h-screen" >
      <AboutHero/>
-     <AboutContent/>
-     <DirectorSection/>   
+     <Suspense fallback={null}>
+       <AboutContent/>
+       <DirectorSection/>
+     </Suspense>
     </main>
   );
 }

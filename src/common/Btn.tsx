@@ -1,8 +1,5 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-
 type BtnProps = {
   title?: string;
   text?: string;
@@ -14,135 +11,40 @@ type BtnProps = {
   type?: "button" | "submit" | "reset";
 };
 
-export default function LearnMoreButton({ title, text, bg, border, hover, onClick, as = "button", type = "button" }: BtnProps) {
-  const buttonRef = useRef<HTMLButtonElement | null>(null);
-  const spanRef = useRef<HTMLSpanElement | null>(null);
-  const circleRef = useRef<HTMLSpanElement | null>(null);
+export default function LearnMoreButton({
+  title,
+  text,
+  bg,
+  border,
+  hover,
+  onClick,
+  as = "button",
+  type = "button",
+}: BtnProps) {
+  const className = `${bg} ${text || "text-white"} ${border || "border-[#017d77]"} group relative inline-flex items-center gap-2 overflow-hidden rounded-full border px-6 py-2 font-medium transition-transform duration-200 ease-out hover:-translate-y-0.5 focus-visible:-translate-y-0.5`;
 
-  useEffect(() => {
-    const btn = as === "span" ? spanRef.current : buttonRef.current;
-    const circle = circleRef.current;
+  const overlay = (
+    <span
+      aria-hidden="true"
+      className={`${hover} absolute inset-0 origin-left scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100 group-focus-visible:scale-x-100`}
+    />
+  );
 
-    if (!btn || !circle) return;
-
-    const DIAMETER = 240;
-
-    gsap.set(circle, {
-      width: DIAMETER,
-      height: DIAMETER,
-      scale: 0,
-      xPercent: -50,
-      yPercent: -50,
-      transformOrigin: "50% 50%",
-      pointerEvents: "none",
-    });
-
-    const getScaleToCover = (
-      bw: number,
-      bh: number,
-      cx: number,
-      cy: number
-    ): number => {
-      const dist1 = Math.hypot(cx, cy);
-      const dist2 = Math.hypot(cx - bw, cy);
-      const dist3 = Math.hypot(cx, cy - bh);
-      const dist4 = Math.hypot(cx - bw, cy - bh);
-
-      const farthest = Math.max(dist1, dist2, dist3, dist4);
-      const requiredRadius = farthest;
-      const circleRadius = DIAMETER / 2;
-
-      return (requiredRadius / circleRadius) * 1.05;
-    };
-
-    const enter = (event: Event) => {
-      const e = event as PointerEvent;
-      const rect = btn.getBoundingClientRect();
-
-      const cx = e.clientX - rect.left;
-      const cy = e.clientY - rect.top;
-
-      gsap.set(circle, { left: cx, top: cy });
-
-      const scale = getScaleToCover(rect.width, rect.height, cx, cy);
-
-      gsap.killTweensOf(circle);
-      gsap.to(circle, {
-        scale,
-        duration: 0.5,
-        ease: "power3.out",
-      });
-    };
-
-    const leave = () => {
-      gsap.killTweensOf(circle);
-      gsap.to(circle, {
-        scale: 0,
-        duration: 0.45,
-        ease: "power3.inOut",
-      });
-    };
-
-    const handleFocus = () => {
-      const rect = btn.getBoundingClientRect();
-
-      const cx = rect.width / 2;
-      const cy = rect.height / 2;
-
-      gsap.set(circle, { left: cx, top: cy });
-
-      const scale = getScaleToCover(rect.width, rect.height, cx, cy);
-
-      gsap.killTweensOf(circle);
-      gsap.to(circle, {
-        scale,
-        duration: 0.45,
-        ease: "power3.out",
-      });
-    };
-
-    // Events
-    btn.addEventListener("pointerenter", enter);
-    btn.addEventListener("pointerleave", leave);
-    btn.addEventListener("focus", handleFocus);
-    btn.addEventListener("blur", leave);
-
-    return () => {
-      btn.removeEventListener("pointerenter", enter);
-      btn.removeEventListener("pointerleave", leave);
-      btn.removeEventListener("focus", handleFocus);
-      btn.removeEventListener("blur", leave);
-    };
-  }, [as]);
-
-  const className = `${bg} ${text || 'text-white'} relative overflow-hidden inline-flex items-center gap-2 px-6 py-2 rounded-full border ${border || 'border-[#017d77]'} font-medium transition-colors duration-300`;
+  const label = <span className="relative z-10">{title}</span>;
 
   if (as === "span") {
     return (
-      <span ref={spanRef} className={className}>
-        <span
-          ref={circleRef}
-          aria-hidden="true"
-          className={` ${hover} absolute rounded-full  z-0` }
-        />
-        <span className="relative z-10">{title}</span>
+      <span className={className}>
+        {overlay}
+        {label}
       </span>
     );
   }
 
   return (
-    <button
-      ref={buttonRef}
-      type={type}
-      onClick={onClick}
-      className={className}
-    >
-      <span
-        ref={circleRef}
-        aria-hidden="true"
-        className={` ${hover} absolute rounded-full  z-0` }
-      />
-      <span className="relative z-10">{title}</span>
+    <button type={type} onClick={onClick} className={className}>
+      {overlay}
+      {label}
     </button>
   );
 }

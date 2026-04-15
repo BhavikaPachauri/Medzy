@@ -1,20 +1,25 @@
 
+import { Suspense, lazy } from "react";
 
-import Delhivery from "../../common/Delhivery";
-import Ticker from "../../components/Ticker";
 import ServiceHero from "./components/ServiceHero";
-import ServicesSection from "./components/ServicesSection";
-import ValueAddedSection from "./components/ValueAddedSection";
+
+const Delhivery = lazy(() => import("../../common/Delhivery"));
+const Ticker = lazy(() => import("../../components/Ticker"));
+const ServicesSection = lazy(() => import("./components/ServicesSection"));
+const ValueAddedSection = lazy(() => import("./components/ValueAddedSection"));
 
 export default function MedzyServicesPage() {
   return (
     <div className="service-page overflow-x-hidden bg-[#f8fffe] text-[#1a3330] font-['Outfit',sans-serif]">
+      <Suspense fallback={null}>
         <Delhivery/>
+      </Suspense>
       <ServiceHero />
-      <Ticker/>
-      <ServicesSection />
-
-      <ValueAddedSection />
+      <Suspense fallback={null}>
+        <Ticker/>
+        <ServicesSection />
+        <ValueAddedSection />
+      </Suspense>
       {/* <ServiceCta /> */}
     </div>
   );
