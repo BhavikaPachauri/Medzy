@@ -316,16 +316,19 @@ function WhatsAppIcon({ className = "" }: { className?: string }) {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.8"
+      strokeWidth="1.6"
       strokeLinecap="round"
       strokeLinejoin="round"
       className={className}
       aria-hidden="true"
-      width="18"
-      height="18"
+      width="20"
+      height="20"
     >
-      <path d="M20 11.5A8.5 8.5 0 0 1 7.3 19l-4.3 1 1.2-4.1A8.5 8.5 0 1 1 20 11.5Z" />
-      <path d="M9.4 8.9c.2-.5.4-.5.7-.5h.6c.2 0 .4.1.5.4l.8 1.8c.1.2.1.4 0 .6l-.4.6c-.1.2-.1.3 0 .5.4.7 1 1.3 1.8 1.8.2.1.3.1.5 0l.6-.4c.2-.1.4-.1.6 0l1.8.8c.3.1.4.3.4.5v.6c0 .3 0 .5-.5.7-.5.2-1.7.3-3.4-.5a9.4 9.4 0 0 1-4.4-4.4c-.8-1.7-.7-2.9-.5-3.4Z" />
+      {/* Chat bubble */}
+      <path d="M21 11.5a9 9 0 0 1-13.5 7.8L3 21l1.7-4.3A9 9 0 1 1 21 11.5z" />
+
+      {/* Phone */}
+      <path d="M9 9c.2-.4.4-.5.7-.5h.5c.3 0 .5.1.6.4l.7 1.6c.1.3.1.5 0 .7l-.3.5c-.1.2-.1.3 0 .5.4.6 1 1.2 1.6 1.6.2.1.3.1.5 0l.5-.3c.2-.1.4-.1.7 0l1.6.7c.3.1.4.3.4.6v.5c0 .3-.1.5-.5.7-.5.2-1.6.3-3.2-.4a8.8 8.8 0 0 1-4.1-4.1C8.7 10.6 8.8 9.5 9 9z" />
     </svg>
   );
 }

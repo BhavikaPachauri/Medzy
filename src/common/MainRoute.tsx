@@ -23,7 +23,7 @@ function MainRoute() {
           <Route path='/partners' element={<Partnerpage />} />
         
         </Routes>
-      </Suspense>
+      </Suspense>          
     </BrowserRouter>
   )
 }

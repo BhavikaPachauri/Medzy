@@ -151,7 +151,7 @@ function Card({ type, icon, tag, heading, body, points, delay, visible }: CardPr
 
         {/* Heading + body */}
         <div className="relative z-10 flex flex-col gap-3">
-          <p
+          <p                    
             className="text-2xl  leading-snug font-heading"
             style={{
               color: isVision ? "#0f1a19" : "#ffffff",
