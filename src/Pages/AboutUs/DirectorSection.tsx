@@ -1,0 +1,54 @@
+"use client";
+import { useVisible } from "../../hooks/useVisible";
+
+export default function DirectorSection() {
+  const [teamRef, teamVisible] = useVisible(0.1);
+
+  return (
+   <section className="relative py-20 px-5  bg-[url('/img/green_pattern_final.webp')] opacity-96 bg-cover bg-center">
+        
+        <div
+          ref={teamRef}
+          className="max-w-[900px] mx-auto transition-all duration-700"
+          style={{ opacity: teamVisible ? 1 : 0, transform: teamVisible ? "translateY(0)" : "translateY(24px)" }}
+        >
+          <div className="text-center mb-10" >
+            <h2 className="font-heading text-white text-[clamp(26px,3.5vw,38px)] font-bold tracking-tight"
+             >
+              Meet Our Director
+            </h2>
+             <div className="flex items-center justify-center gap-3 mt-4">
+
+          <div
+            className="h-px w-80 rounded-full"
+            style={{ background: "linear-gradient(90deg,transparent, #fefffd, transparent)" }}
+          />
+        </div>
+          </div>
+
+          {/* Director card */}
+          <div className="rounded-2xl p-8 md:p-10 flex flex-col md:flex-row items-center md:items-start gap-8 shadow-lg"
+            style={{ background: "rgba(255, 255, 255, 0.05)", border: "1px solid #ffffff80" }}>
+
+
+
+            <div >
+              <h3 className="font-heading text-white text-[22px] font-bold mb-1"
+              >
+                Mr. Tushar Bhatia
+              </h3>
+              <p className="font-body text-white text-[12px] font-semibold uppercase tracking-[0.15em] mb-4">
+                Director, Medzy Healthcare Pvt Ltd.
+              </p>
+              <div className="w-50 h-[1px] rounded-full mb-5"
+                style={{ background: "linear-gradient(90deg, #fff, transparent)" }} />
+              <p className="text-white text-[15px] leading-[1.85]">
+                Under the leadership of Mr. Tushar Bhatia, Medzy Healthcare has grown into a reliable and forward-thinking pharmaceutical distribution company. His vision for quality, compliance, and commitment to exceptional service drives the company's mission and culture at every level.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+  );
+}
